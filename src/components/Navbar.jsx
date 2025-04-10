@@ -1,5 +1,5 @@
 import {
-  Headset,
+  ArrowUpRight,
   Mail,
   Facebook,
   Twitter,
@@ -61,38 +61,124 @@ function Navbar() {
         <div className="flex items-center space-x-2 justify-self-start">
           <img src={logo} alt="logo" className="h-20 w-auto" />
         </div>
-
         {/*Nav Links and Call Us Now Merged*/}
-        <div className="flex items-stretch relative rounded-full overflow-hidden">
+        <div className="flex items-stretch relative rounded-full">
           {/* Navigation Links */}
           <ul className="flex space-x-12 items-center rounded-l-full font-bold text-[#1E1E20] bg-[#FFC107] px-12 py-6  h-full">
             <li className="flex items-center">
-              <a href="#" className="hover:text-white">
+              <a
+                href="#"
+                className="transition-opacity duration-300 hover:opacity-75"
+              >
                 Home
               </a>
             </li>
             <li className="flex items-center">
-              <a href="#" className="hover:text-white">
+              <a
+                href="#"
+                className="transition-opacity duration-300 hover:opacity-75"
+              >
                 About Us
               </a>
             </li>
-            <li className="flex items-center">
-              <a href="#" className="hover:text-white">
+            <li className="flex items-center relative group">
+              <a
+                href="#"
+                className="transition-opacity duration-300 hover:opacity-75 flex items-center"
+              >
                 Programs
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
               </a>
+              <div className="absolute top-full bg-white left-0 mt-2 w-48 shadow-lg rounded-md overflow-visible invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50">
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm text-[#1E1E20] hover:bg-[#FFC107]"
+                >
+                  Program 1
+                </a>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm text-[#1E1E20] hover:bg-[#FFC107]"
+                >
+                  Program 2
+                </a>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm text-[#1E1E20] hover:bg-[#FFC107]"
+                >
+                  Program 3
+                </a>
+              </div>
             </li>
             <li className="flex items-center">
-              <a href="#" className="hover:text-white">
+              <a
+                href="#"
+                className="transition-opacity duration-300 hover:opacity-75"
+              >
                 Inner Center
               </a>
             </li>
-            <li className="flex items-center">
-              <a href="#" className="hover:text-white">
+
+            <li className="flex items-center relative group">
+              <a
+                href="#"
+                className="transition-opacity duration-300 hover:opacity-70 flex items-center"
+              >
                 Get Involved
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
               </a>
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-visible invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50">
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm text-[#1E1E20] hover:bg-[#FFC107] transition-colors duration-200"
+                >
+                  Volunteer
+                </a>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm text-[#1E1E20] hover:bg-[#FFC107] transition-colors duration-200"
+                >
+                  Donate
+                </a>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-sm text-[#1E1E20] hover:bg-[#FFC107] transition-colors duration-200"
+                >
+                  Partnership
+                </a>
+              </div>
             </li>
             <li className="flex items-center">
-              <a href="#" className="hover:text-white">
+              <a
+                href="#"
+                className="transition-opacity duration-300 hover:opacity-75"
+              >
                 Contact Us
               </a>
             </li>
@@ -112,18 +198,23 @@ function Navbar() {
               <span className="text-[11px] font-bold opacity-75 tracking-wide text-[#1E1E20]">
                 CALL US NOW
               </span>
-              <span className="text-base cursor-pointer mt-1 text-[#1E1E20]">
+              <span className="text-base cursor-pointer mt-1 text-[#1E1E20] transition-opacity duration-300 hover:opacity-75">
                 +255 784 266 633
               </span>
             </div>
           </div>
         </div>
-
         {/* Right Side Icons */}
         <div className="flex items-center space-x-12 justify-self-end">
           <Search className="w-auto h-8 text-black cursor-pointer" />
-          <button className="bg-yellow-400 hover:bg-yellow-500 text-[#1E1E20] cursor-pointer font-bold px-10 py-[22px] rounded-full">
-            Donate Now
+          <button className="bg-[#FFC107] text-[#1E1E20] cursor-pointer font-bold px-10 py-[22px] rounded-full relative group overflow-hidden transition-all duration-300">
+            <span className="absolute inset-0 bg-[#1E1E20] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+            <div className="flex items-center space-x-2 relative z-10">
+              <span className="group-hover:text-white transition-colors duration-300">
+                Donate Now
+              </span>
+              <ArrowUpRight className="w-5 h-5 transition-all duration-300 transform group-hover:translate-x-1 group-hover:rotate-45 group-hover:text-white" />
+            </div>
           </button>
         </div>
       </nav>
