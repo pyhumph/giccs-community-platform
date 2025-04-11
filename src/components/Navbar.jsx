@@ -102,24 +102,60 @@ function Navbar() {
                   />
                 </svg>
               </a>
-              <div className="absolute top-full bg-white left-0 mt-2 w-48 shadow-lg rounded-md overflow-visible invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50">
+              <div className="absolute font-[Nunito] font-medium top-full bg-white left-0 mt-2 w-52 shadow-lg rounded-md overflow-visible invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50">
                 <a
                   href="#"
-                  className="block px-4 py-2 text-sm text-[#1E1E20] hover:bg-[#FFC107]"
+                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
                 >
-                  Program 1
+                  Health
+                  <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
+                    →
+                  </span>
                 </a>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-sm text-[#1E1E20] hover:bg-[#FFC107]"
+                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
                 >
-                  Program 2
+                  Education
+                  <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
+                    →
+                  </span>
                 </a>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-sm text-[#1E1E20] hover:bg-[#FFC107]"
+                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
                 >
-                  Program 3
+                  Women Empowerment
+                  <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
+                    →
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
+                >
+                  Renweable Energy
+                  <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
+                    →
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
+                >
+                  Entrepreneurship
+                  <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
+                    →
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
+                >
+                  Business Grants
+                  <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
+                    →
+                  </span>
                 </a>
               </div>
             </li>
@@ -153,24 +189,51 @@ function Navbar() {
                   />
                 </svg>
               </a>
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-visible invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50">
+              <div className="absolute font-[Nunito] font-medium top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-visible invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50">
                 <a
                   href="#"
-                  className="block px-4 py-2 text-sm text-[#1E1E20] hover:bg-[#FFC107] transition-colors duration-200"
+                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
                 >
-                  Volunteer
+                  Become Volunteer
+                  <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
+                    →
+                  </span>
                 </a>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-sm text-[#1E1E20] hover:bg-[#FFC107] transition-colors duration-200"
+                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
                 >
-                  Donate
+                  Donate Us
+                  <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
+                    →
+                  </span>
                 </a>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-sm text-[#1E1E20] hover:bg-[#FFC107] transition-colors duration-200"
+                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
                 >
                   Partnership
+                  <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
+                    →
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
+                >
+                  Newsletter
+                  <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
+                    →
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
+                >
+                  Applications
+                  <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
+                    →
+                  </span>
                 </a>
               </div>
             </li>
