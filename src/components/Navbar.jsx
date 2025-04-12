@@ -20,27 +20,27 @@ function Navbar() {
   return (
     <header className="shadow-md w-full">
       {/*Top Contact Bar */}
-      <div className="w-[95%] md:max-w-[88%] rounded-b-2xl mx-auto bg-[#1E1E20] text-white text-xs md:text-[0.8rem] px-3 md:px-8 py-2 md:py-3.5">
+      <div className="w-[95%] md:max-w-[88%] rounded-b-2xl mx-auto bg-[#1E1E20] text-white text-xs md:text-[0.7rem] lg:text-[0.8rem] px-3 md:px-6 lg:px-8 py-2 md:py-3">
         {/* Mobile: Stack vertically */}
         <div className="flex flex-col md:hidden space-y-2 items-center">
           <div className="flex items-center justify-center space-x-2">
-            <Sparkles className="text-[#FFC107] w-4 h-4" />
+            <Sparkles className="text-[#FFC107] w-3 h-3" />
             <p className="text-center text-xs">
               Empowering Communities, Transforming Lives
             </p>
           </div>
           <div className="flex space-x-3 justify-center">
             <a href="#">
-              <Youtube className="text-white hover:text-[#FFC107] w-4 h-4" />
+              <Youtube className="text-white hover:text-[#FFC107] w-3 h-3" />
             </a>
             <a href="#">
-              <Facebook className="text-white hover:text-[#FFC107] w-4 h-4" />
+              <Facebook className="text-white hover:text-[#FFC107] w-3 h-3" />
             </a>
             <a href="#">
-              <Twitter className="text-white hover:text-[#FFC107] w-4 h-4" />
+              <Twitter className="text-white hover:text-[#FFC107] w-3 h-3" />
             </a>
             <a href="#">
-              <Instagram className="text-white hover:text-[#FFC107] w-4 h-4" />
+              <Instagram className="text-white hover:text-[#FFC107] w-3 h-3" />
             </a>
           </div>
         </div>
@@ -48,49 +48,49 @@ function Navbar() {
         {/* Desktop: Grid layout */}
         <div className="hidden md:grid grid-cols-3 items-center">
           {/* Left: Email & Phone */}
-          <div className="flex items-center space-x-4 lg:space-x-8 text-xs md:text-[0.8rem]">
-            <div className="flex items-center space-x-2">
-              <Mail className="text-[#FFC107] w-4 h-4" />
+          <div className="flex items-center space-x-2 md:space-x-4 lg:space-x-8 text-xs md:text-[0.7rem] lg:text-[0.8rem]">
+            <div className="flex items-center space-x-1 md:space-x-2">
+              <Mail className="text-[#FFC107] w-3 h-3 md:w-3 md:h-3 lg:w-4 lg:h-4" />
               <span>admin@giccs.or.tz</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <PhoneCall className="text-[#FFC107] w-4 h-4" />
+            <div className="flex items-center space-x-1 md:space-x-2">
+              <PhoneCall className="text-[#FFC107] w-3 h-3 md:w-3 md:h-3 lg:w-4 lg:h-4" />
               <span>+255 785 044 220</span>
             </div>
           </div>
 
           {/* Center: Slogan */}
-          <div className="flex items-center space-x-2">
-            <Sparkles className="text-[#FFC107] w-4 h-4" />
-            <p className="text-center text-xs md:text-[0.8rem]">
-              Empowering Communities, Transforming Lives. Become A Volunteer
-              Today!
+          <div className="flex items-center space-x-1 md:space-x-2">
+            <Sparkles className="text-[#FFC107] w-3 h-3 md:w-3 md:h-3 lg:w-4 lg:h-4" />
+            <p className="text-center text-xs md:text-[0.7rem] lg:text-[0.8rem]">
+              <span className="hidden xl:inline">Empowering Communities, Transforming Lives. Become A Volunteer Today!</span>
+              <span className="inline xl:hidden">Empowering Communities, Transforming Lives</span>
             </p>
           </div>
 
           {/* Right: Social Media */}
           <div className="flex space-x-3 justify-self-end">
             <a href="#">
-              <Youtube className="text-white hover:text-[#FFC107] w-4 h-4" />
+              <Youtube className="text-white hover:text-[#FFC107] w-3 h-3 md:w-3 md:h-3 lg:w-4 lg:h-4" />
             </a>
             <a href="#">
-              <Facebook className="text-white hover:text-[#FFC107] w-4 h-4" />
+              <Facebook className="text-white hover:text-[#FFC107] w-3 h-3 md:w-3 md:h-3 lg:w-4 lg:h-4" />
             </a>
             <a href="#">
-              <Twitter className="text-white hover:text-[#FFC107] w-4 h-4" />
+              <Twitter className="text-white hover:text-[#FFC107] w-3 h-3 md:w-3 md:h-3 lg:w-4 lg:h-4" />
             </a>
             <a href="#">
-              <Instagram className="text-white hover:text-[#FFC107] w-4 h-4" />
+              <Instagram className="text-white hover:text-[#FFC107] w-3 h-3 md:w-3 md:h-3 lg:w-4 lg:h-4" />
             </a>
           </div>
         </div>
       </div>
 
       {/*Main Nav Bar*/}
-      <nav className="bg-white flex flex-wrap justify-between items-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-4 text-[0.9rem] relative">
+      <nav className="bg-white flex flex-wrap justify-between items-center px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 py-2 md:py-3 lg:py-4 text-[0.8rem] relative">
         {/*Logo*/}
         <div className="flex items-center space-x-2 justify-self-start">
-          <img src={logo} alt="logo" className="h-12 md:h-16 lg:h-20 w-auto" />
+          <img src={logo} alt="logo" className="h-10 md:h-12 lg:h-16 xl:h-20 w-auto" />
         </div>
 
         {/* Mobile Menu Button */}
@@ -102,131 +102,47 @@ function Navbar() {
         </button>
 
         {/* Mobile Menu */}
-        <div
-          className={`md:hidden w-full ${mobileMenuOpen ? "block" : "hidden"} mt-4`}
-        >
+        <div className={`md:hidden w-full ${mobileMenuOpen ? 'block' : 'hidden'} mt-4`}>
           <ul className="flex flex-col space-y-3 font-bold text-[#1E1E20] bg-[#FFC107] rounded-lg p-4">
-            <li>
-              <a href="#" className="block py-2">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="block py-2">
-                About Us
-              </a>
-            </li>
+            <li><a href="#" className="block py-2">Home</a></li>
+            <li><a href="#" className="block py-2">About Us</a></li>
             <li>
               <details className="cursor-pointer">
                 <summary className="flex justify-between items-center py-2">
                   Programs
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
                 <ul className="pl-4 py-2 space-y-2">
-                  <li>
-                    <a href="#" className="block py-1">
-                      Health
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="block py-1">
-                      Education
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="block py-1">
-                      Women Empowerment
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="block py-1">
-                      Renewable Energy
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="block py-1">
-                      Entrepreneurship
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="block py-1">
-                      Business Grants
-                    </a>
-                  </li>
+                  <li><a href="#" className="block py-1">Health</a></li>
+                  <li><a href="#" className="block py-1">Education</a></li>
+                  <li><a href="#" className="block py-1">Women Empowerment</a></li>
+                  <li><a href="#" className="block py-1">Renewable Energy</a></li>
+                  <li><a href="#" className="block py-1">Entrepreneurship</a></li>
+                  <li><a href="#" className="block py-1">Business Grants</a></li>
                 </ul>
               </details>
             </li>
-            <li>
-              <a href="#" className="block py-2">
-                Inner Center
-              </a>
-            </li>
+            <li><a href="#" className="block py-2">Inner Center</a></li>
             <li>
               <details className="cursor-pointer">
                 <summary className="flex justify-between items-center py-2">
                   Get Involved
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
                 <ul className="pl-4 py-2 space-y-2">
-                  <li>
-                    <a href="#" className="block py-1">
-                      Become Volunteer
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="block py-1">
-                      Donate Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="block py-1">
-                      Partnership
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="block py-1">
-                      Newsletter
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="block py-1">
-                      Applications
-                    </a>
-                  </li>
+                  <li><a href="#" className="block py-1">Become Volunteer</a></li>
+                  <li><a href="#" className="block py-1">Donate Us</a></li>
+                  <li><a href="#" className="block py-1">Partnership</a></li>
+                  <li><a href="#" className="block py-1">Newsletter</a></li>
+                  <li><a href="#" className="block py-1">Applications</a></li>
                 </ul>
               </details>
             </li>
-            <li>
-              <a href="#" className="block py-2">
-                Contact Us
-              </a>
-            </li>
+            <li><a href="#" className="block py-2">Contact Us</a></li>
             <li className="pt-2">
               <button className="w-full bg-[#1E1E20] text-white font-bold py-3 rounded-full flex items-center justify-center space-x-2">
                 <span>Donate Now</span>
@@ -239,7 +155,7 @@ function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-stretch relative rounded-full">
           {/* Navigation Links */}
-          <ul className="flex space-x-4 lg:space-x-8 xl:space-x-12 items-center rounded-l-full font-bold text-[#1E1E20] bg-[#FFC107] px-6 lg:px-8 xl:px-12 py-6 h-full">
+          <ul className="flex space-x-2 md:space-x-3 lg:space-x-6 xl:space-x-12 items-center rounded-l-full font-bold text-[#1E1E20] bg-[#FFC107] px-4 md:px-6 lg:px-8 xl:px-12 py-4 md:py-5 lg:py-6 h-full text-xs md:text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem]">
             <li className="flex items-center">
               <a
                 href="#"
@@ -253,7 +169,7 @@ function Navbar() {
                 href="#"
                 className="transition-opacity duration-300 hover:opacity-75"
               >
-                About Us
+                About
               </a>
             </li>
             <li className="flex items-center relative group">
@@ -264,7 +180,7 @@ function Navbar() {
                 Programs
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
+                  className="h-3 w-3 ml-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -277,10 +193,10 @@ function Navbar() {
                   />
                 </svg>
               </a>
-              <div className="absolute font-[Nunito] font-medium top-full bg-white left-0 mt-2 w-52 shadow-lg rounded-md overflow-visible invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50">
+              <div className="absolute font-[Nunito] font-medium top-full bg-white left-0 mt-2 w-48 md:w-52 shadow-lg rounded-md overflow-visible invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50">
                 <a
                   href="#"
-                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
+                  className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
                 >
                   Health
                   <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
@@ -289,7 +205,7 @@ function Navbar() {
                 </a>
                 <a
                   href="#"
-                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
+                  className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
                 >
                   Education
                   <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
@@ -298,7 +214,7 @@ function Navbar() {
                 </a>
                 <a
                   href="#"
-                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
+                  className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
                 >
                   Women Empowerment
                   <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
@@ -307,7 +223,7 @@ function Navbar() {
                 </a>
                 <a
                   href="#"
-                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
+                  className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
                 >
                   Renewable Energy
                   <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
@@ -316,7 +232,7 @@ function Navbar() {
                 </a>
                 <a
                   href="#"
-                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
+                  className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
                 >
                   Entrepreneurship
                   <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
@@ -325,7 +241,7 @@ function Navbar() {
                 </a>
                 <a
                   href="#"
-                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
+                  className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
                 >
                   Business Grants
                   <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
@@ -334,7 +250,7 @@ function Navbar() {
                 </a>
               </div>
             </li>
-            <li className="hidden lg:flex items-center">
+            <li className="hidden xl:flex items-center">
               <a
                 href="#"
                 className="transition-opacity duration-300 hover:opacity-75"
@@ -348,10 +264,10 @@ function Navbar() {
                 href="#"
                 className="transition-opacity duration-300 hover:opacity-70 flex items-center"
               >
-                Get Involved
+                <span className="hidden md:inline">Get </span>Involved
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
+                  className="h-3 w-3 ml-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -364,10 +280,10 @@ function Navbar() {
                   />
                 </svg>
               </a>
-              <div className="absolute font-[Nunito] font-medium top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-visible invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50">
+              <div className="absolute font-[Nunito] font-medium top-full left-0 mt-2 w-40 md:w-48 bg-white shadow-lg rounded-md overflow-visible invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50">
                 <a
                   href="#"
-                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
+                  className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
                 >
                   Become Volunteer
                   <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
@@ -376,7 +292,7 @@ function Navbar() {
                 </a>
                 <a
                   href="#"
-                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
+                  className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
                 >
                   Donate Us
                   <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
@@ -385,7 +301,7 @@ function Navbar() {
                 </a>
                 <a
                   href="#"
-                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
+                  className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
                 >
                   Partnership
                   <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
@@ -394,7 +310,7 @@ function Navbar() {
                 </a>
                 <a
                   href="#"
-                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
+                  className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
                 >
                   Newsletter
                   <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
@@ -403,7 +319,7 @@ function Navbar() {
                 </a>
                 <a
                   href="#"
-                  className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
+                  className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
                 >
                   Applications
                   <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
@@ -412,31 +328,31 @@ function Navbar() {
                 </a>
               </div>
             </li>
-            <li className="hidden lg:flex items-center">
+            <li className="hidden xl:flex items-center">
               <a
                 href="#"
                 className="transition-opacity duration-300 hover:opacity-75"
               >
-                Contact Us
+                Contact
               </a>
             </li>
           </ul>
 
           {/* U-shape cutout at top and bottom */}
-          <div className="relative w-6 bg-[#FFC107] z-10 before:content-[''] before:absolute before:w-8 before:h-4 before:bg-white before:rounded-b-full before:top-0 before:left-0 after:content-[''] after:absolute after:w-8 after:h-4 after:bg-white after:rounded-t-full after:rounded-b-none after:bottom-0 after:left-0" />
+          <div className="relative w-4 md:w-5 lg:w-6 bg-[#FFC107] z-10 before:content-[''] before:absolute before:w-6 md:before:w-7 lg:before:w-8 before:h-3 md:before:h-3 lg:before:h-4 before:bg-white before:rounded-b-full before:top-0 before:left-0 after:content-[''] after:absolute after:w-6 md:after:w-7 lg:after:w-8 after:h-3 md:after:h-3 lg:after:h-4 after:bg-white after:rounded-t-full after:rounded-b-none after:bottom-0 after:left-0" />
 
           {/* Call Us Now Button */}
-          <div className="bg-[#FFC107] px-6 lg:px-10 xl:px-16 py-4 text-black font-bold flex items-center h-full rounded-r-full">
+          <div className="bg-[#FFC107] px-4 md:px-6 lg:px-10 xl:px-16 py-3 md:py-4 text-black font-bold flex items-center h-full rounded-r-full">
             <img
               src={liveChat}
               alt="contact-icon"
-              className="w-auto h-6 lg:h-9 mr-2 lg:mr-3"
+              className="w-auto h-5 md:h-6 lg:h-8 xl:h-9 mr-2 md:mr-3"
             />
             <div className="flex flex-col leading-tight">
-              <span className="text-[10px] lg:text-[11px] font-bold opacity-75 tracking-wide text-[#1E1E20]">
+              <span className="text-[8px] md:text-[9px] lg:text-[10px] xl:text-[11px] font-bold opacity-75 tracking-wide text-[#1E1E20]">
                 CALL US NOW
               </span>
-              <span className="text-sm lg:text-base cursor-pointer mt-1 text-[#1E1E20] transition-opacity duration-300 hover:opacity-75">
+              <span className="text-xs md:text-sm lg:text-base cursor-pointer mt-0.5 md:mt-1 text-[#1E1E20] transition-opacity duration-300 hover:opacity-75">
                 +255 784 266 633
               </span>
             </div>
@@ -444,15 +360,15 @@ function Navbar() {
         </div>
 
         {/* Right Side Icons - Desktop Only */}
-        <div className="hidden md:flex items-center space-x-8 lg:space-x-12 justify-self-end">
-          <Search className="w-auto h-6 lg:h-8 text-black cursor-pointer" />
-          <button className="bg-[#FFC107] text-[#1E1E20] cursor-pointer font-bold px-6 lg:px-10 py-4 lg:py-[22px] rounded-full relative group overflow-hidden transition-all duration-300">
+        <div className="hidden md:flex items-center space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-12 justify-self-end">
+          <Search className="w-auto h-5 md:h-5 lg:h-6 xl:h-8 text-black cursor-pointer" />
+          <button className="bg-[#FFC107] text-[#1E1E20] cursor-pointer font-bold px-4 md:px-5 lg:px-8 xl:px-10 py-3 md:py-3 lg:py-4 xl:py-[22px] rounded-full relative group overflow-hidden transition-all duration-300 text-xs md:text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem]">
             <span className="absolute inset-0 bg-[#1E1E20] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
-            <div className="flex items-center space-x-2 relative z-10">
+            <div className="flex items-center space-x-1 md:space-x-2 relative z-10">
               <span className="group-hover:text-white transition-colors duration-300">
                 Donate Now
               </span>
-              <ArrowUpRight className="w-5 h-5 transition-all duration-300 transform group-hover:translate-x-1 group-hover:rotate-45 group-hover:text-white" />
+              <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 transition-all duration-300 transform group-hover:translate-x-1 group-hover:rotate-45 group-hover:text-white" />
             </div>
           </button>
         </div>
