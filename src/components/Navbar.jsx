@@ -8,63 +8,238 @@ import {
   Sparkles,
   PhoneCall,
   Search,
+  Menu,
 } from "lucide-react";
+import { useState } from "react";
 import logo from "../assets/giccs_logo.svg";
 import liveChat from "../assets/live-chat.png";
 
 function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <header className="shadow-md">
+    <header className="shadow-md w-full">
       {/*Top Contact Bar */}
-      <div className="max-w-[88%] rounded-b-2xl mx-auto bg-[#1E1E20] text-white text-[0.8rem] grid grid-cols-3 font-medium items-center px-8 py-3.5">
-        {/* Left: Email & Phone */}
-        <div className="flex items-center space-x-8 text-[0.8rem]">
-          <div className="flex items-center space-x-2">
-            <Mail className="text-[#FFC107] w-4 h-5" />
-            <span>admin@giccs.or.tz</span>
+      <div className="w-[95%] md:max-w-[88%] rounded-b-2xl mx-auto bg-[#1E1E20] text-white text-xs md:text-[0.8rem] px-3 md:px-8 py-2 md:py-3.5">
+        {/* Mobile: Stack vertically */}
+        <div className="flex flex-col md:hidden space-y-2 items-center">
+          <div className="flex items-center justify-center space-x-2">
+            <Sparkles className="text-[#FFC107] w-4 h-4" />
+            <p className="text-center text-xs">
+              Empowering Communities, Transforming Lives
+            </p>
           </div>
-          <div className="flex items-center space-x-2">
-            <PhoneCall className="text-[#FFC107] w-4 h-5" />
-            <span>+255 785 044 220</span>
+          <div className="flex space-x-3 justify-center">
+            <a href="#">
+              <Youtube className="text-white hover:text-[#FFC107] w-4 h-4" />
+            </a>
+            <a href="#">
+              <Facebook className="text-white hover:text-[#FFC107] w-4 h-4" />
+            </a>
+            <a href="#">
+              <Twitter className="text-white hover:text-[#FFC107] w-4 h-4" />
+            </a>
+            <a href="#">
+              <Instagram className="text-white hover:text-[#FFC107] w-4 h-4" />
+            </a>
           </div>
         </div>
 
-        {/* Center: Slogan */}
-        <div className="flex items-center space-x-2">
-          <Sparkles className="text-[#FFC107] w-4 h-5" />
-          <p className="text-center text-[0.8rem]">
-            Empowering Communities, Transforming Lives. Become A Volunteer
-            Today!
-          </p>
-        </div>
+        {/* Desktop: Grid layout */}
+        <div className="hidden md:grid grid-cols-3 items-center">
+          {/* Left: Email & Phone */}
+          <div className="flex items-center space-x-4 lg:space-x-8 text-xs md:text-[0.8rem]">
+            <div className="flex items-center space-x-2">
+              <Mail className="text-[#FFC107] w-4 h-4" />
+              <span>admin@giccs.or.tz</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <PhoneCall className="text-[#FFC107] w-4 h-4" />
+              <span>+255 785 044 220</span>
+            </div>
+          </div>
 
-        {/* Right: Social Media */}
-        <div className="flex space-x-3 justify-self-end">
-          <a href="#">
-            <Youtube className="text-white hover:text-[#FFC107] w-5 h-5" />
-          </a>
-          <a href="#">
-            <Facebook className="text-white hover:text-[#FFC107] w-5 h-5" />
-          </a>
-          <a href="#">
-            <Twitter className="text-white hover:text-[#FFC107] w-5 h-5" />
-          </a>
-          <a href="#">
-            <Instagram className="text-white hover:text-[#FFC107] w-5 h-5" />
-          </a>
+          {/* Center: Slogan */}
+          <div className="flex items-center space-x-2">
+            <Sparkles className="text-[#FFC107] w-4 h-4" />
+            <p className="text-center text-xs md:text-[0.8rem]">
+              Empowering Communities, Transforming Lives. Become A Volunteer
+              Today!
+            </p>
+          </div>
+
+          {/* Right: Social Media */}
+          <div className="flex space-x-3 justify-self-end">
+            <a href="#">
+              <Youtube className="text-white hover:text-[#FFC107] w-4 h-4" />
+            </a>
+            <a href="#">
+              <Facebook className="text-white hover:text-[#FFC107] w-4 h-4" />
+            </a>
+            <a href="#">
+              <Twitter className="text-white hover:text-[#FFC107] w-4 h-4" />
+            </a>
+            <a href="#">
+              <Instagram className="text-white hover:text-[#FFC107] w-4 h-4" />
+            </a>
+          </div>
         </div>
       </div>
 
       {/*Main Nav Bar*/}
-      <nav className="bg-white flex justify-between items-center px-32 py-4 text-[0.9rem]">
+      <nav className="bg-white flex flex-wrap justify-between items-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-4 text-[0.9rem] relative">
         {/*Logo*/}
         <div className="flex items-center space-x-2 justify-self-start">
-          <img src={logo} alt="logo" className="h-20 w-auto" />
+          <img src={logo} alt="logo" className="h-12 md:h-16 lg:h-20 w-auto" />
         </div>
-        {/*Nav Links and Call Us Now Merged*/}
-        <div className="flex items-stretch relative rounded-full">
+
+        {/* Mobile Menu Button */}
+        <button
+          className="block md:hidden text-[#1E1E20]"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          <Menu className="w-6 h-6" />
+        </button>
+
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden w-full ${mobileMenuOpen ? "block" : "hidden"} mt-4`}
+        >
+          <ul className="flex flex-col space-y-3 font-bold text-[#1E1E20] bg-[#FFC107] rounded-lg p-4">
+            <li>
+              <a href="#" className="block py-2">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#" className="block py-2">
+                About Us
+              </a>
+            </li>
+            <li>
+              <details className="cursor-pointer">
+                <summary className="flex justify-between items-center py-2">
+                  Programs
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <ul className="pl-4 py-2 space-y-2">
+                  <li>
+                    <a href="#" className="block py-1">
+                      Health
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Education
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Women Empowerment
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Renewable Energy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Entrepreneurship
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Business Grants
+                    </a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <a href="#" className="block py-2">
+                Inner Center
+              </a>
+            </li>
+            <li>
+              <details className="cursor-pointer">
+                <summary className="flex justify-between items-center py-2">
+                  Get Involved
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <ul className="pl-4 py-2 space-y-2">
+                  <li>
+                    <a href="#" className="block py-1">
+                      Become Volunteer
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Donate Us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Partnership
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Newsletter
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Applications
+                    </a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <a href="#" className="block py-2">
+                Contact Us
+              </a>
+            </li>
+            <li className="pt-2">
+              <button className="w-full bg-[#1E1E20] text-white font-bold py-3 rounded-full flex items-center justify-center space-x-2">
+                <span>Donate Now</span>
+                <ArrowUpRight className="w-5 h-5" />
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-stretch relative rounded-full">
           {/* Navigation Links */}
-          <ul className="flex space-x-12 items-center rounded-l-full font-bold text-[#1E1E20] bg-[#FFC107] px-12 py-6  h-full">
+          <ul className="flex space-x-4 lg:space-x-8 xl:space-x-12 items-center rounded-l-full font-bold text-[#1E1E20] bg-[#FFC107] px-6 lg:px-8 xl:px-12 py-6 h-full">
             <li className="flex items-center">
               <a
                 href="#"
@@ -134,7 +309,7 @@ function Navbar() {
                   href="#"
                   className="flex justify-between items-center px-4 py-2 text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
                 >
-                  Renweable Energy
+                  Renewable Energy
                   <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
                     →
                   </span>
@@ -159,7 +334,7 @@ function Navbar() {
                 </a>
               </div>
             </li>
-            <li className="flex items-center">
+            <li className="hidden lg:flex items-center">
               <a
                 href="#"
                 className="transition-opacity duration-300 hover:opacity-75"
@@ -237,7 +412,7 @@ function Navbar() {
                 </a>
               </div>
             </li>
-            <li className="flex items-center">
+            <li className="hidden lg:flex items-center">
               <a
                 href="#"
                 className="transition-opacity duration-300 hover:opacity-75"
@@ -251,26 +426,27 @@ function Navbar() {
           <div className="relative w-6 bg-[#FFC107] z-10 before:content-[''] before:absolute before:w-8 before:h-4 before:bg-white before:rounded-b-full before:top-0 before:left-0 after:content-[''] after:absolute after:w-8 after:h-4 after:bg-white after:rounded-t-full after:rounded-b-none after:bottom-0 after:left-0" />
 
           {/* Call Us Now Button */}
-          <div className="bg-[#FFC107] px-16 py-4 text-black font-bold flex items-center h-full rounded-r-full">
+          <div className="bg-[#FFC107] px-6 lg:px-10 xl:px-16 py-4 text-black font-bold flex items-center h-full rounded-r-full">
             <img
               src={liveChat}
               alt="contact-icon"
-              className="w-auto h-9 mr-3"
+              className="w-auto h-6 lg:h-9 mr-2 lg:mr-3"
             />
             <div className="flex flex-col leading-tight">
-              <span className="text-[11px] font-bold opacity-75 tracking-wide text-[#1E1E20]">
+              <span className="text-[10px] lg:text-[11px] font-bold opacity-75 tracking-wide text-[#1E1E20]">
                 CALL US NOW
               </span>
-              <span className="text-base cursor-pointer mt-1 text-[#1E1E20] transition-opacity duration-300 hover:opacity-75">
+              <span className="text-sm lg:text-base cursor-pointer mt-1 text-[#1E1E20] transition-opacity duration-300 hover:opacity-75">
                 +255 784 266 633
               </span>
             </div>
           </div>
         </div>
-        {/* Right Side Icons */}
-        <div className="flex items-center space-x-12 justify-self-end">
-          <Search className="w-auto h-8 text-black cursor-pointer" />
-          <button className="bg-[#FFC107] text-[#1E1E20] cursor-pointer font-bold px-10 py-[22px] rounded-full relative group overflow-hidden transition-all duration-300">
+
+        {/* Right Side Icons - Desktop Only */}
+        <div className="hidden md:flex items-center space-x-8 lg:space-x-12 justify-self-end">
+          <Search className="w-auto h-6 lg:h-8 text-black cursor-pointer" />
+          <button className="bg-[#FFC107] text-[#1E1E20] cursor-pointer font-bold px-6 lg:px-10 py-4 lg:py-[22px] rounded-full relative group overflow-hidden transition-all duration-300">
             <span className="absolute inset-0 bg-[#1E1E20] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
             <div className="flex items-center space-x-2 relative z-10">
               <span className="group-hover:text-white transition-colors duration-300">
