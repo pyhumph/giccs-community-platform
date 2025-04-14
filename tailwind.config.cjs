@@ -15,6 +15,7 @@ module.exports = {
         openSans: ["Open Sans", ...fontFamily.sans],
         roboto: ["Roboto", ...fontFamily.sans],
         workSans: ["Work Sans", ...fontFamily.sans],
+        dancingScript: ["Dancing Script", ...fontFamily.sans],
       },
     },
   },
