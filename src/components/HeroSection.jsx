@@ -3,6 +3,7 @@ import { ArrowRight, HandshakeIcon } from "lucide-react";
 import bg01 from "../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
 import bg02 from "../assets/michael-ali-Xo27J9RUjK8-unsplash.jpg";
 import bg03 from "../assets/seth-doyle-zf9_yiAekJs-unsplash.jpg";
+import handshake from "../assets/support.png";
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -23,17 +24,15 @@ export default function HeroSection() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
         >
           <div className="w-full h-full overflow-hidden">
             <img
               src={slide}
               alt={`Slide ${index + 1}`}
-              className={`w-full h-full object-cover transition-transform duration-6000 ease-out ${
-                index === currentSlide ? "scale-110" : "scale-100"
-              }`}
+              className={`w-full h-full object-cover transition-transform duration-6000 ease-out ${index === currentSlide ? "scale-110" : "scale-100"
+                }`}
             />
           </div>
         </div>
@@ -43,12 +42,17 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#1E1E20] to-transparent"></div>
 
       {/* Content Container */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 md:px-8 z-10">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center mt-[-12rem] px-4 md:px-8 z-10">
         {/* Small Heading with Handshake Icon */}
-        <div className="flex items-center mb-4">
-          <HandshakeIcon className="w-5 h-5 mr-2 text-[#FFC107]" />
+        <div className="flex items-center mb-2">
+          {/*<HandshakeIcon className="w-5 h-5 mr-2 text-[#FFC107]" />*/}
+          <img
+            src={handshake}
+            alt="handshake_img"
+            className="w-auto h-8 mr-2"
+          />
           <p
-            className="text-[#FFC107] font-medium"
+            className="text-[#FFC107] font-bold text-[1.5rem]"
             style={{ fontFamily: '"Dancing Script", cursive' }}
           >
             Support Communities for a Better Future
@@ -56,10 +60,10 @@ export default function HeroSection() {
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-4xl md:text-6xl font-bold text-white max-w-4xl mb-6">
-          Bring Hope and Aid to{" "}
+        <h1 className="text-4xl md:text-[5rem] font-bold text-white max-w-6xl mb-6">
+          <span className="block">Bring Hope and Aid to </span>
           <span
-            className="text-[#FFC107] relative"
+            className="text-[#FFC107] relative mr-4"
             style={{ fontFamily: '"Dancing Script", cursive' }}
           >
             Tanzanian
@@ -76,7 +80,6 @@ export default function HeroSection() {
               />
             </svg>
           </span>
-          <br />
           in Need
         </h1>
 
