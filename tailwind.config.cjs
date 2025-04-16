@@ -16,6 +16,7 @@ module.exports = {
         roboto: ["Roboto", ...fontFamily.sans],
         workSans: ["Work Sans", ...fontFamily.sans],
         dancingScript: ["Dancing Script", ...fontFamily.sans],
+        Caveat: ["Caveat", ...fontFamily.sans],
       },
     },
   },
