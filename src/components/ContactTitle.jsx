@@ -3,10 +3,10 @@ import React from "react";
 const ContactTitle = ({ showImage = true }) => {
   return (
     <div>
-      <h2 className="text-3xl mt-10 font-bold mb-4 flex items-center">
+      <h2 className="text-4xl mt-10 font-bold mb-4 flex items-center">
         Get in Touch With Us 👋
       </h2>
-      <p className="text-gray-600 mb-8">
+      <p className="text-gray-600 text-xl mb-8">
         We're here to listen and help! Whether you have questions about our
         charity programs, want to make a donation, or are interested in
         volunteering, our team is ready to connect with you. Every conversation

@@ -160,7 +160,7 @@ const Footer = () => {
                 </li>
                 <li className="flex">
                   <FaEnvelope className="text-yellow-500 mr-3 mt-1 flex-shrink-0" />
-                  <p className="text-gray-400">info@charifund.com</p>
+                  <p className="text-gray-400">info@giccs.com</p>
                 </li>
               </ul>
             </div>
@@ -172,8 +172,8 @@ const Footer = () => {
       <div className="bg-gray-900 border-t border-gray-800 py-4">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            Copyright © 2025 <span className="text-yellow-500">Charifund</span>
-            . All Rights Reserved.
+            Copyright © 2025 <span className="text-yellow-500">Giccs</span>.
+            All Rights Reserved.
           </p>
           <div className="flex space-x-4 text-sm text-gray-400">
             <a href="#" className="hover:text-white">

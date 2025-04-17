@@ -17,7 +17,7 @@ const ContactInfo = () => {
           {/* Location */}
           <div className="flex flex-col items-center mb-4">
             <div className="bg-yellow-100 p-3 rounded-full mb-4">
-              <FaMapMarkerAlt className="text-yellow-500 text-xl" />
+              <FaMapMarkerAlt className="text-yellow-500 text-4xl" />
             </div>
             <div>
               <h3 className="font-bold text-xl mb-2">Location</h3>
@@ -31,7 +31,7 @@ const ContactInfo = () => {
           {/* Phone */}
           <div className="flex flex-col items-center mb-4">
             <div className="bg-blue-100 p-3 rounded-full mb-4">
-              <FaPhone className="text-blue-500 text-xl" />
+              <FaPhone className="text-blue-500 text-4xl" />
             </div>
             <div>
               <h3 className="font-bold text-xl mb-2">Phone</h3>
@@ -46,12 +46,12 @@ const ContactInfo = () => {
           {/* Email */}
           <div className="flex flex-col items-center mb-4">
             <div className="bg-green-100 p-3 rounded-full mb-4">
-              <FaEnvelope className="text-green-500 text-xl" />
+              <FaEnvelope className="text-green-500 text-4xl" />
             </div>
             <div>
               <h3 className="font-bold text-xl mb-2">Email</h3>
-              <p className="text-gray-600">info@charifund.com</p>
-              <p className="text-gray-600">support@charifund.com</p>
+              <p className="text-gray-600">info@giccs.com</p>
+              <p className="text-gray-600">support@giccs.com</p>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@ const ContactInfo = () => {
           {/* Social */}
           <div className="flex flex-col items-center">
             <div className="bg-purple-100 p-3 rounded-full mb-4">
-              <span className="text-purple-500 text-xl font-bold">#</span>
+              <span className="text-purple-500 text-4xl font-bold">#</span>
             </div>
             <h3 className="font-bold text-xl mb-3">Social</h3>
             <div className="flex space-x-3 mt-2">

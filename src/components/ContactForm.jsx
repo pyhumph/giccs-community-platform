@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactForm = () => {
   return (
-    <div className="bg-gray-50 p-8 rounded-lg shadow-sm">
+    <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-300">
       <h2 className="text-3xl font-bold mb-4">Fill Up The Form</h2>
       <p className="text-gray-600 mb-4">
         Feel Free To Contact With Us, We'll Get Back To You ASAP!
@@ -14,7 +14,7 @@ const ContactForm = () => {
           <div className="relative">
             <input
               type="text"
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-yellow-500"
+              className="w-full px-4 py-4 border bg-gray-100 border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-yellow-500"
               placeholder="Enter Name"
             />
             <span className="absolute right-4 top-3 text-gray-400">👤</span>
@@ -25,7 +25,7 @@ const ContactForm = () => {
           <div className="relative">
             <input
               type="email"
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-yellow-500"
+              className="w-full px-4 py-4 border bg-gray-100 border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-yellow-500"
               placeholder="Enter Email"
             />
             <span className="absolute right-4 top-3 text-gray-400">✉️</span>
@@ -36,7 +36,7 @@ const ContactForm = () => {
           <div className="relative">
             <input
               type="tel"
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-yellow-500"
+              className="w-full px-4 py-4 border bg-gray-100 border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-yellow-500"
               placeholder="Phone Number"
             />
             <span className="absolute right-4 top-3 text-gray-400">📱</span>
@@ -46,7 +46,7 @@ const ContactForm = () => {
         <div className="mb-6">
           <div className="relative">
             <textarea
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg h-32 focus:outline-none focus:border-yellow-500"
+              className="w-full px-4 py-4 border bg-gray-100 border-gray-300 rounded-lg h-32 text-gray-700 focus:outline-none focus:border-yellow-500"
               placeholder="Your Message..."
             ></textarea>
             <span className="absolute right-4 top-3 text-gray-400">💬</span>
