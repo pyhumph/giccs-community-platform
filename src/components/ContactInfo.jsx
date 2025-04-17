@@ -8,27 +8,84 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 
-const ContactInfo = ({ showImage = true }) => {
+const ContactInfo = () => {
   return (
     <div>
-      <h2 className="text-3xl mt-10 font-bold mb-4 flex items-center">
-        Get in Touch With Us 👋
-      </h2>
-      <p className="text-gray-600 mb-8">
-        We're here to listen and help! Whether you have questions about our
-        charity programs, want to make a donation, or are interested in
-        volunteering, our team is ready to connect with you. Every conversation
-        is an opportunity to make a difference together.
-      </p>
-      {showImage && (
-        <div className="mt-8">
-          <img
-            src="https://www.1stformationsblog.co.uk/wp-content/uploads/2022/09/Shutterstock_573851893.jpg"
-            alt="Our Team"
-            className="w-full rounded-lg shadow-lg"
-          />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-32">
+        {/* Top Row */}
+        <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
+          {/* Location */}
+          <div className="flex flex-col items-center mb-4">
+            <div className="bg-yellow-100 p-3 rounded-full mb-4">
+              <FaMapMarkerAlt className="text-yellow-500 text-xl" />
+            </div>
+            <div>
+              <h3 className="font-bold text-xl mb-2">Location</h3>
+              <p className="text-gray-600">Sakina, Arusha,</p>
+              <p className="text-gray-600">Tanzania</p>
+            </div>
+          </div>
         </div>
-      )}
+
+        <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
+          {/* Phone */}
+          <div className="flex flex-col items-center mb-4">
+            <div className="bg-blue-100 p-3 rounded-full mb-4">
+              <FaPhone className="text-blue-500 text-xl" />
+            </div>
+            <div>
+              <h3 className="font-bold text-xl mb-2">Phone</h3>
+              <p className="text-gray-600">+255 (123) 456 789</p>
+              <p className="text-gray-600">+255 (987) 654 321</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Row */}
+        <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
+          {/* Email */}
+          <div className="flex flex-col items-center mb-4">
+            <div className="bg-green-100 p-3 rounded-full mb-4">
+              <FaEnvelope className="text-green-500 text-xl" />
+            </div>
+            <div>
+              <h3 className="font-bold text-xl mb-2">Email</h3>
+              <p className="text-gray-600">info@charifund.com</p>
+              <p className="text-gray-600">support@charifund.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
+          {/* Social */}
+          <div className="flex flex-col items-center">
+            <div className="bg-purple-100 p-3 rounded-full mb-4">
+              <span className="text-purple-500 text-xl font-bold">#</span>
+            </div>
+            <h3 className="font-bold text-xl mb-3">Social</h3>
+            <div className="flex space-x-3 mt-2">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center hover:bg-yellow-500 hover:border-yellow-500 hover:text-white transition-colors"
+              >
+                <FaFacebookF />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center hover:bg-yellow-500 hover:border-yellow-500 hover:text-white transition-colors"
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center hover:bg-yellow-500 hover:border-yellow-500 hover:text-white transition-colors"
+              >
+                <FaLinkedinIn />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

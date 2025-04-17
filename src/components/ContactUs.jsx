@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import ContactHeader from "./ContactHeader";
 import ContactForm from "./ContactForm";
 import ContactInfo from "./ContactInfo";
+import ContactTitle from "./ContactTitle";
 import GoogleMap from "./GoogleMap";
 import Newsletter from "./Newsletter";
 import Footer from "../components/Footer";
@@ -19,7 +20,7 @@ const ContactUs = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Section - Info and Image */}
-          <ContactInfo />
+          <ContactTitle />
 
           {/* Right Section - Form */}
           <ContactForm />
@@ -33,7 +34,7 @@ const ContactUs = () => {
           <GoogleMap location="Sakina, Arusha, Tanzania" />
 
           {/* Right Section - Contact Details */}
-          {/* <ContactInfo showImage={false} /> */}
+          <ContactInfo showImage={false} />
         </div>
       </div>
 

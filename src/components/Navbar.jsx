@@ -63,8 +63,13 @@ function Navbar() {
           <div className="flex items-center space-x-1 md:space-x-2">
             <Sparkles className="text-[#FFC107] w-3 h-3 md:w-3 md:h-3 lg:w-4 lg:h-4" />
             <p className="text-center text-xs md:text-[0.7rem] lg:text-[0.8rem]">
-              <span className="hidden xl:inline">Empowering Communities, Transforming Lives. Become A Volunteer Today!</span>
-              <span className="inline xl:hidden">Empowering Communities, Transforming Lives</span>
+              <span className="hidden xl:inline">
+                Empowering Communities, Transforming Lives. Become A Volunteer
+                Today!
+              </span>
+              <span className="inline xl:hidden">
+                Empowering Communities, Transforming Lives
+              </span>
             </p>
           </div>
 
@@ -90,7 +95,11 @@ function Navbar() {
       <nav className="bg-white flex flex-wrap justify-between items-center px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 py-2 md:py-3 lg:py-4 text-[0.8rem] relative">
         {/*Logo*/}
         <div className="flex items-center space-x-2 justify-self-start">
-          <img src={logo} alt="logo" className="h-10 md:h-12 lg:h-16 xl:h-20 w-auto" />
+          <img
+            src={logo}
+            alt="logo"
+            className="h-10 md:h-12 lg:h-16 xl:h-20 w-auto"
+          />
         </div>
 
         {/* Mobile Menu Button */}
@@ -102,47 +111,131 @@ function Navbar() {
         </button>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden w-full ${mobileMenuOpen ? 'block' : 'hidden'} mt-4`}>
+        <div
+          className={`md:hidden w-full ${mobileMenuOpen ? "block" : "hidden"} mt-4`}
+        >
           <ul className="flex flex-col space-y-3 font-bold text-[#1E1E20] bg-[#FFC107] rounded-lg p-4">
-            <li><a href="#" className="block py-2">Home</a></li>
-            <li><a href="#" className="block py-2">About Us</a></li>
+            <li>
+              <a href="#" className="block py-2">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#" className="block py-2">
+                About Us
+              </a>
+            </li>
             <li>
               <details className="cursor-pointer">
                 <summary className="flex justify-between items-center py-2">
                   Programs
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </summary>
                 <ul className="pl-4 py-2 space-y-2">
-                  <li><a href="#" className="block py-1">Health</a></li>
-                  <li><a href="#" className="block py-1">Education</a></li>
-                  <li><a href="#" className="block py-1">Women Empowerment</a></li>
-                  <li><a href="#" className="block py-1">Renewable Energy</a></li>
-                  <li><a href="#" className="block py-1">Entrepreneurship</a></li>
-                  <li><a href="#" className="block py-1">Business Grants</a></li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Health
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Education
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Women Empowerment
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Renewable Energy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Entrepreneurship
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Business Grants
+                    </a>
+                  </li>
                 </ul>
               </details>
             </li>
-            <li><a href="#" className="block py-2">Inner Center</a></li>
+            <li>
+              <a href="#" className="block py-2">
+                Inner Center
+              </a>
+            </li>
             <li>
               <details className="cursor-pointer">
                 <summary className="flex justify-between items-center py-2">
                   Get Involved
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </summary>
                 <ul className="pl-4 py-2 space-y-2">
-                  <li><a href="#" className="block py-1">Become Volunteer</a></li>
-                  <li><a href="#" className="block py-1">Donate Us</a></li>
-                  <li><a href="#" className="block py-1">Partnership</a></li>
-                  <li><a href="#" className="block py-1">Newsletter</a></li>
-                  <li><a href="#" className="block py-1">Applications</a></li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Become Volunteer
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Donate Us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Partnership
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Newsletter
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block py-1">
+                      Applications
+                    </a>
+                  </li>
                 </ul>
               </details>
             </li>
-            <li><a href="#" className="block py-2">Contact Us</a></li>
+            <li>
+              <a href="#" className="block py-2">
+                Contact Us
+              </a>
+            </li>
             <li className="pt-2">
               <button className="w-full bg-[#1E1E20] text-white font-bold py-3 rounded-full flex items-center justify-center space-x-2">
                 <span>Donate Now</span>
