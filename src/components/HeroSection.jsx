@@ -89,7 +89,7 @@ export default function HeroSection() {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
           {/* Learn More Button */}
-          <button className="bg-[#C2B3B3]/45 text-white cursor-pointer font-bold px-4 md:px-5 lg:px-8 xl:px-10 py-3 md:py-3 lg:py-4 xl:py-[22px] rounded-full relative group overflow-hidden transition-all duration-300 text-xs md:text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem]">
+          <button className="hover:scale-105 transition-transform bg-[#C2B3B3]/45 text-white cursor-pointer font-bold px-4 md:px-5 lg:px-8 xl:px-10 py-3 md:py-3 lg:py-4 xl:py-[22px] rounded-full relative group overflow-hidden duration-300 text-xs md:text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem]">
             <span className="absolute inset-0 bg-[#FFC107] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
             <div className="flex items-center space-x-1 md:space-x-2 relative z-10">
               <span className="group-hover:text-black transition-colors duration-300">
@@ -100,7 +100,7 @@ export default function HeroSection() {
           </button>
 
           {/* Apply Now Button */}
-          <button className="bg-[#FFC107] text-[#1E1E20] cursor-pointer font-bold px-4 md:px-5 lg:px-8 xl:px-10 py-3 md:py-3 lg:py-4 xl:py-[22px] rounded-full relative group overflow-hidden transition-all duration-300 text-xs md:text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem]">
+          <button className="hover:scale-105 bg-[#FFC107] text-[#1E1E20] cursor-pointer font-bold px-4 md:px-5 lg:px-8 xl:px-10 py-3 md:py-3 lg:py-4 xl:py-[22px] rounded-full relative group overflow-hidden transition-all duration-300 text-xs md:text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem]">
             <span className="absolute inset-0 bg-[#1E1E20] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
             <div className="flex items-center space-x-1 md:space-x-2 relative z-10">
               <span className="group-hover:text-white transition-colors duration-300">

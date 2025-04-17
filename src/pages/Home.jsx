@@ -1,13 +1,13 @@
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
-import ServicesShowcase from "../components/ServicesShowcase";
+import CommunityImpactSection from "../components/CommunityImpact";
 
 function Home() {
   return (
     <div>
       <Navbar />
       <HeroSection />
-      <ServicesShowcase />
+      <CommunityImpactSection />
     </div>
   );
 }

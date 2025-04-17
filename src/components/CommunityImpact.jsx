@@ -1,0 +1,164 @@
+import { FaHandshake } from "react-icons/fa";
+import { HiArrowNarrowRight } from "react-icons/hi";
+import handshake from "../assets/support.png";
+import {
+  PiBookOpenText,
+  PiHeartbeat,
+  PiSunHorizon,
+  PiBriefcase,
+} from "react-icons/pi";
+import bg01 from "../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
+import briefcase from "../assets/briefcase.png";
+import plant from "../assets/plant.png";
+import heart from "../assets/heart-rate (2).png";
+import book from "../assets/book.png";
+import girl from "../assets/girl-power.png";
+
+const CommunityImpactSection = () => {
+  return (
+    <section className="bg-[#fdf9f3] text-center py-24">
+      {/* Top Text Block */}
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex items-center mb-2 justify-center">
+          {/*<HandshakeIcon className="w-5 h-5 mr-2 text-[#FFC107]" />*/}
+          <img
+            src={handshake}
+            alt="handshake_img"
+            className="w-auto h-8 mr-2"
+          />
+          <p className="text-[#FFC107] font-[Caveat] font-bold text-[1.5rem]">
+            Support Communities for a Better Future
+          </p>
+        </div>
+        {/*<div className="flex items-center justify-center gap-2 text-[#FFC107] text-lg font-bold font-dancing">
+          <FaHandshake className="inline-block text-xl" />
+          Supports Communities for a Better Future
+        </div>*/}
+
+        <p className="text-4xl md:text-3xl font-medium text-black mt-6">
+          Global Integrated Charitable Community Services (GICCS) Is A
+          Registered NGO In Tanzania Working To Improve Lives Through
+          Sustainable Programs In Education, Healthcare, Environmental
+          Conservation, And Economic Empowerment.
+        </p>
+
+        <div className="text-[6rem] font-bold text-black mt-10 leading-none">
+          154,489+
+        </div>
+        <p className="text-[#5a5d78] text-lg font-semibold mt-2">
+          Join The Many Who Have Benefited From Our Assistance
+        </p>
+
+        <button className="bg-[#FFC107] text-black mt-6 py-3 px-6 rounded-full font-semibold border border-black shadow-md hover:scale-105 transition-transform">
+          Join Our Community
+        </button>
+      </div>
+
+      {/* Services Section */}
+      <div className="relative mt-28">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={bg01}
+            alt="Background"
+            className="w-full h-[450px] object-cover"
+          />
+
+          <div className="absolute inset-0 h-[450px] bg-gradient-to-r from-[#1E1E20] to-transparent"></div>
+          <div className="absolute inset-0 h-[450px] bg-black opacity-60"></div>
+        </div>
+
+        <div className="relative z-10 max-w-[85rem] mx-auto px-4 py-16">
+          <div className="flex items-center mb-2 justify-start mt-8">
+            {/*<HandshakeIcon className="w-5 h-5 mr-2 text-[#FFC107]" />*/}
+            <img
+              src={handshake}
+              alt="handshake_img"
+              className="w-auto h-8 mr-2"
+            />
+            <p className="text-[#FFC107] font-[Caveat] font-bold text-[1.5rem]">
+              Support Communities for a Better Future
+            </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
+            <h2 className="text-white text-4xl md:text-6xl font-bold leading-tight text-left">
+              Our Life-Changing Services <br /> You’ll Love
+            </h2>
+
+            <button className="bg-[#FFC107] text-black font-semibold py-3 px-6 rounded-full shadow-md border border-black hover:scale-105 transition-transform">
+              Check Our Services
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-24">
+            {/* Card 1 */}
+            <div className="bg-white rounded-xl p-6 shadow-md">
+              <div className="flex items-center justify-between mb-2">
+                <img src={book} alt="book" className="w-auto h-16" />
+                <HiArrowNarrowRight className="text-[#FFC107] text-xl" />
+              </div>
+              <h3 className="text-lg font-bold text-left">
+                Educational Access & Support
+              </h3>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white rounded-xl p-6 shadow-md">
+              <div className="flex items-center justify-between mb-2">
+                <img src={heart} alt="heart pulse" className="w-auto h-16" />
+                <HiArrowNarrowRight className="text-[#FFC107] text-xl" />
+              </div>
+              <h3 className="text-lg font-bold text-left">Health & Wellness</h3>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white rounded-xl p-6 shadow-md">
+              <div className="flex items-center justify-between mb-2">
+                <img
+                  src={plant}
+                  alt="globe with greenery"
+                  className="w-auto h-16"
+                />
+
+                <HiArrowNarrowRight className="text-[#FFC107] text-xl" />
+              </div>
+              <h3 className="text-lg font-bold text-left">
+                Environmental & Renewable Energy
+              </h3>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white rounded-xl p-6 shadow-md">
+              <div className="flex items-center justify-between mb-2">
+                <img
+                  src={briefcase}
+                  alt="briefcase business"
+                  className="w-auto h-16"
+                />
+                <HiArrowNarrowRight className="text-[#FFC107] text-xl" />
+              </div>
+              <h3 className="text-lg font-bold text-left">
+                Entrepreneurship & Small Business Grants
+              </h3>
+            </div>
+
+            {/* Card 5 - Women Empowerment */}
+            <div className="bg-white rounded-xl p-6 shadow-md">
+              <div className="flex items-center justify-between mb-2">
+                <img
+                  src={girl}
+                  alt="women empowerement"
+                  className="w-auto h-16"
+                />
+                <HiArrowNarrowRight className="text-[#FFC107] text-xl" />
+              </div>
+              <h3 className="text-lg font-bold text-left">Women Empowerment</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CommunityImpactSection;
