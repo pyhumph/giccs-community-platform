@@ -3,3 +3,65 @@
 body {
     font-family: "Nunito", sans-serif;
 }
+
+/* Calculate the height of your navbar for different screen sizes to prevent content jump */
+.navbar-placeholder {
+    height: 60px;
+    /* Default mobile height */
+}
+
+@media (min-width: 768px) {
+    .navbar-placeholder {
+        height: 80px;
+        /* Tablet height */
+    }
+}
+
+@media (min-width: 1024px) {
+    .navbar-placeholder {
+        height: 90px;
+        /* Desktop height */
+    }
+}
+
+@media (min-width: 1280px) {
+    .navbar-placeholder {
+        height: 100px;
+        /* Large desktop height */
+    }
+}
+
+/* Add smooth transition effect for all elements */
+header,
+nav,
+div,
+img,
+button,
+span {
+    transition: all 0.5s ease-in-out;
+}
+
+/* Optional: Add slight animation when navbar becomes sticky */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header.fixed {
+    animation: slideDown 0.3s ease-in-out;
+}
+
+/* Mobile menu adjustments when sticky */
+@media (max-width: 767px) {
+    header.fixed .mobile-menu {
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+    }
+}
