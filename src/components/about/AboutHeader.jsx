@@ -2,18 +2,18 @@ import { ChevronRightIcon } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const contact = [
+const about = [
   {
     title: "About Us",
     backgroundImage:
-      "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://zamsisters.com/wp-content/uploads/2023/06/abccharity-namibia-bbb-fullscreen-2.jpg",
   },
 ];
 
-const ContactHeader = () => {
+const AboutHeader = () => {
   return (
     <div>
-      {contact.map((section, index) => (
+      {about.map((section, index) => (
         <section
           key={index}
           className="relative h-[60vh] bg-cover bg-center"
@@ -48,4 +48,4 @@ const ContactHeader = () => {
   );
 };
 
-export default ContactHeader;
+export default AboutHeader;
