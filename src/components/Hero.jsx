@@ -5,7 +5,7 @@ import bg02 from "../assets/michael-ali-Xo27J9RUjK8-unsplash.jpg";
 import bg03 from "../assets/seth-doyle-zf9_yiAekJs-unsplash.jpg";
 import handshake from "../assets/support.png";
 
-export default function HeroSection() {
+export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [bg01, bg02, bg03];
@@ -24,17 +24,15 @@ export default function HeroSection() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
         >
           <div className="w-full h-full overflow-hidden">
             <img
               src={slide}
               alt={`Slide ${index + 1}`}
-              className={`w-full h-full object-cover transition-transform duration-6000 ease-out ${
-                index === currentSlide ? "scale-110" : "scale-100"
-              }`}
+              className={`w-full h-full object-cover transition-transform duration-6000 ease-out ${index === currentSlide ? "scale-110" : "scale-100"
+                }`}
             />
           </div>
         </div>

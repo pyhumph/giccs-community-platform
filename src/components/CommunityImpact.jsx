@@ -7,7 +7,7 @@ import heart from "../assets/heart-rate (2).png";
 import book from "../assets/book.png";
 import girl from "../assets/girl-power.png";
 
-const CommunityImpactSection = () => {
+const CommunityImpact = () => {
   return (
     <section className="bg-[#fdf9f3] text-center py-12 md:py-16 lg:py-24">
       {/* Top Text Block */}
@@ -156,4 +156,4 @@ const CommunityImpactSection = () => {
   );
 };
 
-export default CommunityImpactSection;
+export default CommunityImpact;

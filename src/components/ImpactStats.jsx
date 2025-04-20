@@ -25,7 +25,7 @@ const stats = [
   },
 ];
 
-const ImpactStatsSection = () => {
+const ImpactStats = () => {
   return (
     <section
       className="relative bg-cover bg-center bg-no-repeat"
@@ -58,4 +58,4 @@ const ImpactStatsSection = () => {
   );
 };
 
-export default ImpactStatsSection;
+export default ImpactStats;
