@@ -6,7 +6,7 @@ const about = [
   {
     title: "About Us",
     backgroundImage:
-      "https://zamsisters.com/wp-content/uploads/2023/06/abccharity-namibia-bbb-fullscreen-2.jpg",
+      "https://mettawelfareassociation.files.wordpress.com/2015/05/7.jpg?w=634&h=423",
   },
 ];
 
