@@ -1,4 +1,9 @@
 import Slogan from "./slogan";
+import newz01 from "../assets/mustafa-alabri-9gz10zK7mWo-unsplash.jpg";
+import newz02 from "../assets/kate-bezzubets-WBzkNwjpvwc-unsplash.jpg";
+import newz03 from "../assets/jorge-maya-9AiE2wfpwvY-unsplash.jpg";
+import CTAButton from "./Button";
+import { useState } from "react";
 
 export default function NewsletterSection() {
   const newsItems = [
@@ -9,7 +14,7 @@ export default function NewsletterSection() {
       title: "Empowering Local Communities Through Sustainable Projects",
       views: 12,
       shares: 0,
-      image: "/news/community-interview.jpg",
+      image: newz01,
     },
     {
       id: 2,
@@ -18,7 +23,7 @@ export default function NewsletterSection() {
       title: "Empowering Local Communities Through Sustainable Projects",
       views: 12,
       shares: 0,
-      image: "/news/community-interview.jpg",
+      image: newz02,
     },
     {
       id: 3,
@@ -27,53 +32,103 @@ export default function NewsletterSection() {
       title: "Empowering Local Communities Through Sustainable Projects",
       views: 12,
       shares: 0,
-      image: "/news/community-interview.jpg",
+      image: newz03,
     },
   ];
 
+  // Card hover state for each card
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  // Handle card hover effects
+  const handleMouseMove = (e, id) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+
+    // Calculate position relative to the card
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    // Calculate the rotation angle based on mouse position
+    // Dividing by higher numbers creates a more subtle effect
+    const rotateX = (y - rect.height / 2) / 60;
+    const rotateY = (rect.width / 2 - x) / 50;
+
+    setMousePosition({ x: rotateY, y: rotateX });
+    setHoveredCard(id);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredCard(null);
+    setMousePosition({ x: 0, y: 0 });
+  };
+
   return (
     <div className="w-full bg-gray-50 py-16">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-center">
           <Slogan />
         </div>
         <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold">
-            <span className="text-gray-800">Our Latest </span>
-            <span className="text-yellow-500">Newsletter</span>
-            <span className="text-gray-800"> And</span>
+          <h2 className="text-6xl font-bold">
+            <span className="text-[#1E1E20]">Our Latest </span>
+            <span className="text-[#FFC107]">Newsletter</span>
+            <span className="text-[#1E1E20]"> And</span>
             <br />
-            <span className="text-gray-800">Insights You Like</span>
+            <span className="text-[#1E1E20]">Insights You Like</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
           {newsItems.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="bg-white rounded-2xl shadow-md w-[26rem] overflow-hidden transition-all duration-300 cursor-pointer"
+              style={{
+                transform:
+                  hoveredCard === item.id
+                    ? `perspective(1000px) rotateX(${mousePosition.y}deg) rotateY(${mousePosition.x}deg) scale(1.02)`
+                    : "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)",
+                transition: "all 0.3s ease",
+              }}
+              onMouseMove={(e) => handleMouseMove(e, item.id)}
+              onMouseLeave={handleMouseLeave}
             >
               <div className="relative">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="absolute bottom-0 right-0 bg-yellow-500 text-white p-2 rounded-tl-lg">
+                <div className="overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-72 object-cover transition-all duration-500"
+                    style={{
+                      transform:
+                        hoveredCard === item.id
+                          ? "scale(1.1) rotate(2deg)"
+                          : "scale(1) rotate(0deg)",
+                    }}
+                  />
+                </div>
+                <div className="absolute bottom-[-1.5rem] font-bold text-2xl right-5 bg-[#FFC107] text-white px-[17px] py-0.5 rounded">
                   <div className="text-center font-bold">
                     {item.date.split(" ")[0]}
                   </div>
-                  <div className="text-xs">{item.date.split(" ")[1]}</div>
+                  <div className="text-base font-medium">
+                    {item.date.split(" ")[1]}
+                  </div>
                 </div>
               </div>
 
-              <div className="p-4">
-                <div className="text-yellow-500 text-sm font-medium mb-2">
+              <div className="p-5 h-52 mt-2 mb-3">
+                <div className="text-[#FFC107] text-base font-bold mb-2 mt-1">
                   {item.category}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">
+                <h3 className="text-xl font-bold text-black leading-[27px] mb-8 hover:text-[#FFC107] transition-colors duration-300">
                   {item.title}
                 </h3>
+
+                <div className="-mx-4 mb-6">
+                  <hr className="border-gray-300" />
+                </div>
 
                 <div className="flex justify-between text-gray-500 text-sm">
                   <div className="flex items-center">
@@ -97,7 +152,7 @@ export default function NewsletterSection() {
                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                       />
                     </svg>
-                    <span>Views ({item.views})</span>
+                    <span className="text-base">Views ({item.views})</span>
                   </div>
 
                   <div className="flex items-center">
@@ -115,7 +170,7 @@ export default function NewsletterSection() {
                         d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
                       />
                     </svg>
-                    <span>Shares</span>
+                    <span className="text-base">Shares</span>
                   </div>
                 </div>
               </div>
@@ -124,21 +179,7 @@ export default function NewsletterSection() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-full font-medium flex items-center gap-2">
-            View All
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </button>
+          <CTAButton text="View All" />
         </div>
       </div>
     </div>
