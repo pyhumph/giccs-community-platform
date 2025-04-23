@@ -3,6 +3,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { FaGraduationCap, FaHeartbeat } from "react-icons/fa";
 import { MdOutlinePersonalVideo } from "react-icons/md";
 import { BsHeartFill } from "react-icons/bs";
+import handshake from "../assets/support.png";
 
 const EmpowermentShowcase = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -58,9 +59,17 @@ const EmpowermentShowcase = () => {
       <div className="container mx-auto px-4 md:px-8">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">
-          <p className="text-yellow-500 font-['Caveat'] text-xl md:text-2xl font-bold">
-            Support Communities for a Better Future
-          </p>
+          <div className="flex items-center justify-center mb-2">
+            {/*<HandshakeIcon className="w-5 h-5 mr-2 text-[#FFC107]" />*/}
+            <img
+              src={handshake}
+              alt="handshake_img"
+              className="w-auto h-8 mr-2"
+            />
+            <p className="text-[#FFC107] font-[Caveat] font-bold text-[1.5rem]">
+              Support Communities for a Better Future
+            </p>
+          </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-2">
             Empowering Lives Daily
           </h2>
@@ -116,9 +125,8 @@ const EmpowermentShowcase = () => {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-2 h-2 rounded-full ${
-                  currentSlide === index ? "bg-yellow-500" : "bg-gray-300"
-                }`}
+                className={`w-2 h-2 rounded-full ${currentSlide === index ? "bg-yellow-500" : "bg-gray-300"
+                  }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}

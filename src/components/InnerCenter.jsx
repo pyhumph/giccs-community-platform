@@ -3,6 +3,7 @@ import topImage from "../assets/inner-top.jpg";
 import buildingImage from "../assets/inner-main.jpg";
 import bottomImage from "../assets/inner-bottom.jpg";
 import { Phone, CheckCircle } from "lucide-react";
+import handshake from "../assets/support.png";
 
 const InnerCenter = () => {
   return (
@@ -40,9 +41,17 @@ const InnerCenter = () => {
 
         {/* Right Content */}
         <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
-          <h4 className="text-yellow-500 font-medium text-lg">
-            🖋️ Support Communities for a Better Future
-          </h4>
+          <div className="flex items-center mb-2">
+            {/*<HandshakeIcon className="w-5 h-5 mr-2 text-[#FFC107]" />*/}
+            <img
+              src={handshake}
+              alt="handshake_img"
+              className="w-auto h-8 mr-2"
+            />
+            <p className="text-[#FFC107] font-[Caveat] font-bold text-[1.5rem]">
+              Support Communities for a Better Future
+            </p>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
             Empowering Communities <br /> Through Our{" "}
             <span className="text-yellow-500">Inner Center</span>

@@ -21,20 +21,20 @@ const stats = [
   {
     icon: <Trophy size={36} />,
     value: "4K+",
-    label: "Recognized Achievements & Partnerships",
+    label: "Recognized Achievements",
   },
 ];
 
 const ImpactStats = () => {
   return (
     <section
-      className="relative bg-cover bg-center bg-no-repeat"
+      className="relative bg-cover bg-center mt-12 bg-no-repeat"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Overlay with black + yellow gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#FFC107]/70 via-black/70 to-black/70 z-0" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-white text-center">
+      <div className="relative z-10 max-w-[90rem] mx-auto px-2 py-30 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-white text-center">
         {stats.map((stat, index) => (
           <div
             key={index}
@@ -47,8 +47,8 @@ const ImpactStats = () => {
             <div className="p-3 border-2 border-white rounded-full">
               <div className="text-white">{stat.icon}</div>
             </div>
-            <h3 className="text-3xl font-bold">{stat.value}</h3>
-            <p className="text-sm sm:text-base font-medium text-white text-opacity-90">
+            <h3 className="text-6xl font-bold">{stat.value}</h3>
+            <p className="text-xl font-semibold text-white text-opacity-90">
               {stat.label}
             </p>
           </div>
