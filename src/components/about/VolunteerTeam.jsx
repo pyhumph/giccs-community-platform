@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { PlusCircle, ChevronRight, Heart } from "lucide-react";
+import thumbup from "../../assets/thumbs-up.svg";
 
 // Individual Volunteer Card Component
-const VolunteerCard = ({ name, image, onClick }) => {
+const VolunteerCard = ({ name, image }) => {
   return (
     <div className="bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
       <div className="relative h-64 w-full overflow-hidden">
@@ -11,12 +12,6 @@ const VolunteerCard = ({ name, image, onClick }) => {
           alt={name}
           className="w-full h-full object-cover object-center"
         />
-        <button
-          onClick={onClick}
-          className="absolute bottom-4 right-4 bg-green-800 text-white rounded-full p-1 hover:bg-green-700 transition-colors duration-300"
-        >
-          <PlusCircle size={24} />
-        </button>
       </div>
       <div className="p-4 flex justify-between items-center">
         <div>
@@ -31,28 +26,45 @@ const VolunteerCard = ({ name, image, onClick }) => {
   );
 };
 
+const ThumbsUpAnimation = () => (
+  <div className="fill-green-700">
+    <div className="animate-none fill-green-700">
+      <img
+        src={thumbup}
+        alt="thumbup"
+        fill="#22c55e"
+        className="w-auto h-auto fill-green-700 animate-none"
+      />
+    </div>
+  </div>
+);
+
 // Main Component
 const VolunteerTeamSection = () => {
   const [volunteers] = useState([
     {
       id: 1,
       name: "Michel Fokluz",
-      image: "/api/placeholder/400/500",
+      image:
+        "https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
     },
     {
       id: 2,
       name: "Arian Drobloas",
-      image: "/api/placeholder/400/500",
+      image:
+        "https://freeparalegal.org/wp-content/uploads/2023/08/July-1536x1024-1.jpg",
     },
     {
       id: 3,
       name: "Jara Klintof",
-      image: "/api/placeholder/400/500",
+      image:
+        "https://plus.unsplash.com/premium_photo-1689565611422-b2156cc65e47?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHx8",
     },
     {
       id: 4,
       name: "Aiden Markram",
-      image: "/api/placeholder/400/500",
+      image:
+        "https://img.freepik.com/free-photo/close-up-portrait-pleased-young-guy-dressed-maroon-casual-t-shirt-looking-smiling-camera-expresses-happyness-model-posing-isolated-yellow-people-youth-lifestyle-concept_176532-8508.jpg",
     },
   ]);
 
@@ -66,15 +78,13 @@ const VolunteerTeamSection = () => {
       {/* Header with Logo */}
       <div className="flex justify-between items-center mb-6">
         <div className="flex items-center text-green-800">
-          <Heart className="mr-2 fill-green-700 stroke-green-800" size={20} />
+          <Heart className="mr-2 fill-green-700 stroke-green-800" size={25} />
           <span className="font-medium cursor-pointer hover:underline">
             Start Donating Poor People
           </span>
         </div>
         <div className="w-16 h-16">
-          <svg viewBox="0 0 100 100" className="fill-green-700">
-            <path d="M50,10 C30,10 15,25 15,50 C15,75 35,90 50,90 C65,90 85,75 85,50 C85,40 80,25 65,15 C55,25 45,25 35,15 C45,10 50,10 50,10 Z" />
-          </svg>
+          <ThumbsUpAnimation />
         </div>
       </div>
 
