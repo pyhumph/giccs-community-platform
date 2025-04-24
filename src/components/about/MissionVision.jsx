@@ -1,5 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import parachute from "../../assets/parachute2.svg";
+import hand from "../../assets/hand.png";
 
 // Card Component
 const ActionCard = ({ icon, title, description }) => {
@@ -26,10 +28,10 @@ const ActionCard = ({ icon, title, description }) => {
 
 // Heart Icon Component
 const HeartIcon = () => (
-  <div className="absolute left-12 top-20">
+  <div className="absolute left-8 top-20 animate-bounce">
     <svg
-      width="40"
-      height="40"
+      width="70"
+      height="70"
       viewBox="0 0 40 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -47,6 +49,23 @@ const HeartIcon = () => (
         strokeLinecap="round"
       />
     </svg>
+  </div>
+);
+
+// Parachute Animation Component
+const ParachuteAnimation = () => (
+  <div className="absolute right-8 top-0">
+    <div className="animate-parachute">
+      <img src={parachute} alt="Parachute" className="w-50 h-50" />
+    </div>
+  </div>
+);
+
+const HandAnimation = () => (
+  <div className="absolute left-0 top-55">
+    <div className="animate-bounce">
+      <img src={hand} alt="Parachute" className="w-20 h-30 animate-pulse" />
+    </div>
   </div>
 );
 
@@ -148,8 +167,33 @@ const EventIcon = () => (
 // Main Component
 const MissionVisionSection = () => {
   return (
-    <div className="relative w-full bg-gradient-to-b from-gray-900 to-gray-800 py-16 px-4">
-      <HeartIcon />
+    <div className="relative w-full bg-gradient-to-b from-gray-900 to-gray-800 py-16 px-4 overflow-hidden">
+      <style jsx>{`
+        @keyframes parachuteFall {
+          0% {
+            transform: translateY(-50px);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(430px);
+            opacity: 0;
+          }
+        }
+
+        .animate-parachute {
+          animation: parachuteFall 10s ease-in-out infinite;
+        }
+      `}</style>
+
+      {/* <HeartIcon /> */}
+      <ParachuteAnimation />
+      <HandAnimation />
 
       {/* Header Section */}
       <div className="max-w-5xl mx-auto mb-12 text-center">

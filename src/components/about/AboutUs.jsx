@@ -3,7 +3,7 @@ import { Heart, Info, Phone, ArrowRight, Gift } from "lucide-react";
 
 export default function AboutUs() {
   return (
-    <div className="py-16 px-4 max-w-[1700px] mx-auto  bg-white">
+    <div className="py-16 px-4 max-w-[1700px] mx-auto bg-white">
       {/* Hero Section */}
       <section className="px-4 py-12 md:px-12 lg:px-24">
         <div className="flex flex-col md:flex-row items-center gap-8">
@@ -26,8 +26,8 @@ export default function AboutUs() {
 
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex items-center p-4 rounded-lg border border-gray-200">
-                <div className="p-2 bg-yellow-50 rounded-full mr-3">
-                  <Heart className="w-6 h-6 text-yellow-500" />
+                <div className="p-2 bg-yellow-50 rounded-full mr-3 animate-bounce">
+                  <Heart className="w-6 h-6 text-yellow-500 animate-pulse" />
                 </div>
                 <div>
                   <h3 className="font-semibold">Start Helping Them</h3>
@@ -38,8 +38,8 @@ export default function AboutUs() {
               </div>
 
               <div className="flex items-center p-4 rounded-lg border border-gray-200">
-                <div className="p-2 bg-yellow-50 rounded-full mr-3">
-                  <Gift className="w-6 h-6 text-yellow-500" />
+                <div className="p-2 bg-yellow-50 rounded-full mr-3 animate-bounce">
+                  <Gift className="w-6 h-6 text-yellow-500 animate-pulse" />
                 </div>
                 <div>
                   <h3 className="font-semibold">Make Donations</h3>

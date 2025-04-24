@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import spade from "../../assets/spade-base.png";
+import spiral from "../../assets/hand-with-love.svg";
 
 // Circular ServiceCard Component
 const ServiceCard = ({ icon, title, description, color }) => {
@@ -26,6 +28,58 @@ const ServiceCard = ({ icon, title, description, color }) => {
     </div>
   );
 };
+
+const SpiralAnimation = () => (
+  <div className="absolute right-0 bottom-0">
+    <div className="animate-none">
+      <img src={spiral} alt="spiral" className="w-70 h-80 animate-none" />
+    </div>
+  </div>
+);
+
+const SpadeAnimation = () => (
+  <div className="absolute left-24 top-60">
+    <style jsx>{`
+      @keyframes floatAnimation {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .animate-float {
+        animation: floatAnimation 5s ease-in-out infinite;
+      }
+
+      @keyframes gentlePulse {
+        0% {
+          opacity: 0.8;
+          transform: scale(0.95);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(2.05);
+        }
+        100% {
+          opacity: 0.8;
+          transform: scale(0.95);
+        }
+      }
+
+      .animate-gentle-pulse {
+        animation: gentlePulse 12s ease-in-out infinite;
+      }
+    `}</style>
+    <div className="animate-float">
+      <img src={spade} alt="spade" className="w-35 h-35 animate-gentle-pulse" />
+    </div>
+  </div>
+);
 
 // Main Component with Triangle Formation
 export default function ServicesSection() {
@@ -120,7 +174,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-50">
+    <section className="relative py-20 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="mb-16 text-center">
@@ -129,6 +183,9 @@ export default function ServicesSection() {
             We're here to <span className="text-orange-500">Help</span>
           </h2>
         </div>
+
+        <SpadeAnimation />
+        <SpiralAnimation />
 
         {/* Triangle Formation with Services */}
         <div className="hidden md:block">
