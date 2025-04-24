@@ -10,7 +10,7 @@ import FAQSection from "../components/FAQ";
 import NewsletterSection from "../components/NewsLetter";
 import ImageMarquee from "../components/ImageMarquee";
 import Footer from "../components/Footer";
-import Newsletter from "../components/Newsletter";
+import Newsletter from "../components/contact/Newsletter";
 
 function Home() {
   return (
