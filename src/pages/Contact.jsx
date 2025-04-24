@@ -1,4 +1,4 @@
-import ContactUs from "../components/ContactUs";
+import ContactUs from "../components/contact/ContactUs";
 
 function Contact() {
   return (

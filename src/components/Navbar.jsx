@@ -268,7 +268,7 @@ function Navbar() {
                 </details>
               </li>
               <li>
-                <a href="#" className="block py-2">
+                <a href="/contact" className="block py-2">
                   Contact Us
                 </a>
               </li>
@@ -290,7 +290,7 @@ function Navbar() {
             >
               <li className="flex items-center">
                 <a
-                  href="#"
+                  href="/home"
                   className="transition-opacity duration-300 hover:opacity-75"
                 >
                   Home
@@ -298,7 +298,7 @@ function Navbar() {
               </li>
               <li className="flex items-center">
                 <a
-                  href="#"
+                  href="/about"
                   className="transition-opacity duration-300 hover:opacity-75"
                 >
                   About
@@ -306,7 +306,7 @@ function Navbar() {
               </li>
               <li className="flex items-center relative group">
                 <a
-                  href="#"
+                  href="/programs"
                   className="transition-opacity duration-300 hover:opacity-75 flex items-center"
                 >
                   Programs
@@ -393,7 +393,7 @@ function Navbar() {
 
               <li className="flex items-center relative group">
                 <a
-                  href="#"
+                  href="get-involved"
                   className="transition-opacity duration-300 hover:opacity-70 flex items-center"
                 >
                   <span className="hidden md:inline">Get Involved</span>
@@ -414,7 +414,7 @@ function Navbar() {
                 </a>
                 <div className="absolute font-[Nunito] font-medium top-full left-0 mt-2 w-40 md:w-48 bg-white shadow-lg rounded-md overflow-visible invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50">
                   <a
-                    href="#"
+                    href="/volunteer"
                     className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
                   >
                     Become Volunteer
@@ -423,7 +423,7 @@ function Navbar() {
                     </span>
                   </a>
                   <a
-                    href="#"
+                    href="/donate"
                     className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
                   >
                     Donate Us
@@ -432,7 +432,7 @@ function Navbar() {
                     </span>
                   </a>
                   <a
-                    href="#"
+                    href="/partnership"
                     className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
                   >
                     Partnership
@@ -441,7 +441,7 @@ function Navbar() {
                     </span>
                   </a>
                   <a
-                    href="#"
+                    href="/newsletter"
                     className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
                   >
                     Newsletter
@@ -450,7 +450,7 @@ function Navbar() {
                     </span>
                   </a>
                   <a
-                    href="#"
+                    href="/application"
                     className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
                   >
                     Applications
@@ -462,7 +462,7 @@ function Navbar() {
               </li>
               <li className="hidden xl:flex items-center">
                 <a
-                  href="#"
+                  href="/contact"
                   className="transition-opacity duration-300 hover:opacity-75"
                 >
                   Contact
