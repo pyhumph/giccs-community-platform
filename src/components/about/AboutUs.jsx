@@ -3,7 +3,7 @@ import { Heart, Info, Phone, ArrowRight, Gift } from "lucide-react";
 
 export default function AboutUs() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="py-16 px-4 max-w-[1700px] mx-auto  bg-white">
       {/* Hero Section */}
       <section className="px-4 py-12 md:px-12 lg:px-24">
         <div className="flex flex-col md:flex-row items-center gap-8">
@@ -13,7 +13,7 @@ export default function AboutUs() {
               {/* <p className="font-medium">Start Donating For People</p> */}
             </div>
 
-            <h1 className="text-4xl mt-16 md:text-5xl font-bold text-gray-800">
+            <h1 className="text-4xl mt-1 md:text-5xl font-bold text-gray-800">
               Helping Each Other Can Make{" "}
               <span className="text-yellow-400">World</span> Better
             </h1>
@@ -127,50 +127,78 @@ export default function AboutUs() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Phone</p>
-                  <p className="font-medium">+234 (456) 896 22</p>
+                  <p className="font-medium">+255 784 266 633</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Image Gallery */}
-          <div className="md:w-1/2">
-            <div className="grid grid-cols-3 gap-2">
-              <div className="col-span-2">
-                <img
-                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hhcml0eXxlbnwwfHwwfHx8MA%3D%3D"
-                  alt="Children eating"
-                  className="w-full h-48 object-cover rounded-lg"
-                />
-              </div>
-              <div className="col-span-1 relative">
-                <div className="h-48 bg-teal-600 rounded-lg flex items-center justify-center">
-                  <svg
-                    className="w-12 h-12 text-white"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path
-                      d="M20 6L9 17l-5-5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+          <div className="md:w-1/2 h-full">
+            <div className="grid gap-2 mt-16">
+              {/* Row 2: 3 images */}
+              <div className="grid grid-cols-3 gap-2">
+                <div>
+                  <img
+                    src="https://st.depositphotos.com/1003580/2153/i/450/depositphotos_21531951-stock-photo-hungry-children-in-refugee-camp.jpg"
+                    alt="Children smiling"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
                 </div>
-                <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-24 bg-green-100 flex flex-col items-center justify-center rounded-r-full">
-                  <p className="text-xs font-bold text-green-800 transform -rotate-90 whitespace-nowrap">
-                    we give donations to poor people
-                  </p>
+                <div>
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/5a2ba8479f07f51bfa2d71f6/1518285598484-5GDDE7HQS2WZGBYMBTQX/AOO_WEBSITE_IMAGES-04593.jpg"
+                    alt="Charity support"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://media.istockphoto.com/id/636215476/photo/african-little-girls-are-learning-english-language-orphanage-in-kenya.jpg?s=612x612&w=0&k=20&c=Rt_LOqh_y2NPgUNtN47PBIOK_dC2Na_2DHRlsa8vqck="
+                    alt="Education program"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
                 </div>
               </div>
 
-              <div className="col-span-1">
+              {/* Row 3: 4 images */}
+              <div className="grid grid-cols-4 gap-2">
+                <div>
+                  <img
+                    src="https://justglobetrotting.com/wp-content/uploads/2016/06/langbos-fundraiser-1080x675.jpg"
+                    alt="Food donation"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://pmedia.launchgood.com/144820/provide_food__water_to_orphans_in_africa_5DF563F7-B817-4524-A9B6-60D5A2427C16-700x525.jpeg"
+                    alt="Health services"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://iis.ac.tz/wp-content/uploads/2021/11/Donations-e1571400713666.jpg"
+                    alt="Clean water"
+                    className="w-full h-32 object-cover rounded-lg"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://rippleafrica.org/wp-content/uploads/2023/10/A-large-primary-school-class-in-Malawi.jpg"
+                    alt="Shelter building"
+                    className="w-full h-32 object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+
+              {/* Row 1: 1 image (centered) */}
+              <div className="mx-auto w-full">
                 <img
-                  src="https://st.depositphotos.com/1003580/2153/i/450/depositphotos_21531951-stock-photo-hungry-children-in-refugee-camp.jpg"
-                  alt="Children smiling"
-                  className="w-full h-48 object-cover rounded-lg"
+                  src="https://olbios.org/wp-content/uploads/2020/09/olbios-6-scaled.jpg"
+                  alt="Children eating"
+                  className="w-full h-42 object-cover rounded-lg"
                 />
               </div>
             </div>
