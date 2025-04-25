@@ -3,7 +3,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { FaGraduationCap, FaHeartbeat } from "react-icons/fa";
 import { MdOutlinePersonalVideo } from "react-icons/md";
 import { BsHeartFill } from "react-icons/bs";
-import handshake from "../assets/support.png";
+import handshake from "../../assets/support.png";
 
 const EmpowermentShowcase = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

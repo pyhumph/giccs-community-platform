@@ -1,15 +1,15 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import CommunityImpact from "../components/CommunityImpact";
-import EmpowermentSection from "../components/Empowerement";
-import InnerCenter from "../components/InnerCenter";
-import ImpactStatsSection from "../components/ImpactStats";
-import SupportCarousel from "../components/SupportCarousel";
-import VolunteerTeamSection from "../components/VolunteerTeam";
-import FAQSection from "../components/FAQ";
-import NewsletterSection from "../components/NewsLetter";
-import ImageMarquee from "../components/ImageMarquee";
-import Footer from "../components/Footer";
+import Navbar from "../components/sub-comp/Navbar";
+import Hero from "../components/home/Hero";
+import CommunityImpact from "../components/home/CommunityImpact";
+import EmpowermentSection from "../components/home/Empowerement";
+import InnerCenter from "../components/home/InnerCenter";
+import ImpactStatsSection from "../components/home/ImpactStats";
+import SupportCarousel from "../components/home/SupportCarousel";
+import VolunteerTeamSection from "../components/home/VolunteerTeam";
+import FAQSection from "../components/home/FAQ";
+import NewsletterSection from "../components/home/NewsLetter";
+import ImageMarquee from "../components/home/ImageMarquee";
+import Footer from "../components/sub-comp/Footer";
 import Newsletter from "../components/contact/Newsletter";
 
 function Home() {

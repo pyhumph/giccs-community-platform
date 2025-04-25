@@ -1,13 +1,13 @@
 import { useState } from "react";
-import Slogan from "./slogan";
-import children from "../assets/children-playing.png";
-import mother from "../assets/mother-child.png";
+import Slogan from "../sub-comp/slogan";
+import children from "../../assets/children-playing.png";
+import mother from "../../assets/mother-child.png";
 
 const FAQItem = ({ question, answer, isOpen, toggle }) => {
   return (
-    <div className="mb-4">
+    <div className="mb-8">
       <button
-        className={`w-full text-left p-6 rounded-4xl flex justify-between items-center ${isOpen ? "bg-teal-700 text-white rounded-b-none" : "bg-teal-700 text-white"}`}
+        className={`w-full text-left py-5 px-8 rounded-full flex justify-between items-center ${isOpen ? "bg-teal-700 border border-gray-300 text-white rounded-t-4xl rounded-b-none" : "bg-transparent border-2 border-gray-300 text-black"}`}
         onClick={toggle}
       >
         <span className="font-semibold text-xl">{question}</span>
@@ -71,14 +71,14 @@ export default function FAQSection() {
 
   return (
     <div className="w-full bg-white">
-      <div className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row">
+      <div className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row gap-20">
         <div className="md:w-1/2 mb-8 md:mb-0">
           <div className="flex justify-start mb-4">
             <Slogan />
           </div>
           <h2 className="text-6xl font-extrabold mb-10">
-            <span className="text-dark-green">Frequently </span>
-            <span className="text-yellow-500">Asked</span>
+            <span className="text-[#1E1E20]">Frequently </span>
+            <span className="text-[#FFC107]">Asked</span>
             <br />
             <span className="text-dark-green">Questions</span>
           </h2>
@@ -103,13 +103,13 @@ export default function FAQSection() {
               <img
                 src={children}
                 alt="Children playing"
-                className="rounded-lg w-full h-full object-cover"
+                className="w-[98%] rounded-2xl border-10 border-white shadow-2xl shadow-black h-[43rem] object-cover"
               />
-              <div className="absolute -right-4 -bottom-16">
+              <div className="absolute -right-40 bottom-[12rem]">
                 <img
                   src={mother}
                   alt="Mother with child"
-                  className="rounded-lg w-64 h-52 object-cover border-4 border-white"
+                  className="rounded-2xl w-full h-full border-10 border-white shadow-2xl shadow-black object-cover"
                 />
               </div>
             </div>

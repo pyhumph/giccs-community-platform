@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Slogan from "./slogan";
-import CTAButton from "./Button";
-import heart from "../assets/balloon-hearts (1).png";
-import city from "../assets/city.png";
-import topImage from "../assets/inner-top.jpg";
-import buildingImage from "../assets/inner-main.jpg";
-import bottomImage from "../assets/inner-bottom.jpg";
+import Slogan from "../sub-comp/slogan";
+import CTAButton from "../sub-comp/Button";
+import heart from "../../assets/balloon-hearts (1).png";
+import city from "../../assets/city.png";
+import topImage from "../../assets/inner-top.jpg";
+import buildingImage from "../../assets/inner-main.jpg";
+import bottomImage from "../../assets/inner-bottom.jpg";
 import { Phone, CheckCircle, Play } from "lucide-react";
-import phone from "../assets/phone-call (2).png";
+import phone from "../../assets/phone-call (2).png";
 
 const InnerCenter = () => {
   const [isWaveAnimating, setIsWaveAnimating] = useState(false);

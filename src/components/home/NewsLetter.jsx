@@ -1,8 +1,8 @@
-import Slogan from "./slogan";
-import newz01 from "../assets/mustafa-alabri-9gz10zK7mWo-unsplash.jpg";
-import newz02 from "../assets/kate-bezzubets-WBzkNwjpvwc-unsplash.jpg";
-import newz03 from "../assets/jorge-maya-9AiE2wfpwvY-unsplash.jpg";
-import CTAButton from "./Button";
+import Slogan from "../sub-comp/slogan.jsx";
+import newz01 from "../../assets/mustafa-alabri-9gz10zK7mWo-unsplash.jpg";
+import newz02 from "../../assets/kate-bezzubets-WBzkNwjpvwc-unsplash.jpg";
+import newz03 from "../../assets/jorge-maya-9AiE2wfpwvY-unsplash.jpg";
+import CTAButton from "../sub-comp/Button";
 import { useState } from "react";
 
 export default function NewsletterSection() {

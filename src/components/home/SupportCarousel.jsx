@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import handshake from "../assets/support.png";
-import bg01 from "../assets/r.png";
+import handshake from "../../assets/support.png";
+import bg01 from "../../assets/r.png";
 
 export default function SupportCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,5 +1,5 @@
 import React from "react";
-import handshake from "../assets/support.png";
+import handshake from "../../assets/support.png";
 
 const Slogan = () => {
   return (

@@ -1,11 +1,10 @@
 import { useState } from "react";
-import slogan from "./slogan";
-import handshake from "../assets/support.png";
-import volunteer01 from "../assets/volunteer01.jpg";
-import volunteer02 from "../assets/volunteer02.jpg";
-import volunteer03 from "../assets/volunteer.jpg";
-import Slogan from "./slogan";
-import CTAButton from "./Button";
+import handshake from "../../assets/support.png";
+import volunteer01 from "../../assets/volunteer01.jpg";
+import volunteer02 from "../../assets/volunteer02.jpg";
+import volunteer03 from "../../assets/volunteer.jpg";
+import Slogan from "../sub-comp/slogan";
+import CTAButton from "../sub-comp/Button";
 
 const VolunteerCard = ({ name, role, image }) => {
   return (

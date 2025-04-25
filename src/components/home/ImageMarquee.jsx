@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import img01 from "../assets/r.png";
-import img02 from "../assets/seven.png";
+import img01 from "../../assets/r.png";
+import img02 from "../../assets/seven.png";
 
 export default function ImageMarquee() {
   const marqueeRef = useRef(null);

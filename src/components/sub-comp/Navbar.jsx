@@ -11,8 +11,8 @@ import {
   Menu,
 } from "lucide-react";
 import { useState, useEffect } from "react";
-import logo from "../assets/giccs_logo.svg";
-import liveChat from "../assets/live-chat.png";
+import logo from "../../assets/giccs_logo.svg";
+import liveChat from "../../assets/live-chat.png";
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

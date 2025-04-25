@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from "../Navbar";
+import Navbar from "../sub-comp/Navbar.jsx";
 import ContactHeader from "./ContactHeader";
 import ContactForm from "./ContactForm";
 import ContactInfo from "./ContactInfo";
 import ContactTitle from "./ContactTitle";
 import GoogleMap from "./GoogleMap";
 import Newsletter from "./Newsletter";
-import Footer from "../Footer.jsx";
+import Footer from "../sub-comp/Footer.jsx";
 
 const ContactUs = () => {
   return (

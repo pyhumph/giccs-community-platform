@@ -1,5 +1,5 @@
 import React from "react";
-import bgImage from "../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
+import bgImage from "../../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
 import { Users, Handshake, PackageCheck, Trophy } from "lucide-react";
 
 const stats = [

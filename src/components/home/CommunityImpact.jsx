@@ -1,11 +1,11 @@
 import { HiArrowNarrowRight } from "react-icons/hi";
-import handshake from "../assets/support.png";
-import bg01 from "../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
-import briefcase from "../assets/briefcase.png";
-import plant from "../assets/plant.png";
-import heart from "../assets/heart-rate (2).png";
-import book from "../assets/book.png";
-import girl from "../assets/girl-power.png";
+import handshake from "../../assets/support.png";
+import bg01 from "../../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
+import briefcase from "../../assets/briefcase.png";
+import plant from "../../assets/plant.png";
+import heart from "../../assets/heart-rate (2).png";
+import book from "../../assets/book.png";
+import girl from "../../assets/girl-power.png";
 
 const CommunityImpact = () => {
   return (
