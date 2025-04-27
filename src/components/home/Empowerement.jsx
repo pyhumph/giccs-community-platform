@@ -1,34 +1,26 @@
-import { useState, useRef, useEffect } from "react";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { FaGraduationCap, FaHeartbeat } from "react-icons/fa";
+import { useState, useEffect, useRef } from "react";
+import {
+  FaGraduationCap,
+  FaHeartbeat,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
 import { MdOutlinePersonalVideo } from "react-icons/md";
-import { BsHeartFill } from "react-icons/bs";
+import { BsHeartFill, BsBook } from "react-icons/bs";
+import { RiMentalHealthLine } from "react-icons/ri";
+import { GiMeal } from "react-icons/gi";
 import handshake from "../../assets/support.png";
+import womenImg from "../../assets/women-card.png";
+import eduImg from "../../assets/education-card.png";
+import healthImg from "../../assets/card-copy.png";
 
 const EmpowermentShowcase = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const sliderRef = useRef(null);
-  const totalSlides = 3;
-
-  const goToSlide = (slideIndex) => {
-    if (slideIndex < 0) {
-      setCurrentSlide(totalSlides - 1);
-    } else if (slideIndex >= totalSlides) {
-      setCurrentSlide(0);
-    } else {
-      setCurrentSlide(slideIndex);
-    }
-  };
-
-  useEffect(() => {
-    if (sliderRef.current) {
-      const scrollAmount = sliderRef.current.offsetWidth * currentSlide;
-      sliderRef.current.scrollTo({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  }, [currentSlide]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const autoPlayRef = useRef(null);
+  const carouselRef = useRef(null);
 
   const services = [
     {
@@ -36,23 +28,140 @@ const EmpowermentShowcase = () => {
       icon: <FaGraduationCap className="text-white text-3xl" />,
       description:
         "Empowering youth and orphans through accessible education to create a brighter future for every child.",
+      bgImage: eduImg,
       bgColor: "bg-yellow-400",
+      borderColor: "border-yellow-400",
     },
     {
       title: "Women Empowerment",
       icon: <MdOutlinePersonalVideo className="text-white text-3xl" />,
       description:
-        "Supporting women with entrepreneurship training, financial literacy, and vocational skills to promote self-reliance and economic stability.",
+        "Supporting women with training and skills for self-reliance and economic stability.",
+      bgImage: womenImg,
       bgColor: "bg-black",
+      borderColor: "border-black",
     },
     {
       title: "Healthcare Support",
       icon: <FaHeartbeat className="text-white text-3xl" />,
       description:
-        "Providing medical assistance and awareness programs to combat chronic diseases, ensuring healthier communities.",
+        "Providing medical aid and programs to fight chronic diseases for healthier communities.",
+      bgImage: healthImg,
       bgColor: "bg-red-600",
+      borderColor: "border-red-600",
+    },
+    {
+      title: "Literacy Programs",
+      icon: <BsBook className="text-white text-3xl" />,
+      description:
+        "Building literacy skills in underserved communities through reading programs and educational resources.",
+      bgImage: eduImg,
+      bgColor: "bg-blue-500",
+      borderColor: "border-blue-500",
+    },
+    {
+      title: "Mental Health Support",
+      icon: <RiMentalHealthLine className="text-white text-3xl" />,
+      description:
+        "Offering counseling services and mental health resources to support emotional wellbeing in vulnerable communities.",
+      bgImage: healthImg,
+      bgColor: "bg-green-600",
+      borderColor: "border-green-600",
+    },
+    {
+      title: "Nutrition Programs",
+      icon: <GiMeal className="text-white text-3xl" />,
+      description:
+        "Providing nutritious meals and food education to combat hunger and promote healthy eating habits.",
+      bgImage: womenImg,
+      bgColor: "bg-purple-500",
+      borderColor: "border-purple-500",
     },
   ];
+
+  const nextSlide = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+
+    const carousel = carouselRef.current;
+    if (carousel) {
+      carousel.style.transition = "transform 1s ease";
+      carousel.style.transform = "translateX(-33.33%)";
+
+      setTimeout(() => {
+        carousel.style.transition = "none";
+        carousel.style.transform = "translateX(0)";
+        setCurrentIndex((prevIndex) =>
+          prevIndex === services.length - 1 ? 0 : prevIndex + 1,
+        );
+        setTimeout(() => {
+          setIsAnimating(false);
+        }, 50);
+      }, 1000);
+    }
+  };
+
+  const prevSlide = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+
+    const carousel = carouselRef.current;
+    if (carousel) {
+      // First prepend the last item
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? services.length - 1 : prevIndex - 1,
+      );
+
+      carousel.style.transition = "none";
+      carousel.style.transform = "translateX(-33.33%)";
+
+      setTimeout(() => {
+        carousel.style.transition = "transform 1s ease";
+        carousel.style.transform = "translateX(0)";
+        setTimeout(() => {
+          setIsAnimating(false);
+        }, 1000);
+      }, 50);
+    }
+  };
+
+  // Get visible services with a sliding window approach
+  const getVisibleServices = () => {
+    const result = [];
+    for (let i = 0; i < 5; i++) {
+      const index = (currentIndex + i) % services.length;
+      result.push(services[index]);
+    }
+    return result;
+  };
+
+  // Setup auto play
+  useEffect(() => {
+    if (isAutoPlaying && !isHovered && !isAnimating) {
+      autoPlayRef.current = setInterval(() => {
+        nextSlide();
+      }, 5000);
+    }
+
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+    };
+  }, [isAutoPlaying, isHovered, isAnimating, currentIndex]);
+
+  // Handle hover effects
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    setIsAutoPlaying(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setIsAutoPlaying(true);
+  };
+
+  const visibleServices = getVisibleServices();
 
   return (
     <section className="bg-white py-12 md:py-16 lg:py-24 overflow-hidden">
@@ -60,7 +169,6 @@ const EmpowermentShowcase = () => {
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">
           <div className="flex items-center justify-center mb-2">
-            {/*<HandshakeIcon className="w-5 h-5 mr-2 text-[#FFC107]" />*/}
             <img
               src={handshake}
               alt="handshake_img"
@@ -81,56 +189,59 @@ const EmpowermentShowcase = () => {
           </p>
         </div>
 
-        {/* Services Showcase */}
-        <div className="relative">
-          {/* Mobile Navigation Arrows */}
-          <button
-            onClick={() => goToSlide(currentSlide - 1)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black bg-opacity-70 rounded-full p-2 text-white md:hidden"
-            aria-label="Previous slide"
-          >
-            <IoIosArrowBack size={24} />
-          </button>
-
-          <button
-            onClick={() => goToSlide(currentSlide + 1)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black bg-opacity-70 rounded-full p-2 text-white md:hidden"
-            aria-label="Next slide"
-          >
-            <IoIosArrowForward size={24} />
-          </button>
-
-          {/* Desktop Services Grid - Hidden on mobile */}
-          <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8">
-            {services.map((service, index) => (
-              <ServiceCard key={index} service={service} />
-            ))}
-          </div>
-
-          {/* Mobile Slider - Hidden on desktop */}
+        {/* Services Showcase - Desktop Carousel */}
+        <div
+          className="relative hidden md:block overflow-hidden"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          {/* Carousel Container */}
           <div
-            ref={sliderRef}
-            className="md:hidden flex overflow-x-hidden snap-x snap-mandatory w-full"
+            ref={carouselRef}
+            className="flex transition-transform duration-1000 ease-in-out"
+            style={{ transform: "translateX(0)" }}
           >
-            {services.map((service, index) => (
-              <div key={index} className="min-w-full px-4 snap-center">
+            {visibleServices.map((service, index) => (
+              <div
+                key={index}
+                className={`w-1/3 flex-shrink-0 px-3 ${index < 3 ? "block" : "hidden md:block"}`}
+              >
                 <ServiceCard service={service} />
               </div>
             ))}
           </div>
 
-          {/* Mobile Dots Indicator */}
-          <div className="flex justify-center space-x-2 mt-4 md:hidden">
-            {Array.from({ length: totalSlides }).map((_, index) => (
+          {/* Navigation Controls - Only visible on hover */}
+          {isHovered && (
+            <>
               <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-2 h-2 rounded-full ${currentSlide === index ? "bg-yellow-500" : "bg-gray-300"
-                  }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
+                onClick={prevSlide}
+                className="absolute left-4 top-1/2 -translate-x-[1rem] -translate-y-1/2 bg-[#122f2a] hover:bg-[#0b201c] text-white rounded-full w-12 h-12 flex items-center justify-center z-20 transition-all duration-300 shadow-lg"
+                disabled={isAnimating}
+              >
+                <FaChevronLeft className="text-lg" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="absolute right-4 top-1/2 translate-x-[1rem] -translate-y-1/2 bg-[#FFC107] hover:bg-[#e6af06] text-black rounded-full w-12 h-12 flex items-center justify-center z-20 transition-all duration-300 shadow-lg"
+                disabled={isAnimating}
+              >
+                <FaChevronRight className="text-lg" />
+              </button>
+            </>
+          )}
+        </div>
+
+        {/* Mobile Services Display - Scrollable without navigation */}
+        <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory w-full pb-4">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="min-w-full flex-shrink-0 px-4 snap-center"
+            >
+              <ServiceCard service={service} />
+            </div>
+          ))}
         </div>
 
         {/* Call to Action Sections */}
@@ -194,21 +305,36 @@ const EmpowermentShowcase = () => {
 // Service Card Component
 const ServiceCard = ({ service }) => {
   return (
-    <div className="relative service-card group p-4">
-      <div
-        className={`rounded-full w-20 h-20 mx-auto flex items-center justify-center ${service.bgColor} mb-4`}
-      >
-        {service.icon}
-      </div>
-      <div className="relative z-10">
-        <h3 className="text-xl font-bold text-center mb-3">{service.title}</h3>
-        <p className="text-gray-700 text-center">{service.description}</p>
+    <div className="relative service-card group p-4 h-[32rem] rounded-[40px]">
+      {/* Background Image */}
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src={service.bgImage}
+          alt={service.title}
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.style.backgroundColor = "#f0f0f0";
+          }}
+        />
       </div>
 
-      {/* Card Border */}
-      <div
-        className={`absolute inset-0 border-[3px] rounded-[40px] border-transparent group-hover:border-${service.bgColor.replace("bg-", "")} transition-all duration-300`}
-      ></div>
+      {/* Content */}
+      <div className="relative z-10 pt-8 pb-4 px-4 flex flex-col items-center">
+        <div
+          className={`rounded-full w-22 h-22 flex items-center justify-center ${service.bgColor} mt-12 mb-4 p-6`}
+        >
+          <div className="transition-transform duration-500 group-hover:scale-x-[-1]">
+            {service.icon}
+          </div>
+        </div>
+        <h3 className="text-[1.3rem] font-extrabold text-[#1E1E20] text-center mt-10 mb-3">
+          {service.title}
+        </h3>
+        <p className="text-gray-700 text-center w-[18rem] p-1.5 font-medium tracking-wide leading-7">
+          {service.description}
+        </p>
+      </div>
     </div>
   );
 };
