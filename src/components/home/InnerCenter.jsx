@@ -7,7 +7,35 @@ import topImage from "../../assets/inner-top.jpg";
 import buildingImage from "../../assets/inner-main.jpg";
 import bottomImage from "../../assets/inner-bottom.jpg";
 import { Phone, CheckCircle, Play } from "lucide-react";
-import phone from "../../assets/phone-call (2).png";
+import phone from "../assets/phone-call (2).png";
+import grid from "../../src/assets/grid.png";
+import hand from "../../src/assets/hand.png";
+import parachute from "../assets/parachute2.svg";
+
+// Parachute Animation Component
+const ParachuteAnimation = () => (
+  <div className="absolute right-8 top-0">
+    <div className="animate-parachute">
+      <img src={parachute} alt="Parachute" className="w-60 h-50" />
+    </div>
+  </div>
+);
+
+const GridAnimation = () => (
+  <div className="absolute left-66 top-150">
+    <div className="animate-bounce">
+      <img src={grid} alt="grid" className="w-30 h-40 animate-pulse" />
+    </div>
+  </div>
+);
+
+const HandAnimation = () => (
+  <div className="absolute left-8 top-50">
+    <div className="animate-bounce">
+      <img src={hand} alt="hand" className="w-30 h-40 animate-pulse" />
+    </div>
+  </div>
+);
 
 const InnerCenter = () => {
   const [isWaveAnimating, setIsWaveAnimating] = useState(false);
@@ -22,7 +50,33 @@ const InnerCenter = () => {
   }, []);
 
   return (
-    <section className="bg-white max-w-screen-2xl mx-auto py-16 px-12 md:px-8 lg:px-16">
+    <section className="relative bg-white  py-16 px-12 md:px-8 lg:px-16">
+      <style jsx>{`
+        @keyframes parachuteFall {
+          0% {
+            transform: translateY(-100px);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(650px);
+            opacity: 0;
+          }
+        }
+
+        .animate-parachute {
+          animation: parachuteFall 10s ease-in-out infinite;
+        }
+      `}</style>
+      <GridAnimation />
+      <HandAnimation />
+      <ParachuteAnimation />
+
       <div className="max-w-7xl mx-auto flex justify-center flex-col lg:flex-row items-center gap-16 lg:gap-24">
         {/* Left Image Area */}
         <div className="relative w-full lg:w-[30rem] flex justify-center">
@@ -106,7 +160,11 @@ const InnerCenter = () => {
             <div className="flex flex-col items-center lg:items-start">
               <div className="flex items-center mb-4">
                 <div className="bg-[#FFC107] p-3 rounded-full mr-3">
-                  <img src={city} className="w-auto h-12" alt="City icon" />
+                  <img
+                    src={city}
+                    className="w-auto h-12 animate-pulse"
+                    alt="City icon"
+                  />
                 </div>
                 <h3 className="text-xl font-bold">Empower Lives</h3>
               </div>
@@ -122,7 +180,7 @@ const InnerCenter = () => {
                 <div className="bg-[#FFC107] p-3 rounded-full mr-3">
                   <img
                     src={heart}
-                    className="w-auto h-12"
+                    className="w-auto h-12 animate-pulse"
                     alt="Heart balloon icon"
                   />
                 </div>

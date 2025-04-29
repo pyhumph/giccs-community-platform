@@ -1,9 +1,19 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, HandshakeIcon, ArrowUpRight } from "lucide-react";
-import bg01 from "../../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
-import bg02 from "../../assets/michael-ali-Xo27J9RUjK8-unsplash.jpg";
-import bg03 from "../../assets/seth-doyle-zf9_yiAekJs-unsplash.jpg";
-import handshake from "../../assets/support.png";
+import bg01 from "../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
+import bg02 from "../assets/michael-ali-Xo27J9RUjK8-unsplash.jpg";
+import bg03 from "../assets/seth-doyle-zf9_yiAekJs-unsplash.jpg";
+import handshake from "../assets/support.png";
+import parachute from "../../assets/parachute2.svg";
+
+// Parachute Animation Component
+const ParachuteAnimation = () => (
+  <div className="absolute right-8 top-0">
+    <div className="animate-parachute">
+      <img src={parachute} alt="Parachute" className="w-50 h-50" />
+    </div>
+  </div>
+);
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -24,15 +34,17 @@ export default function Hero() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+            index === currentSlide ? "opacity-100" : "opacity-0"
+          }`}
         >
           <div className="w-full h-full overflow-hidden">
             <img
               src={slide}
               alt={`Slide ${index + 1}`}
-              className={`w-full h-full object-cover transition-transform duration-6000 ease-out ${index === currentSlide ? "scale-110" : "scale-100"
-                }`}
+              className={`w-full h-full object-cover transition-transform duration-6000 ease-out ${
+                index === currentSlide ? "scale-110" : "scale-100"
+              }`}
             />
           </div>
         </div>
