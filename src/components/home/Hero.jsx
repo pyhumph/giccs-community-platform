@@ -4,21 +4,13 @@ import bg01 from "../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
 import bg02 from "../assets/michael-ali-Xo27J9RUjK8-unsplash.jpg";
 import bg03 from "../assets/seth-doyle-zf9_yiAekJs-unsplash.jpg";
 import handshake from "../assets/support.png";
-import parachute from "../../assets/parachute2.svg";
-
-// Parachute Animation Component
-const ParachuteAnimation = () => (
-  <div className="absolute right-8 top-0">
-    <div className="animate-parachute">
-      <img src={parachute} alt="Parachute" className="w-50 h-50" />
-    </div>
-  </div>
-);
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [displayText, setDisplayText] = useState("");
 
   const slides = [bg01, bg02, bg03];
+  const fullText = "Bring Hope and Aid to Tanzanian in Need";
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,6 +18,21 @@ export default function Hero() {
     }, 5000);
 
     return () => clearInterval(interval);
+  }, []);
+
+  // Text animation effect - runs only once on component load
+  useEffect(() => {
+    let currentIndex = 0;
+    const timer = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setDisplayText(fullText.substring(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 80); // Adjust speed of typing here
+
+    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -42,8 +49,8 @@ export default function Hero() {
             <img
               src={slide}
               alt={`Slide ${index + 1}`}
-              className={`w-full h-full object-cover transition-transform duration-6000 ease-out ${
-                index === currentSlide ? "scale-110" : "scale-100"
+              className={`w-full h-full object-cover transition-transform duration-5000 ease-out ${
+                index === currentSlide ? "scale-110" : "scale-70"
               }`}
             />
           </div>
@@ -57,7 +64,6 @@ export default function Hero() {
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center mt-[-12rem] px-4 md:px-8 z-10">
         {/* Small Heading with Handshake Icon */}
         <div className="flex items-center mb-2">
-          {/*<HandshakeIcon className="w-5 h-5 mr-2 text-[#FFC107]" />*/}
           <img
             src={handshake}
             alt="handshake_img"
@@ -68,25 +74,31 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Main Heading */}
+        {/* Main Heading with Animation */}
         <h1 className="text-4xl md:text-[5.5rem] font-[750] text-white max-w-6xl mb-4">
-          <span className="block">Bring Hope and Aid to </span>
-          <span className="text-[#FFC107] relative mr-4">
-            Tanzanian
-            {/*<svg
-              className="absolute w-full h-3 -bottom-2 left-0"
-              viewBox="0 0 100 10"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M0,5 C30,15 70,-5 100,5"
-                stroke="#FFC107"
-                fill="none"
-                strokeWidth="2"
-              />
-            </svg>*/}
+          <span className="block">
+            {displayText.includes("Bring")
+              ? displayText.substring(
+                  0,
+                  displayText.indexOf("Tanzanian") !== -1
+                    ? displayText.indexOf("Tanzanian")
+                    : displayText.length,
+                )
+              : ""}
           </span>
-          in Need
+          {displayText.includes("Tanzanian") && (
+            <>
+              <span className="text-[#FFC107] relative mr-4">
+                {displayText.substring(
+                  displayText.indexOf("Tanzanian"),
+                  displayText.indexOf("Tanzanian") + "Tanzanian".length,
+                )}
+              </span>
+              {displayText.substring(
+                displayText.indexOf("Tanzanian") + "Tanzanian".length,
+              )}
+            </>
+          )}
         </h1>
 
         {/* Paragraph */}
