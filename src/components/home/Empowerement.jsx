@@ -4,23 +4,34 @@ import {
   FaHeartbeat,
   FaChevronLeft,
   FaChevronRight,
+  FaSolarPanel,
+  FaLightbulb,
+  FaMoneyCheckAlt,
+  FaGift,
 } from "react-icons/fa";
-import { MdOutlinePersonalVideo } from "react-icons/md";
 import { BsHeartFill, BsBook } from "react-icons/bs";
 import { RiMentalHealthLine } from "react-icons/ri";
-import { GiMeal } from "react-icons/gi";
-import handshake from "../../assets/support.png";
+import { IoMdClose } from "react-icons/io";
+import Slogan from "../sub-comp/slogan";
 import womenImg from "../../assets/women-card.png";
 import eduImg from "../../assets/education-card.png";
 import healthImg from "../../assets/card-copy.png";
+import womenPower from "../../assets/strong (1).png";
+import CTAImg from "../../assets/seth-doyle-zf9_yiAekJs-unsplash.jpg";
+import VolunteerImg from "../../assets/khalil-radi-BlzrvWb1_vQ-unsplash.jpg";
+import DonationImg from "../../assets/larm-rmah-AEaTUnvneik-unsplash.jpg";
+import CTAButton from "../sub-comp/Button";
 
 const EmpowermentShowcase = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const [pulseAnimation, setPulseAnimation] = useState(false);
   const autoPlayRef = useRef(null);
   const carouselRef = useRef(null);
+  const videoRef = useRef(null);
 
   const services = [
     {
@@ -34,7 +45,7 @@ const EmpowermentShowcase = () => {
     },
     {
       title: "Women Empowerment",
-      icon: <MdOutlinePersonalVideo className="text-white text-3xl" />,
+      icon: <img src={womenPower} className="text-white text-3xl" />,
       description:
         "Supporting women with training and skills for self-reliance and economic stability.",
       bgImage: womenImg,
@@ -69,13 +80,31 @@ const EmpowermentShowcase = () => {
       borderColor: "border-green-600",
     },
     {
-      title: "Nutrition Programs",
-      icon: <GiMeal className="text-white text-3xl" />,
+      title: "Clean Energy Initiatives",
+      icon: <FaSolarPanel className="text-white text-3xl" />,
       description:
-        "Providing nutritious meals and food education to combat hunger and promote healthy eating habits.",
+        "Promoting clean energy access and sustainable solutions for underserved communities.",
       bgImage: womenImg,
       bgColor: "bg-purple-500",
       borderColor: "border-purple-500",
+    },
+    {
+      title: "Entrepreneurship",
+      icon: <FaLightbulb className="text-white text-3xl" />,
+      description:
+        "Empowering individuals with skills and resources to launch successful small businesses.",
+      bgImage: womenImg,
+      bgColor: "bg-indigo-500",
+      borderColor: "border-indigo-500",
+    },
+    {
+      title: "Startup Business Grants",
+      icon: <FaMoneyCheckAlt className="text-white text-3xl" />,
+      description:
+        "Providing financial support to fuel startups and boost local economic growth.",
+      bgImage: womenImg,
+      bgColor: "bg-green-600",
+      borderColor: "border-green-500",
     },
   ];
 
@@ -161,6 +190,30 @@ const EmpowermentShowcase = () => {
     setIsAutoPlaying(true);
   };
 
+  // Start the pulse animation for the play button
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPulseAnimation(true);
+      setTimeout(() => setPulseAnimation(false), 2000);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Video functions
+  const openVideo = () => {
+    setShowVideo(true);
+  };
+
+  const closeVideo = () => {
+    setShowVideo(false);
+    // Reset YouTube iframe if needed
+    if (videoRef.current) {
+      const iframeSrc = videoRef.current.src;
+      videoRef.current.src = iframeSrc;
+    }
+  };
+
   const visibleServices = getVisibleServices();
 
   return (
@@ -168,15 +221,8 @@ const EmpowermentShowcase = () => {
       <div className="container mx-auto px-4 md:px-8">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">
-          <div className="flex items-center justify-center mb-2">
-            <img
-              src={handshake}
-              alt="handshake_img"
-              className="w-auto h-8 mr-2"
-            />
-            <p className="text-[#FFC107] font-[Caveat] font-bold text-[1.5rem]">
-              Support Communities for a Better Future
-            </p>
+          <div className="flex justify-center">
+            <Slogan />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-2">
             Empowering Lives Daily
@@ -244,60 +290,177 @@ const EmpowermentShowcase = () => {
           ))}
         </div>
 
-        {/* Call to Action Sections */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16">
-          {/* Need Help Section */}
-          <div className="bg-gray-900 text-white p-6 md:p-8 rounded-lg relative overflow-hidden">
-            <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-            <div className="relative z-10">
-              <div className="flex justify-center mb-4">
-                <BsHeartFill className="text-white text-3xl" />
+        {/* Call to Action Section */}
+        <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-3">
+            {/* Become a Volunteer */}
+            <div className="relative flex flex-col justify-center items-center text-center text-white py-16 px-6 overflow-hidden">
+              {/* Background Image with Grayscale */}
+              <img
+                src={VolunteerImg}
+                alt="Volunteer Background"
+                className="absolute inset-0 w-full h-full object-cover grayscale"
+              />
+              {/* Dark Overlay + Right Side Gradient */}
+              <div
+                className="absolute inset-0 bg-opacity-50"
+                style={{
+                  background:
+                    "linear-gradient(to right, rgba(0,0,0,0.75), rgba(17,24,39,0.6))",
+                }}
+              ></div>
+
+              <div className="relative z-10">
+                <div className="flex justify-center mb-4">
+                  <BsHeartFill className="text-white text-6xl" />
+                </div>
+                <p className="text-sm mb-2">
+                  We Give Child A Gift Of A Education
+                </p>
+                <h3 className="text-4xl font-bold mb-6">Become A Volunteer?</h3>
+                <CTAButton
+                  text="Contact Now"
+                  bgColor="#00715d"
+                  textColor="white"
+                  hoverBgColor="#FFC107"
+                  hoverTextColor="#1E1E20"
+                />
               </div>
-              <p className="text-sm font-medium mb-1">
-                Come And Let Us Help You
-              </p>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Need Help?
-              </h3>
-              <button className="border border-yellow-500 text-white hover:bg-yellow-500 hover:text-black transition-colors py-2 px-6 rounded-full">
-                Contact Now
-              </button>
             </div>
-          </div>
 
-          {/* Video Section */}
-          <div className="bg-gray-900 p-6 md:p-8 rounded-lg flex items-center justify-center">
-            <button className="bg-yellow-500 rounded-full p-4 hover:bg-yellow-600 transition-colors">
-              <svg
-                className="w-8 h-8 text-white"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </button>
-          </div>
+            {/* Play Video Section */}
+            <div className="relative flex items-center justify-center bg-gray-200 overflow-hidden">
+              {/* Center Gray Image Placeholder */}
+              <img
+                src={CTAImg}
+                alt="Center CTA"
+                className="w-full h-full object-cover grayscale"
+              />
 
-          {/* Need Support Section */}
-          <div className="bg-gray-900 text-white p-6 md:p-8 rounded-lg relative overflow-hidden">
-            <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-            <div className="relative z-10">
-              <div className="flex justify-center mb-4">
-                <BsHeartFill className="text-white text-3xl" />
+              {/* Torn Paper Effect Left Side */}
+              <div className="absolute top-0 bottom-0 left-0 w-12 z-10">
+                <svg
+                  viewBox="0 0 100 1000"
+                  preserveAspectRatio="none"
+                  className="h-full w-full"
+                >
+                  <path
+                    d="M100,0 Q70,50 80,100 Q60,150 75,200 Q50,250 70,300 Q80,350 60,400 Q70,450 50,500 Q80,550 70,600 Q50,650 80,700 Q70,750 50,800 Q60,850 80,900 Q70,950 100,1000 L0,1000 L0,0 Z"
+                    fill="#facc15"
+                  />
+                </svg>
               </div>
-              <p className="text-sm font-medium mb-1">
-                Access Life-Changing Assistance
-              </p>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Need Support?
-              </h3>
-              <button className="bg-yellow-500 text-black hover:bg-yellow-600 transition-colors py-2 px-6 rounded-full">
-                Apply Now
+
+              {/* Yellow Play Button with Animation */}
+              <button
+                onClick={openVideo}
+                className={`absolute bg-yellow-500 hover:bg-yellow-600 p-6 rounded-full z-20 transition-all duration-300 ${
+                  pulseAnimation ? "animate-pulse scale-110" : ""
+                }`}
+              >
+                <svg
+                  className="w-8 h-8 text-black"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
               </button>
+
+              {/* Pulse Animation Elements */}
+              <div
+                className={`absolute w-20 h-20 rounded-full bg-yellow-500 opacity-50 transition-all duration-700 ${
+                  pulseAnimation ? "scale-150 opacity-0" : "scale-100 opacity-0"
+                }`}
+              ></div>
+              <div
+                className={`absolute w-20 h-20 rounded-full bg-yellow-500 opacity-25 transition-all duration-1000 delay-100 ${
+                  pulseAnimation ? "scale-150 opacity-0" : "scale-100 opacity-0"
+                }`}
+              ></div>
+            </div>
+
+            {/* Make Donation */}
+            <div className="relative flex flex-col justify-center items-center text-center text-white py-16 px-6 overflow-hidden">
+              {/* Background Image with Grayscale */}
+              <img
+                src={DonationImg}
+                alt="Donation Background"
+                className="absolute inset-0 w-full h-full object-cover grayscale"
+              />
+              {/* Dark Overlay + Left Side Gradient */}
+              <div
+                className="absolute inset-0 bg-opacity-50"
+                style={{
+                  background:
+                    "linear-gradient(to left, rgba(6,78,59,0.75), rgba(16,185,129,0.6))",
+                }}
+              ></div>
+              {/* Torn Paper Effect Left Side */}
+              <div className="absolute top-0 bottom-0 left-0 w-12 z-10">
+                <svg
+                  viewBox="0 0 100 1000"
+                  preserveAspectRatio="none"
+                  className="h-full w-full"
+                >
+                  <path
+                    d="M100,0 Q70,50 80,100 Q60,150 75,200 Q50,250 70,300 Q80,350 60,400 Q70,450 50,500 Q80,550 70,600 Q50,650 80,700 Q70,750 50,800 Q60,850 80,900 Q70,950 100,1000 L0,1000 L0,0 Z"
+                    fill="#facc15"
+                  />
+                </svg>
+              </div>
+
+              <div className="relative z-10">
+                <div className="flex justify-center mb-4">
+                  <FaGift className="text-white text-6xl" />
+                </div>
+                <p className="text-sm mb-2">
+                  We Give Child A Gift Of A Education
+                </p>
+                <h3 className="text-4xl font-bold mb-6">
+                  Make Donation To Us?
+                </h3>
+                <CTAButton text="Donate Now" />
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Overlay */}
+          <div
+            className="absolute inset-0 bg-black bg-opacity-75"
+            onClick={closeVideo}
+          ></div>
+
+          {/* Modal Content */}
+          <div className="relative bg-black rounded-lg w-full max-w-4xl">
+            {/* Close Button */}
+            <button
+              onClick={closeVideo}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300"
+            >
+              <IoMdClose className="w-8 h-8" />
+            </button>
+
+            {/* Video Player */}
+            <div className="aspect-w-16 aspect-h-9">
+              <iframe
+                ref={videoRef}
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                title="YouTube video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
@@ -322,9 +485,9 @@ const ServiceCard = ({ service }) => {
       {/* Content */}
       <div className="relative z-10 pt-8 pb-4 px-4 flex flex-col items-center">
         <div
-          className={`rounded-full w-22 h-22 flex items-center justify-center ${service.bgColor} mt-12 mb-4 p-6`}
+          className={`rounded-full w-22 h-22 flex items-center justify-center ${service.bgColor} mt-12 mb-4 p-6  transition-transform duration-500 group-hover:scale-x-[-1]`}
         >
-          <div className="transition-transform duration-500 group-hover:scale-x-[-1]">
+          <div className="transition-transform duration-500 group-hover:scale-x-[1]">
             {service.icon}
           </div>
         </div>

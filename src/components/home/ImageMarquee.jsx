@@ -1,10 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import img01 from "../../assets/r.png";
 import img02 from "../../assets/seven.png";
 
 export default function ImageMarquee() {
   const marqueeRef = useRef(null);
-
+  const [isPaused, setIsPaused] = useState(false);
   const images = [
     {
       id: 1,
@@ -42,54 +42,79 @@ export default function ImageMarquee() {
       alt: "Community support",
     },
   ];
-
   useEffect(() => {
     const marqueeElement = marqueeRef.current;
     let animationId;
     let position = 0;
+    let lastTimestamp = 0;
+    const pixelsPerSecond = 50; // Speed control - pixels per second
 
-    const animate = () => {
-      position -= 0.5; // Adjust speed here
+    const animate = (timestamp) => {
+      if (!lastTimestamp) lastTimestamp = timestamp;
+      const deltaTime = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
 
-      // Reset position when first image is out of view
-      if (position <= -200) {
-        position = 0;
-      }
+      if (!isPaused) {
+        // Calculate movement based on time elapsed for smooth animation
+        const pixelsToMove = (pixelsPerSecond * deltaTime) / 1000;
+        position -= pixelsToMove;
 
-      if (marqueeElement) {
-        marqueeElement.style.transform = `translateX(${position}px)`;
+        // Get width of first image + its container
+        const firstImageContainer = marqueeElement.firstChild;
+        const containerWidth = firstImageContainer
+          ? firstImageContainer.offsetWidth
+          : 200;
+
+        // Reset position when first image is out of view
+        if (position <= -containerWidth) {
+          // Move the first image to the end for infinite scroll effect
+          const firstChild = marqueeElement.firstChild;
+          marqueeElement.appendChild(firstChild);
+          position += containerWidth;
+        }
+
+        if (marqueeElement) {
+          marqueeElement.style.transform = `translateX(${position}px)`;
+        }
       }
 
       animationId = requestAnimationFrame(animate);
     };
 
-    animate();
+    animationId = requestAnimationFrame(animate);
 
     // Cleanup function
     return () => {
       cancelAnimationFrame(animationId);
     };
-  }, []);
+  }, [isPaused]);
 
   // Create a duplicate set of images for seamless scrolling
-  const allImages = [...images, ...images];
+  const allImages = [...images, ...images, ...images]; // Triple images for smooth loop
 
   return (
-    <div className="w-full overflow-hidden bg-gray-900 py-4 relative">
+    <div
+      className="w-full overflow-hidden relative"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <div
         ref={marqueeRef}
         className="flex whitespace-nowrap"
-        style={{ willChange: "transform" }}
+        style={{
+          willChange: "transform",
+          transition: isPaused ? "transform 0.5s" : "none",
+        }}
       >
         {allImages.map((image, index) => (
           <div
             key={`${image.id}-${index}`}
-            className="inline-block w-64 h-40 mx-2 flex-shrink-0"
+            className="inline-block w-96 h-80 flex-shrink-0"
           >
             <img
               src={image.src}
               alt={image.alt}
-              className="w-full h-full object-cover rounded"
+              className="w-full h-full object-cover"
             />
           </div>
         ))}
