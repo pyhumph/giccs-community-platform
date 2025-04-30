@@ -1,16 +1,47 @@
 import { HiArrowNarrowRight } from "react-icons/hi";
-import handshake from "../../assets/support.png";
-import bg01 from "../../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
-import briefcase from "../../assets/briefcase.png";
-import plant from "../../assets/plant.png";
-import heart from "../../assets/heart-rate (2).png";
-import book from "../../assets/book.png";
-import girl from "../../assets/girl-power.png";
-import CommunityButton from "../sub-comp/AnimateBTN";
+import handshake from "../assets/support.png";
+import bg01 from "../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
+import briefcase from "../assets/briefcase.png";
+import plant from "../assets/plant.png";
+import heart from "../assets/heart-rate (2).png";
+import book from "../assets/book.png";
+import girl from "../assets/girl-power.png";
+import NumberCounter from "../components/NumberCounter"; // Import the NumberCounter component
+import hanging from "../assets/hanging-love.png";
+import bag from "../assets/love-bag.png";
+import spade from "../assets/spade-base.png";
+
+// Parachute Animation Component
+const HangingLove = () => (
+  <div className="absolute left-15 top-0">
+    <div className="animate-pulse">
+      <img src={hanging} alt="hanging-love" className="w-23 h-50" />
+    </div>
+  </div>
+);
+
+const LoveBag = () => (
+  <div className="absolute right-10 top-10">
+    <div className="animate-pulse">
+      <img src={bag} alt="love-bag" className="w-37 h-30" />
+    </div>
+  </div>
+);
+
+const Spadebase = () => (
+  <div className="absolute right-85 top-110">
+    <div className="animate-pulse">
+      <img src={spade} alt="love-bag" className="w-40 h-35" />
+    </div>
+  </div>
+);
 
 const CommunityImpact = () => {
   return (
-    <section className="bg-[#fdf9f3] text-center py-12 md:py-16 lg:pt-24 lg:pb-0">
+    <section className="relative bg-[#fdf9f3] text-center py-12 md:py-16 lg:py-24">
+      <HangingLove />
+      <LoveBag />
+      <Spadebase />
       {/* Top Text Block */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center mb-2 justify-center">
@@ -31,9 +62,9 @@ const CommunityImpact = () => {
           Conservation, And Economic Empowerment.
         </p>
 
-        <div className="text-4xl sm:text-5xl md:text-[6rem] font-bold text-black mt-6 md:mt-10 leading-none">
-          154,489+
-        </div>
+        {/* Replaced static div with animated NumberCounter component */}
+        <NumberCounter targetNumber={154489} duration={2500} suffix="+" />
+
         <p className="text-[#5a5d78] text-base md:text-lg font-semibold mt-2">
           Join The Many Who Have Benefited From Our Assistance
         </p>
