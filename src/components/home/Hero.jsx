@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, HandshakeIcon, ArrowUpRight } from "lucide-react";
-import bg01 from "../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
-import bg02 from "../assets/michael-ali-Xo27J9RUjK8-unsplash.jpg";
-import bg03 from "../assets/seth-doyle-zf9_yiAekJs-unsplash.jpg";
-import handshake from "../assets/support.png";
+import bg01 from "../../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
+import bg02 from "../../assets/michael-ali-Xo27J9RUjK8-unsplash.jpg";
+import bg03 from "../../assets/seth-doyle-zf9_yiAekJs-unsplash.jpg";
+import handshake from "../../assets/support.png";
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);

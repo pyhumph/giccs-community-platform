@@ -7,10 +7,10 @@ import topImage from "../../assets/inner-top.jpg";
 import buildingImage from "../../assets/inner-main.jpg";
 import bottomImage from "../../assets/inner-bottom.jpg";
 import { Phone, CheckCircle, Play } from "lucide-react";
-import phone from "../assets/phone-call (2).png";
-import grid from "../../src/assets/grid.png";
-import hand from "../../src/assets/hand.png";
-import parachute from "../assets/parachute2.svg";
+import phone from "../../assets/phone-call (2).png";
+import grid from "../../assets/grid.png";
+import hand from "../../assets/hand.png";
+import parachute from "../../assets/parachute2.svg";
 
 // Parachute Animation Component
 const ParachuteAnimation = () => (

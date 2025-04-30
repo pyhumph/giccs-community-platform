@@ -1,15 +1,16 @@
 import { HiArrowNarrowRight } from "react-icons/hi";
-import handshake from "../assets/support.png";
-import bg01 from "../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
-import briefcase from "../assets/briefcase.png";
-import plant from "../assets/plant.png";
-import heart from "../assets/heart-rate (2).png";
-import book from "../assets/book.png";
-import girl from "../assets/girl-power.png";
-import NumberCounter from "../components/NumberCounter"; // Import the NumberCounter component
-import hanging from "../assets/hanging-love.png";
-import bag from "../assets/love-bag.png";
-import spade from "../assets/spade-base.png";
+import handshake from "../../assets/support.png";
+import bg01 from "../../assets/armando-fera-i8IeYLEZ7hE-unsplash.jpg";
+import briefcase from "../../assets/briefcase.png";
+import plant from "../../assets/plant.png";
+import heart from "../../assets/heart-rate (2).png";
+import book from "../../assets/book.png";
+import girl from "../../assets/girl-power.png";
+import NumberCounter from "../NumberCounter.jsx"; // Import the NumberCounter component
+import hanging from "../../assets/hanging-love.png";
+import bag from "../../assets/love-bag.png";
+import spade from "../../assets/spade-base.png";
+import CommunityButton from "../sub-comp/AnimateBTN";
 
 // Parachute Animation Component
 const HangingLove = () => (
