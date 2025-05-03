@@ -1,7 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import handshake from "../../assets/support.png";
-import bg01 from "../../assets/r.png";
+import bg02 from "../../assets/student.jpg";
+import bg03 from "../../assets/foodDonation.jpg";
+import bg04 from "../../assets/healthDonation.jpg";
+import bg05 from "../../assets/childrenWork.jpg";
+import bg06 from "../../assets/womenPower.jpg";
+import bg07 from "../../assets/startup.jpg";
+import bg08 from "../../assets/renewableEnergy.jpg";
+import bg01 from "../../assets/library.jpg";
+import Slogan from "../sub-comp/slogan";
 
 export default function SupportCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,76 +22,87 @@ export default function SupportCarousel() {
       title: "Help For Food",
       category: "Food",
       description:
-        "Lorem Ipsum Dolor Sit Amet, Consete Sadipscing Elitr, Sed Diam Nonumy",
+        "Providing daily nutritious meals for vulnerable families and individuals worldwide.",
       progress: 75,
-      raised: "$8500",
-      goal: "$1,0000",
-      image: bg01,
+      raised: "$8,500",
+      goal: "$10,000",
+      image: bg03,
     },
     {
       id: 2,
       title: "Give Health Support",
       category: "Health",
       description:
-        "Lorem Ipsum Dolor Sit Amet, Consete Sadipscing Elitr, Sed Diam Nonumy",
+        "Medical care and health awareness for underserved rural and urban communities.",
       progress: 65,
-      raised: "$8500",
-      goal: "$1,0000",
-      image: bg01,
+      raised: "$8,500",
+      goal: "$10,000",
+      image: bg04,
     },
     {
       id: 3,
       title: "Children We Work With",
       category: "Health",
       description:
-        "Lorem Ipsum Dolor Sit Amet, Consete Sadipscing Elitr, Sed Diam Nonumy",
+        "Supporting children's health, education, and basic needs across all regions.",
       progress: 85,
-      raised: "$8500",
-      goal: "$1,0000",
-      image: bg01,
+      raised: "$8,500",
+      goal: "$10,000",
+      image: bg05,
     },
     {
       id: 4,
       title: "Help For Education",
-      category: "Food",
+      category: "Education",
       description:
-        "Lorem Ipsum Dolor Sit Amet, Consete Sadipscing Elitr, Sed Diam Nonumy",
+        "Empowering children with learning materials and school fees for education.",
       progress: 45,
-      raised: "$8500",
-      goal: "$1,0000",
-      image: bg01,
+      raised: "$8,500",
+      goal: "$10,000",
+      image: bg02,
     },
     {
       id: 5,
-      title: "Water For All",
-      category: "Water",
+      title: "Empowering Women",
+      category: "Empowerment",
       description:
-        "Lorem Ipsum Dolor Sit Amet, Consete Sadipscing Elitr, Sed Diam Nonumy",
-      progress: 55,
-      raised: "$8500",
-      goal: "$1,0000",
-      image: bg01,
+        "Training and funding women-led small businesses to boost local economies.",
+      progress: 60,
+      raised: "$7,200",
+      goal: "$10,000",
+      image: bg06,
     },
     {
       id: 6,
-      title: "Water For All",
-      category: "Water",
+      title: "Startup Grants For Women",
+      category: "Entrepreneurship",
       description:
-        "Lorem Ipsum Dolor Sit Amet, Consete Sadipscing Elitr, Sed Diam Nonumy",
-      progress: 55,
-      raised: "$8500",
-      goal: "$1,0000",
-      image: bg01,
+        "Seed funding and business mentorship for passionate women-led startups.",
+      progress: 50,
+      raised: "$6,000",
+      goal: "$10,000",
+      image: bg07,
     },
     {
       id: 7,
-      title: "Water For All",
-      category: "Water",
+      title: "Clean Energy For Communities",
+      category: "Renewable Energy",
       description:
-        "Lorem Ipsum Dolor Sit Amet, Consete Sadipscing Elitr, Sed Diam Nonumy",
-      progress: 55,
-      raised: "$8500",
-      goal: "$1,0000",
+        "Promoting solar energy and clean cooking alternatives in remote villages.",
+      progress: 70,
+      raised: "$7,800",
+      goal: "$10,000",
+      image: bg08,
+    },
+    {
+      id: 8,
+      title: "Build School Libraries",
+      category: "Education",
+      description:
+        "Equipping rural schools with books, furniture, and quiet reading spaces.",
+      progress: 40,
+      raised: "$5,500",
+      goal: "$10,000",
       image: bg01,
     },
   ];
@@ -165,19 +183,11 @@ export default function SupportCarousel() {
 
   return (
     <div className="flex flex-col w-full max-w-[1300px] mx-auto px-4 sm:px-8 mt-12 mb-12 overflow-hidden">
-      <div className="flex items-center mb-2">
-        <img
-          src={handshake}
-          alt="handshake_img"
-          className="w-auto h-6 sm:h-8 mr-2"
-        />
-        <p className="text-[#FFC107] font-[Caveat] font-bold text-xl sm:text-2xl">
-          Support Communities for a Better Future
-        </p>
+      <div className="mb-2">
+        <Slogan />
       </div>
-
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-0">
+        <h1 className="lg:text-5xl md:text-4xl font-extrabold tracking-wide mb-4 sm:mb-0">
           <span className="text-[#1E1E20]">Help & </span>
           <span className="text-[#FFC107]">Donate </span>
           <span className="text-[#1E1E20]">
@@ -233,18 +243,18 @@ export default function SupportCarousel() {
                   style={{ width: `${cardWidth}%` }}
                 >
                   <div
-                    className={`bg-white rounded-lg shadow-lg overflow-hidden border ${isActive ? "border-[#FFC107] border-2" : "border-gray-100"
+                    className={`bg-white rounded-2xl shadow-lg overflow-hidden border ${isActive ? "border-[#FFC107] border-2" : "border-gray-100"
                       }`}
                   >
                     <div
-                      className="relative h-32 sm:h-40 md:h-48 bg-cover bg-center"
+                      className="relative h-32 lg:h-56 sm:h-40 md:h-48 bg-cover bg-center"
                       style={{ backgroundImage: `url(${card.image})` }}
                     >
                       <div
                         className={`absolute top-2 sm:top-4 left-2 sm:left-4 ${isActive
                             ? "bg-[#FFC107] text-[#1E1E20]"
                             : "bg-[#1E1E20] text-white"
-                          } px-2 sm:px-3 py-1 rounded-md text-xs sm:text-sm`}
+                          } px-2 sm:px-3 py-1 rounded-xl text-xs sm:text-sm`}
                       >
                         {card.category}
                       </div>
@@ -275,9 +285,9 @@ export default function SupportCarousel() {
 
                       <div className="flex justify-start">
                         <button
-                          className={`py-1.5 sm:py-2 px-3 sm:px-4 rounded-md text-sm ${isActive
-                              ? "bg-[#FFC107] text-[#1E1E20] font-medium"
-                              : "bg-[#1E1E20] text-white"
+                          className={`py-1.5 sm:py-2 px-3 lg:py-3 lg:px-6 sm:px-4 rounded-3xl cursor-pointer text-sm ${isActive
+                              ? "bg-[#FFC107] text-[#1E1E20] font-bold"
+                              : "bg-[#1E1E20] text-white font-bold"
                             }`}
                         >
                           Donate Now
