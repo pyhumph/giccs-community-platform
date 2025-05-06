@@ -182,7 +182,7 @@ export default function SupportCarousel() {
   const cardWidth = 100 / cardsPerView;
 
   return (
-    <div className="flex flex-col w-full max-w-[1300px] mx-auto px-4 sm:px-8 mt-12 mb-12 overflow-hidden">
+    <div className="flex flex-col w-full max-w-[1300px] mx-auto px-4 sm:px-8 overflow-hidden">
       <div className="mb-2">
         <Slogan />
       </div>
@@ -243,22 +243,26 @@ export default function SupportCarousel() {
                   style={{ width: `${cardWidth}%` }}
                 >
                   <div
-                    className={`bg-white rounded-2xl shadow-lg overflow-hidden border ${isActive ? "border-[#FFC107] border-2" : "border-gray-100"
-                      }`}
+                    className={`bg-white rounded-2xl shadow-lg overflow-hidden border ${
+                      isActive ? "border-[#FFC107] border-2" : "border-gray-100"
+                    }`}
                   >
                     <div
                       className="relative h-32 lg:h-56 sm:h-40 md:h-48 bg-cover bg-center"
                       style={{ backgroundImage: `url(${card.image})` }}
                     >
+                      <div className="absolute inset-0 bg-black opacity-40"></div>
                       <div
-                        className={`absolute top-2 sm:top-4 left-2 sm:left-4 ${isActive
+                        className={`absolute top-2 sm:top-4 left-2 sm:left-4 z-10 ${
+                          isActive
                             ? "bg-[#FFC107] text-[#1E1E20]"
                             : "bg-[#1E1E20] text-white"
-                          } px-2 sm:px-3 py-1 rounded-xl text-xs sm:text-sm`}
+                        } px-2 sm:px-3 py-1 rounded-xl text-xs sm:text-sm`}
                       >
                         {card.category}
                       </div>
                     </div>
+
                     <div className="p-3 sm:p-4 md:p-5">
                       <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">
                         {card.title}
@@ -285,10 +289,11 @@ export default function SupportCarousel() {
 
                       <div className="flex justify-start">
                         <button
-                          className={`py-1.5 sm:py-2 px-3 lg:py-3 lg:px-6 sm:px-4 rounded-3xl cursor-pointer text-sm ${isActive
+                          className={`py-1.5 sm:py-2 px-3 lg:py-3 lg:px-6 sm:px-4 rounded-3xl cursor-pointer text-sm ${
+                            isActive
                               ? "bg-[#FFC107] text-[#1E1E20] font-bold"
                               : "bg-[#1E1E20] text-white font-bold"
-                            }`}
+                          }`}
                         >
                           Donate Now
                         </button>

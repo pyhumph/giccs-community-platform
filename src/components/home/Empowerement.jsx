@@ -217,7 +217,7 @@ const EmpowermentShowcase = () => {
   const visibleServices = getVisibleServices();
 
   return (
-    <section className="bg-white py-12 md:py-16 lg:py-24 overflow-hidden">
+    <section className="bg-white overflow-hidden">
       <div className="container mx-auto px-4 md:px-8">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">

@@ -157,7 +157,7 @@ export default function VolunteerTeamSection() {
   ];
 
   return (
-    <div className="w-full bg-white py-16">
+    <div className="w-full">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-center">
           <Slogan />

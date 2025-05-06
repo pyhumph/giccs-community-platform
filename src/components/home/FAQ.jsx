@@ -70,8 +70,8 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="w-full bg-white">
-      <div className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row gap-20">
+    <div className="w-full">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-20">
         <div className="md:w-1/2 mb-8 md:mb-0">
           <div className="flex justify-start mb-4">
             <Slogan />

@@ -39,7 +39,7 @@ const Spadebase = () => (
 
 const CommunityImpact = () => {
   return (
-    <section className="relative bg-[#fdf9f3] text-center py-12 md:py-16 lg:py-24">
+    <section className="relative bg-[#fdf9f3] text-center">
       <HangingLove />
       <LoveBag />
       <Spadebase />

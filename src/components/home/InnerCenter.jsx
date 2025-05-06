@@ -50,7 +50,7 @@ const InnerCenter = () => {
   }, []);
 
   return (
-    <section className="relative bg-white  py-16 px-12 md:px-8 lg:px-16">
+    <section className="relative md:px-8 lg:px-16">
       <style jsx>{`
         @keyframes parachuteFall {
           0% {
