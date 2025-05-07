@@ -12,6 +12,7 @@ import ImageMarquee from "../components/home/ImageMarquee";
 import Footer from "../components/sub-comp/Footer";
 import Newsletter from "../components/contact/Newsletter";
 import SectionWrapper from "../components/sub-comp/SectionWrapper";
+import BackToTopButton from "../components/sub-comp/BackToTopButton";
 
 function Home() {
   return (
@@ -55,6 +56,7 @@ function Home() {
       <ImageMarquee />
 
       <Newsletter />
+      <BackToTopButton />
 
       <Footer />
     </div>
