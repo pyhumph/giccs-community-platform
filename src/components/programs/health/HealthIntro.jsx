@@ -6,7 +6,7 @@ import Slogan from "../../sub-comp/slogan";
 
 const HealthIntro = () => {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-[#fdf9f3]">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Image Column */}

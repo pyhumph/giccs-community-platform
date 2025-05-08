@@ -63,7 +63,7 @@ const HealthImpact = () => {
   }, [counters, targets]);
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24 bg-[#fdf9f3]">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-stretch">
           {/* Left Column - Image */}

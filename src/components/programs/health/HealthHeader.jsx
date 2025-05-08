@@ -4,6 +4,7 @@ import headerImg from "../../../assets/health_02.jpg";
 import Slogan from "../../sub-comp/slogan";
 import healthcare from "../../../assets/handshake_health.png";
 import CTAButton from "../../sub-comp/Button";
+import LearnMoreButton from "../../sub-comp/LearnMoreBTN";
 
 const HealthHeader = () => {
   return (
@@ -36,7 +37,7 @@ const HealthHeader = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <CTAButton text="Volunteer Now" />
+          <LearnMoreButton text="Volunteer Now" />
           <CTAButton />
         </div>
       </div>
