@@ -1,0 +1,156 @@
+import React, { useState } from "react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import SectionWrapper from "../../sub-comp/SectionWrapper";
+
+function EntrepreneurshipTestimonials() {
+  const testimonials = [
+    {
+      id: 1,
+      name: "Zainab M.",
+      role: "Restaurant Owner",
+      quote:
+        "The business grant from GICCS helped me renovate my small restaurant and add new equipment. The business training taught me how to manage my finances better and market my services. My customer base has grown significantly.",
+      image: "/api/placeholder/100/100",
+      rating: 5,
+    },
+    {
+      id: 2,
+      name: "Sakina J.",
+      role: "Handcraft Entrepreneur",
+      quote:
+        "As a single mother, starting my own business was challenging. The support from GICCS has been invaluable. The grant helped me purchase materials in bulk, and the mentorship has guided me in building a sustainable business model.",
+      image: "/api/placeholder/100/100",
+      rating: 5,
+    },
+    {
+      id: 3,
+      name: "Fatima A.",
+      role: "Clothing Store Owner",
+      quote:
+        "Thanks to the Entrepreneurship & Business Grants program, I was able to move my clothing store to a better location and expand my inventory. The marketing workshops helped me create an online presence, which has brought in new customers.",
+      image: "/api/placeholder/100/100",
+      rating: 5,
+    },
+    {
+      id: 4,
+      name: "Khadija R.",
+      role: "Beauty Salon Owner",
+      quote:
+        "The grant from GICCS enabled me to purchase high-quality equipment for my salon. The business training helped me better manage my time and resources. My business has grown, and I now employ two other women from my community.",
+      image: "/api/placeholder/100/100",
+      rating: 5,
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + testimonials.length) % testimonials.length,
+    );
+  };
+
+  return (
+    <div className="bg-[#1E1E20] py-16 md:py-20 lg:py-24 relative overflow-hidden">
+      {/* Decorative circles */}
+      <div className="absolute top-0 left-0 w-32 h-32 md:w-48 md:h-48 rounded-full bg-[#FFC107]/10 -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-40 h-40 md:w-64 md:h-64 rounded-full bg-[#FFC107]/10 translate-x-1/2 translate-y-1/2"></div>
+
+      <SectionWrapper>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-sm md:text-base text-[#FFC107] font-bold mb-3">
+            TESTIMONIALS
+          </h2>
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
+            Success Stories from{" "}
+            <span className="text-[#FFC107]">Our Beneficiaries</span>
+          </h3>
+          <p className="text-gray-300 max-w-3xl mx-auto">
+            Hear directly from the women whose lives and businesses have been
+            transformed through our Entrepreneurship & Business Grants program.
+          </p>
+        </div>
+
+        {/* Testimonials carousel */}
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-xl p-6 md:p-8 lg:p-10 shadow-xl relative">
+            {/* Quote icon */}
+            <div className="absolute top-6 right-6 md:top-8 md:right-8 lg:top-10 lg:right-10">
+              <svg
+                className="w-12 h-12 text-[#FFC107]/30"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+            </div>
+
+            <div className="text-lg md:text-xl lg:text-2xl text-gray-800 italic mb-8">
+              "{testimonials[currentIndex].quote}"
+            </div>
+
+            <div className="flex items-center">
+              <img
+                src={testimonials[currentIndex].image}
+                alt={testimonials[currentIndex].name}
+                className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover mr-4"
+              />
+              <div>
+                <h4 className="font-bold text-lg text-[#1E1E20]">
+                  {testimonials[currentIndex].name}
+                </h4>
+                <p className="text-gray-600">
+                  {testimonials[currentIndex].role}
+                </p>
+                <div className="flex mt-1">
+                  {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-4 h-4 text-[#FFC107] fill-[#FFC107]"
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation buttons */}
+            <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 lg:bottom-10 lg:right-10 flex space-x-2">
+              <button
+                onClick={prevTestimonial}
+                className="p-2 rounded-full bg-gray-100 hover:bg-[#FFC107]/20 transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5 text-gray-700" />
+              </button>
+              <button
+                onClick={nextTestimonial}
+                className="p-2 rounded-full bg-gray-100 hover:bg-[#FFC107]/20 transition-colors"
+              >
+                <ChevronRight className="w-5 h-5 text-gray-700" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Dots navigation */}
+        <div className="flex justify-center mt-6 space-x-2">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${
+                index === currentIndex ? "bg-[#FFC107] w-5" : "bg-white/30"
+              }`}
+            />
+          ))}
+        </div>
+      </SectionWrapper>
+    </div>
+  );
+}
+
+export default EntrepreneurshipTestimonials;
