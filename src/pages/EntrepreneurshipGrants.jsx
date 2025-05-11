@@ -1,3 +1,4 @@
+import Newsletter from "../components/contact/Newsletter";
 import EntrepreneurshipDonate from "../components/programs/EntrepreneurshipGrants/EntrepreneurshipDonate";
 import EntrepreneurshipHeader from "../components/programs/EntrepreneurshipGrants/EntrepreneurshipHeader";
 import EntrepreneurshipImpact from "../components/programs/EntrepreneurshipGrants/EntrepreneurshipImpact";
@@ -5,6 +6,7 @@ import EntrepreneurshipIntro from "../components/programs/EntrepreneurshipGrants
 import EntrepreneurshipServices from "../components/programs/EntrepreneurshipGrants/EntrepreneurshipServices";
 import EntrepreneurshipTestimonials from "../components/programs/EntrepreneurshipGrants/EntrepreneurshipTestimonials";
 import BackToTopButton from "../components/sub-comp/BackToTopButton";
+import Footer from "../components/sub-comp/Footer";
 import Navbar from "../components/sub-comp/Navbar";
 
 function EntrepreneurshipGrants() {
@@ -17,7 +19,9 @@ function EntrepreneurshipGrants() {
       <EntrepreneurshipImpact />
       <EntrepreneurshipTestimonials />
       <EntrepreneurshipDonate />
+      <Newsletter />
       <BackToTopButton />
+      <Footer />
     </div>
   );
 }

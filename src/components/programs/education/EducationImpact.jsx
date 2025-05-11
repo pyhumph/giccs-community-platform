@@ -1,4 +1,5 @@
 import React from "react";
+import { ArrowUpRight } from "lucide-react";
 import SectionWrapper from "../../sub-comp/SectionWrapper";
 import eduImg from "../../../assets/education_03.jpg";
 import eduIcon from "../../../assets/education_04.png";
@@ -133,20 +134,7 @@ function EducationImpact() {
                   <span className="group-hover:text-white transition-colors duration-300">
                     Read More Stories
                   </span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 transition-all duration-300 transform group-hover:translate-x-1 group-hover:-rotate-45 group-hover:text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
+                  <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 transform rotate-0 group-hover:rotate-45 group-hover:translate-x-1 transition-all duration-300 group-hover:text-white" />
                 </div>
               </button>
             </div>

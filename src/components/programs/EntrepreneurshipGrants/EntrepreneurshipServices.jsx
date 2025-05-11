@@ -50,8 +50,8 @@ function EntrepreneurshipServices() {
   ];
 
   return (
-    <div className="bg-gray-50 py-16 md:py-20 lg:py-24">
-      <SectionWrapper>
+    <SectionWrapper>
+      <div className="container mx-auto px-4 py-16 md:py-20 lg:py-24">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-sm md:text-base text-[#FFC107] font-bold mb-3">
             WHAT WE OFFER
@@ -114,8 +114,8 @@ function EntrepreneurshipServices() {
             </div>
           </div>
         </div>
-      </SectionWrapper>
-    </div>
+      </div>
+    </SectionWrapper>
   );
 }
 
