@@ -6,7 +6,7 @@ import EducationImpact from "../components/programs/education/EducationImpact";
 import EducationTestimonials from "../components/programs/education/EducationTestimonials";
 import EducationDonate from "../components/programs/education/EducationDonate";
 import Navbar from "../components/sub-comp/Navbar";
-import Newsletter from "../components/contact/Newsletter";
+// import Newsletter from "../components/contact/Newsletter";
 import Footer from "../components/sub-comp/Footer";
 import BackToTopButton from "../components/sub-comp/BackToTopButton";
 
@@ -20,7 +20,7 @@ function Education() {
       <EducationImpact />
       <EducationTestimonials />
       <EducationDonate />
-      <Newsletter />
+      {/* <Newsletter /> */}
       <BackToTopButton />
       <Footer />
     </div>
