@@ -1,5 +1,6 @@
 import Newsletter from "../components/contact/Newsletter";
 import EntrepreneurshipDonate from "../components/programs/EntrepreneurshipGrants/EntrepreneurshipDonate";
+import EntrepreneurshipFAQ from "../components/programs/EntrepreneurshipGrants/EntrepreneurshipFAQ";
 import EntrepreneurshipHeader from "../components/programs/EntrepreneurshipGrants/EntrepreneurshipHeader";
 import EntrepreneurshipImpact from "../components/programs/EntrepreneurshipGrants/EntrepreneurshipImpact";
 import EntrepreneurshipIntro from "../components/programs/EntrepreneurshipGrants/EntrepreneurshipIntro";
@@ -19,6 +20,7 @@ function EntrepreneurshipGrants() {
       <EntrepreneurshipImpact />
       <EntrepreneurshipTestimonials />
       <EntrepreneurshipDonate />
+      <EntrepreneurshipFAQ />
       <Newsletter />
       <BackToTopButton />
       <Footer />

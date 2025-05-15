@@ -1,5 +1,7 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import CTAButton from "../../sub-comp/Button";
+import LearnMoreButton from "../../sub-comp/LearnMoreBTN";
 
 function EntrepreneurshipDonate() {
   return (
@@ -22,13 +24,8 @@ function EntrepreneurshipDonate() {
                 economic independence and community transformation.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-[#FFC107] text-[#1E1E20] font-bold px-8 py-4 rounded-full flex items-center gap-2 hover:bg-[#FFD54F] transition-colors group">
-                  <span>Donate Now</span>
-                  <ArrowUpRight className="w-5 h-5 transition-transform group-hover:rotate-45" />
-                </button>
-                <button className="border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors">
-                  Become a Partner
-                </button>
+                <CTAButton text="Donate Now" />
+                <LearnMoreButton text="Become a Partner" />
               </div>
             </div>
 

@@ -8,6 +8,8 @@ import {
   BarChart,
 } from "lucide-react";
 import SectionWrapper from "../../sub-comp/SectionWrapper";
+import CTAButton from "../../sub-comp/Button";
+import LearnMoreButton from "../../sub-comp/LearnMoreBTN";
 
 function EntrepreneurshipServices() {
   const services = [
@@ -96,12 +98,8 @@ function EntrepreneurshipServices() {
                 impact in their communities.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-[#FFC107] text-[#1E1E20] px-6 py-3 rounded-full font-bold hover:bg-white transition-all duration-300">
-                  Apply Now
-                </button>
-                <button className="border-2 border-white px-6 py-[10px] rounded-full font-bold hover:border-[#FFC107] hover:text-[#FFC107] transition-all duration-300">
-                  Contact Us
-                </button>
+                <CTAButton text="Apply Now" />
+                <LearnMoreButton text="Contact Us" />
               </div>
             </div>
             <div className="hidden lg:block lg:col-span-2 relative">
