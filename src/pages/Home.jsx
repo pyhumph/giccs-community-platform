@@ -10,9 +10,9 @@ import FAQSection from "../components/home/FAQ";
 import NewsletterSection from "../components/home/NewsLetter";
 import ImageMarquee from "../components/home/ImageMarquee";
 import Footer from "../components/sub-comp/Footer";
-import Newsletter from "../components/contact/Newsletter";
 import SectionWrapper from "../components/sub-comp/SectionWrapper";
 import BackToTopButton from "../components/sub-comp/BackToTopButton";
+import Subscribe from "../components/contact/Subscribe";
 
 function Home() {
   return (
@@ -55,9 +55,9 @@ function Home() {
 
       <ImageMarquee />
 
-      <Newsletter />
       <BackToTopButton />
 
+      <Subscribe />
       <Footer />
     </div>
   );

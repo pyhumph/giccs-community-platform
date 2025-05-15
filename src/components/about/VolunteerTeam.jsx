@@ -74,7 +74,7 @@ const VolunteerTeamSection = () => {
   };
 
   return (
-    <section className="px-4 max-w-7xl mx-auto">
+    <section className="px-4 mb-8 max-w-7xl mx-auto">
       {/* Header with Logo */}
       <div className="flex justify-between items-center mb-6">
         <div className="flex items-center text-green-800">

@@ -7,7 +7,7 @@ import HealthTestimonials from "../components/programs/health/HealthTestimonials
 import HealthDonate from "../components/programs/health/HealthDonate";
 import Footer from "../components/sub-comp/Footer";
 import Navbar from "../components/sub-comp/Navbar";
-import Newsletter from "../components/contact/Newsletter";
+import Subscribe from "../components/contact/Subscribe";
 import BackToTopButton from "../components/sub-comp/BackToTopButton";
 
 const Health = () => {
@@ -20,7 +20,7 @@ const Health = () => {
       <HealthImpact />
       <HealthTestimonials />
       <HealthDonate />
-      <Newsletter />
+      <Subscribe />
       <BackToTopButton />
       <Footer />
     </div>

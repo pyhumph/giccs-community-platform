@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Health from "./pages/Health";
 import Education from "./pages/Education";
 import EntrepreneurshipGrants from "./pages/EntrepreneurshipGrants";
+import Donate from "./pages/Donate";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           path="/programs/entrepreneurship-business-grants"
           element={<EntrepreneurshipGrants />}
         />
+
+        <Route path="/donate" element={<Donate />} />
       </Routes>
     </Router>
   );
