@@ -1,6 +1,6 @@
 import React from "react";
 
-const Newsletter = () => {
+const Subscribe = () => {
   return (
     <div className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
@@ -32,4 +32,4 @@ const Newsletter = () => {
   );
 };
 
-export default Newsletter;
+export default Subscribe;

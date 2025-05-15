@@ -5,8 +5,8 @@ import ContactForm from "./ContactForm";
 import ContactInfo from "./ContactInfo";
 import ContactTitle from "./ContactTitle";
 import GoogleMap from "./GoogleMap";
-import Newsletter from "./Newsletter";
 import Footer from "../sub-comp/Footer.jsx";
+import Subscribe from "./Subscribe.jsx";
 
 const ContactUs = () => {
   return (
@@ -39,7 +39,7 @@ const ContactUs = () => {
       </div>
 
       {/* Newsletter Section */}
-      <Newsletter />
+      <Subscribe />
 
       {/* Footer */}
       <Footer />

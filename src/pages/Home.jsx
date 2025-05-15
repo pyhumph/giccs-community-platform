@@ -13,6 +13,7 @@ import Footer from "../components/sub-comp/Footer";
 import Newsletter from "../components/contact/Newsletter";
 import SectionWrapper from "../components/sub-comp/SectionWrapper";
 import BackToTopButton from "../components/sub-comp/BackToTopButton";
+import Subscribe from "../components/contact/Subscribe";
 
 function Home() {
   return (
@@ -58,6 +59,7 @@ function Home() {
       <Newsletter />
       <BackToTopButton />
 
+      <Subscribe />
       <Footer />
     </div>
   );
