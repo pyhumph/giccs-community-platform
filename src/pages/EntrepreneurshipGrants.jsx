@@ -1,4 +1,4 @@
-import Newsletter from "../components/contact/Newsletter";
+import Subscribe from "../components/contact/Subscribe";
 import EntrepreneurshipDonate from "../components/programs/EntrepreneurshipGrants/EntrepreneurshipDonate";
 import EntrepreneurshipFAQ from "../components/programs/EntrepreneurshipGrants/EntrepreneurshipFAQ";
 import EntrepreneurshipHeader from "../components/programs/EntrepreneurshipGrants/EntrepreneurshipHeader";
@@ -21,7 +21,7 @@ function EntrepreneurshipGrants() {
       <EntrepreneurshipTestimonials />
       <EntrepreneurshipDonate />
       <EntrepreneurshipFAQ />
-      <Newsletter />
+      <Subscribe />
       <BackToTopButton />
       <Footer />
     </div>

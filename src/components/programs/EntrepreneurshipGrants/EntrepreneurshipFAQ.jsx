@@ -13,8 +13,9 @@ const FAQItem = ({ question, answer }) => {
       >
         <h3 className="text-lg font-medium text-gray-800">{question}</h3>
         <svg
-          className={`w-6 h-6 text-yellow-500 transform transition-transform duration-300 ${isOpen ? "rotate-180" : ""
-            }`}
+          className={`w-6 h-6 text-yellow-500 transform transition-transform duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
