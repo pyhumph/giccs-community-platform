@@ -44,10 +44,11 @@ function Navbar() {
 
       {/* Top Contact Bar - Outside the sticky header */}
       <div
-        className={`w-[95%] md:max-w-[88%] rounded-b-2xl mx-auto bg-[#1E1E20] text-white text-xs md:text-[0.7rem] lg:text-[0.8rem] px-3 md:px-6 lg:px-8 transition-all duration-300 ease-in-out ${scrolled
+        className={`w-[95%] md:max-w-[88%] rounded-b-2xl mx-auto bg-[#1E1E20] text-white text-xs md:text-[0.7rem] lg:text-[0.8rem] px-3 md:px-6 lg:px-8 transition-all duration-300 ease-in-out ${
+          scrolled
             ? "opacity-0 max-h-0 py-0 overflow-hidden"
             : "opacity-100 max-h-24 py-2 md:py-3"
-          }`}
+        }`}
       >
         {/* Mobile: Stack vertically */}
         <div className="flex flex-col md:hidden space-y-2 items-center">
@@ -121,22 +122,25 @@ function Navbar() {
 
       {/* Main Nav Bar - This becomes sticky */}
       <header
-        className={`w-full bg-white z-50 transition-all duration-300 ease-in-out ${scrolled ? "fixed top-0 left-0" : "relative"
-          }`}
+        className={`w-full bg-white z-50 transition-all duration-300 ease-in-out ${
+          scrolled ? "fixed top-0 left-0" : "relative"
+        }`}
       >
         <nav
-          className={`flex flex-wrap justify-between items-center px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 py-2 md:py-3 lg:py-4 text-[0.8rem] transition-all duration-300 ease-in-out ${scrolled ? "shadow-lg" : "shadow-md"
-            }`}
+          className={`flex flex-wrap justify-between items-center px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 py-2 md:py-3 lg:py-4 text-[0.8rem] transition-all duration-300 ease-in-out ${
+            scrolled ? "shadow-lg" : "shadow-md"
+          }`}
         >
           {/*Logo*/}
           <div className="flex items-center space-x-2 justify-self-start">
             <img
               src={logo}
               alt="logo"
-              className={`transition-all duration-300 ease-in-out ${scrolled
+              className={`transition-all duration-300 ease-in-out ${
+                scrolled
                   ? "h-8 md:h-10 lg:h-12 xl:h-16"
                   : "h-10 md:h-12 lg:h-16 xl:h-20"
-                } w-auto`}
+              } w-auto`}
             />
           </div>
 
@@ -280,8 +284,9 @@ function Navbar() {
           <div className="hidden md:flex items-stretch relative rounded-full">
             {/* Navigation Links */}
             <ul
-              className={`flex space-x-2 md:space-x-3 lg:space-x-6 xl:space-x-12 items-center rounded-l-full font-bold text-[#1E1E20] bg-[#FFC107] px-4 md:px-6 lg:px-8 xl:px-12 h-full text-xs md:text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem] transition-all duration-300 ease-in-out ${scrolled ? "py-4 md:py-5 lg:py-6" : "py-4 md:py-5 lg:py-6"
-                }`}
+              className={`flex space-x-2 md:space-x-3 lg:space-x-6 xl:space-x-12 items-center rounded-l-full font-bold text-[#1E1E20] bg-[#FFC107] px-4 md:px-6 lg:px-8 xl:px-12 h-full text-xs md:text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem] transition-all duration-300 ease-in-out ${
+                scrolled ? "py-4 md:py-5 lg:py-6" : "py-4 md:py-5 lg:py-6"
+              }`}
             >
               <li className="flex items-center">
                 <a
@@ -356,7 +361,7 @@ function Navbar() {
               </li>
               <li className="hidden xl:flex items-center">
                 <a
-                  href="#"
+                  href="/inner-center"
                   className="transition-opacity duration-300 hover:opacity-75"
                 >
                   Inner Center
@@ -447,16 +452,18 @@ function Navbar() {
 
             {/* Call Us Now Button */}
             <div
-              className={`bg-[#FFC107] px-4 md:px-6 lg:px-10 xl:px-16 text-black font-bold flex items-center h-full rounded-r-full transition-all duration-300 ease-in-out ${scrolled ? "py-2 md:py-2 lg:py-3" : "py-3 md:py-[0.80rem]"
-                }`}
+              className={`bg-[#FFC107] px-4 md:px-6 lg:px-10 xl:px-16 text-black font-bold flex items-center h-full rounded-r-full transition-all duration-300 ease-in-out ${
+                scrolled ? "py-2 md:py-2 lg:py-3" : "py-3 md:py-[0.80rem]"
+              }`}
             >
               <img
                 src={liveChat}
                 alt="contact-icon"
-                className={`transition-all duration-300 ease-in-out ${scrolled
+                className={`transition-all duration-300 ease-in-out ${
+                  scrolled
                     ? "w-auto h-4 md:h-5 lg:h-6 xl:h-7"
                     : "w-auto h-5 md:h-6 lg:h-8 xl:h-9"
-                  } mr-2 md:mr-3`}
+                } mr-2 md:mr-3`}
               />
               <div className="flex flex-col leading-tight">
                 <span className="text-[8px] md:text-[9px] lg:text-[10px] xl:text-[11px] font-bold opacity-75 tracking-wide text-[#1E1E20]">
@@ -472,17 +479,19 @@ function Navbar() {
           {/* Right Side Icons - Desktop Only */}
           <div className="hidden md:flex items-center space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-12 justify-self-end">
             <Search
-              className={`transition-all duration-300 ease-in-out ${scrolled
+              className={`transition-all duration-300 ease-in-out ${
+                scrolled
                   ? "w-auto h-4 md:h-4 lg:h-5 xl:h-6"
                   : "w-auto h-5 md:h-5 lg:h-6 xl:h-8"
-                } text-black cursor-pointer`}
+              } text-black cursor-pointer`}
             />
             <button
               onClick={() => navigate("/donate")}
-              className={`bg-[#FFC107] text-[#1E1E20] cursor-pointer font-bold px-4 md:px-5 lg:px-8 xl:px-10 rounded-full relative group overflow-hidden transition-all duration-300 text-xs md:text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem] ${scrolled
+              className={`bg-[#FFC107] text-[#1E1E20] cursor-pointer font-bold px-4 md:px-5 lg:px-8 xl:px-10 rounded-full relative group overflow-hidden transition-all duration-300 text-xs md:text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem] ${
+                scrolled
                   ? "py-2 md:py-2 lg:py-3 xl:py-[22px]"
                   : "py-3 md:py-3 lg:py-4 xl:py-[22px]"
-                }`}
+              }`}
             >
               <span className="absolute inset-0 bg-[#1E1E20] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
               <div className="flex items-center space-x-1 md:space-x-2 relative z-10">

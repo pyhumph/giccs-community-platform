@@ -6,6 +6,7 @@ import Health from "./pages/Health";
 import Education from "./pages/Education";
 import EntrepreneurshipGrants from "./pages/EntrepreneurshipGrants";
 import Donate from "./pages/Donate";
+import InnerCenter from "./pages/InnerCenter";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           path="/programs/entrepreneurship-business-grants"
           element={<EntrepreneurshipGrants />}
         />
+        <Route path="/inner-center" element={<InnerCenter />} />
 
         <Route path="/donate" element={<Donate />} />
       </Routes>
