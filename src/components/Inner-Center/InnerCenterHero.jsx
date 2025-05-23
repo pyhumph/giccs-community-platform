@@ -12,7 +12,7 @@ const InnerCenterHero = ({ onShowAgreement }) => {
           alt="Inner Center Yoga Space"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div className="absolute inset-0 bg-black/80"></div>
         {/* Animated overlay pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-transparent to-yellow-900 opacity-40"></div>
       </div>
@@ -38,15 +38,15 @@ const InnerCenterHero = ({ onShowAgreement }) => {
         {/* Tagline */}
         <div className="inline-flex items-center gap-2 bg-yellow-400 bg-opacity-20 backdrop-blur-sm border border-yellow-400 border-opacity-30 rounded-full px-6 py-2 mb-8 animate-fade-in-up">
           <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-          <span className="text-yellow-400 font-medium text-sm sm:text-base">
+          <span className="text-[#1E1E20] font-medium text-sm sm:text-base">
             Holistic Wellness & Community Empowerment
           </span>
         </div>
 
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up animation-delay-200">
-          Inner
-          <span className="block text-yellow-400 relative">
+          Inner{" "}
+          <span className="text-yellow-400 relative">
             Center
             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-yellow-400 rounded-full animate-pulse"></div>
           </span>

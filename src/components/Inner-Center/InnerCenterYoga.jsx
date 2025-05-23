@@ -9,6 +9,10 @@ import {
   Clock,
   MapPin,
 } from "lucide-react";
+import yogaBg01 from "../../assets/yoga-01.jpg";
+import students from "../../assets/shool&student.jpg";
+import elder from "../../assets/elder.jpg";
+import meditation from "../../assets/meditation.jpg";
 
 const InnerCenterYoga = () => {
   const [inView, setInView] = useState(false);
@@ -71,7 +75,7 @@ const InnerCenterYoga = () => {
       description:
         "Natural healing approaches using holistic treatment methods",
       time: "Flexible",
-      level: "Consultation Based",
+      level: "Consultation",
     },
     {
       icon: <Heart className="w-6 h-6" />,
@@ -95,7 +99,7 @@ const InnerCenterYoga = () => {
         "Emotional Regulation",
         "Physical Fitness",
       ],
-      image: "/api/placeholder/400/300",
+      image: students,
       color: "from-blue-500 to-cyan-500",
     },
     {
@@ -109,7 +113,7 @@ const InnerCenterYoga = () => {
         "Social Connection",
         "Mental Wellness",
       ],
-      image: "/api/placeholder/400/300",
+      image: elder,
       color: "from-purple-500 to-pink-500",
     },
     {
@@ -123,7 +127,7 @@ const InnerCenterYoga = () => {
         "Personal Growth",
         "Community Building",
       ],
-      image: "/api/placeholder/400/300",
+      image: meditation,
       color: "from-yellow-500 to-orange-500",
     },
   ];
@@ -146,8 +150,8 @@ const InnerCenterYoga = () => {
           className={`text-center mb-16 transform transition-all duration-1000 ${inView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
           <div className="inline-flex items-center gap-2 bg-yellow-400 bg-opacity-20 backdrop-blur-sm border border-yellow-400 border-opacity-30 rounded-full px-6 py-2 mb-6">
-            <Leaf className="w-5 h-5 text-yellow-400" />
-            <span className="text-yellow-400 font-semibold">
+            <Leaf className="w-5 h-5 text-[#1E1E20]" />
+            <span className="text-[#1E1E20] font-semibold">
               Yoga Initiative
             </span>
           </div>
@@ -177,21 +181,19 @@ const InnerCenterYoga = () => {
           <div className="bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-full p-2 border border-gray-700">
             <button
               onClick={() => setActiveTab("activities")}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                activeTab === "activities"
+              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === "activities"
                   ? "bg-yellow-400 text-gray-900 shadow-lg"
                   : "text-gray-300 hover:text-white hover:bg-gray-700"
-              }`}
+                }`}
             >
               Our Activities
             </button>
             <button
               onClick={() => setActiveTab("audiences")}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                activeTab === "audiences"
+              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === "audiences"
                   ? "bg-yellow-400 text-gray-900 shadow-lg"
                   : "text-gray-300 hover:text-white hover:bg-gray-700"
-              }`}
+                }`}
             >
               Who We Serve
             </button>
@@ -208,7 +210,7 @@ const InnerCenterYoga = () => {
               <div className="relative">
                 <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                   <img
-                    src="/api/placeholder/600/400"
+                    src={yogaBg01}
                     alt="Yoga Practice at Inner Center"
                     className="w-full h-96 object-cover"
                   />
@@ -252,11 +254,11 @@ const InnerCenterYoga = () => {
                       </div>
                       <div className="flex-1">
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-                          <h4 className="font-bold text-xl group-hover:text-yellow-400 transition-colors duration-300">
+                          <h4 className="font-bold text-xl group-hover:text-white transition-colors duration-300">
                             {activity.title}
                           </h4>
                           <div className="flex gap-2 mt-2 sm:mt-0">
-                            <span className="text-xs bg-yellow-400 bg-opacity-20 text-yellow-400 px-2 py-1 rounded-full">
+                            <span className="text-xs bg-yellow-400 bg-opacity-20 text-[#1E1E20] px-2 py-1 rounded-full">
                               <Clock className="w-3 h-3 inline mr-1" />
                               {activity.time}
                             </span>

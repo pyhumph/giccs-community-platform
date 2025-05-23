@@ -1,126 +1,128 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import SectionWrapper from "../../sub-comp/SectionWrapper";
+import { useState } from "react";
+import Slogan from "../../sub-comp/slogan";
+import children from "../../../assets/children-playing.png";
+import mother from "../../../assets/mother-child.png";
 
-const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const FAQItem = ({ question, answer, isOpen, toggle }) => {
   return (
-    <div className="border-b border-gray-200 py-4">
+    <div className="mb-8">
       <button
-        className="flex justify-between items-center w-full text-left focus:outline-none"
-        onClick={() => setIsOpen(!isOpen)}
+        className={`w-full text-left py-5 px-8 rounded-full flex justify-between items-center ${isOpen ? "bg-teal-700 border border-gray-300 text-white rounded-t-4xl rounded-b-none" : "bg-transparent border-2 border-gray-300 text-black"}`}
+        onClick={toggle}
       >
-        <h3 className="text-lg font-medium text-gray-800">{question}</h3>
+        <span className="font-semibold text-xl">{question}</span>
         <svg
-          className={`w-6 h-6 text-yellow-500 transform transition-transform duration-300 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
+          className={`h-6 w-6 transition-transform ${isOpen ? "transform rotate-180" : ""}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth="2"
+            strokeWidth={2}
             d="M19 9l-7 7-7-7"
-          ></path>
+          />
         </svg>
       </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <p className="mt-3 text-gray-600">{answer}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <div className="p-4 bg-white rounded-b-4xl border border-gray-200 border-t-0">
+          <p className="text-gray-600 leading-8">{answer}</p>
+        </div>
+      )}
     </div>
   );
 };
 
-const EntrepreneurshipFAQ = () => {
+export default function EntrepreneurshipFAQ() {
+  const [openIndex, setOpenIndex] = useState(0);
+
   const faqs = [
     {
+      id: 1,
       question: "How much funding can I apply for?",
       answer:
         "Grant amounts vary based on the business needs, stage of development, and potential impact. Generally, our grants range from $500 to $5,000. The exact amount will be determined during the application review process based on your specific business needs and growth plan.",
     },
     {
+      id: 2,
       question: "What can the grant money be used for?",
       answer:
         "Grant funds can be used for various business purposes, including purchasing equipment or inventory, marketing and advertising, website development, business training or certifications, hiring staff, renting commercial space, or product development. All proposed uses must be clearly outlined in your application and directly related to business growth.",
     },
     {
+      id: 3,
       question: "What does the application process involve?",
       answer:
         "The application process includes completing an online application form, submitting a business plan or proposal, providing proof of community membership, participating in an interview with our selection committee, and demonstrating how the grant will impact your business and community. Shortlisted applicants may be asked to present their business in person.",
     },
     {
+      id: 4,
       question: "How often do you accept applications?",
       answer:
         "We accept applications on a quarterly basis. The next application window opens on June 1st, 2023. However, you can express your interest at any time by completing the pre-application form on our website, and we'll notify you when applications open.",
     },
+
     {
-      question: "What kind of business training do you provide?",
-      answer:
-        "Our business training program covers essential topics such as business planning, financial management, marketing strategies, digital skills, customer service, product development, and operational efficiency. Training is delivered through workshops, webinars, one-on-one coaching sessions, and online courses tailored to your business needs.",
-    },
-    {
+      id: 5,
       question: "Do I need to repay the grant?",
       answer:
         "No, our grants are not loans and do not need to be repaid. However, grant recipients are expected to participate in our business training program, attend networking events, and provide regular updates on their business progress. We also encourage recipients to mentor future entrepreneurs in the community when possible.",
     },
-    {
-      question: "Can I apply if my business is just an idea?",
-      answer:
-        "Our program is primarily designed for women who already have an ongoing business. However, we do have a special track for promising business ideas in the early concept stage. These applicants will need to demonstrate a well-researched business plan, market analysis, and commitment to launching their business within 3-6 months of receiving support.",
-    },
-    {
-      question: "Am I eligible if I have a part-time business?",
-      answer:
-        "Yes, part-time businesses are eligible. We understand that many entrepreneurs start their businesses while maintaining other employment. Your application will be evaluated based on your business potential, growth plans, and commitment to developing your venture, not on whether it's currently full-time or part-time.",
-    },
-    {
-      question: "How long does it take to receive funding after approval?",
-      answer:
-        "Once approved, funding is typically disbursed within 2-4 weeks. The exact timeline depends on the completion of all required paperwork, attendance at orientation sessions, and finalization of your business development plan with our advisors.",
-    },
   ];
 
-  return (
-    <SectionWrapper
-      id="faq"
-      title="Frequently Asked Questions"
-      subtitle="Find answers to common questions about our entrepreneurship program"
-      className="bg-gray-50"
-    >
-      <div className="max-w-3xl mx-auto">
-        {faqs.map((faq, index) => (
-          <FAQItem key={index} question={faq.question} answer={faq.answer} />
-        ))}
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
-        <div className="mt-8 text-center">
-          <p className="text-gray-600 mb-4">
-            Don't see your question answered?
-          </p>
-          <a
-            href="#contact"
-            className="inline-block px-6 py-3 bg-yellow-500 text-white font-medium rounded-md hover:bg-yellow-600 transition-colors"
-          >
-            Contact Us
-          </a>
+  return (
+    <div className="w-full">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-20">
+        <div className="md:w-1/2 mb-8 md:mb-0">
+          <div className="flex justify-start mb-4">
+            <Slogan />
+          </div>
+          <h2 className="text-6xl font-extrabold mb-10">
+            <span className="text-[#1E1E20]">Frequently </span>
+            <span className="text-[#FFC107]">Asked</span>
+            <br />
+            <span className="text-dark-green">Questions</span>
+          </h2>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <FAQItem
+                key={faq.id}
+                question={faq.question}
+                answer={faq.answer}
+                isOpen={index === openIndex}
+                toggle={() => toggleFAQ(index)}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="md:w-1/2 md:pl-8 relative">
+          <div className="bg-teal-700 h-full w-full absolute -z-10 right-0"></div>
+          <div className="relative z-10 p-6">
+            <div className="relative">
+              <img
+                src={children}
+                alt="Children playing"
+                className="w-[98%] rounded-2xl border-10 border-white shadow-2xl shadow-black h-[43rem] object-cover"
+              />
+              <div className="absolute -right-40 bottom-[12rem]">
+                <img
+                  src={mother}
+                  alt="Mother with child"
+                  className="rounded-2xl w-full h-full border-10 border-white shadow-2xl shadow-black object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </SectionWrapper>
+    </div>
   );
-};
-
-export default EntrepreneurshipFAQ;
+}

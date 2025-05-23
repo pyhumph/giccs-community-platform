@@ -7,6 +7,7 @@ import Education from "./pages/Education";
 import EntrepreneurshipGrants from "./pages/EntrepreneurshipGrants";
 import Donate from "./pages/Donate";
 import InnerCenter from "./pages/InnerCenter";
+import Newsletter from "./pages/Newsletter";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           element={<EntrepreneurshipGrants />}
         />
         <Route path="/inner-center" element={<InnerCenter />} />
+        <Route path="/newsletter" element={<Newsletter />} />
 
         <Route path="/donate" element={<Donate />} />
       </Routes>
