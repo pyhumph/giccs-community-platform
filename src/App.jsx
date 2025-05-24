@@ -8,6 +8,7 @@ import EntrepreneurshipGrants from "./pages/EntrepreneurshipGrants";
 import Donate from "./pages/Donate";
 import InnerCenter from "./pages/InnerCenter";
 import Newsletter from "./pages/Newsletter";
+import NewsletterDetailPage from "./components/newsletter/pages/NewsletterDetail";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         />
         <Route path="/inner-center" element={<InnerCenter />} />
         <Route path="/newsletter" element={<Newsletter />} />
+        <Route path="/newsletter/:id" element={<NewsletterDetailPage />} />
 
         <Route path="/donate" element={<Donate />} />
       </Routes>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Calendar,
   ArrowRight,
@@ -106,10 +107,14 @@ const NewsletterCard = ({ newsletter, featured = false }) => {
         </div>
 
         {/* Action Button */}
-        <button className="group/btn w-full bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+
+        <Link
+          to={`/newsletter/${newsletter.id}`}
+          className="group/btn w-full bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+        >
           Read Newsletter
           <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-        </button>
+        </Link>
       </div>
     </article>
   );
