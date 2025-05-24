@@ -8,6 +8,7 @@ import EntrepreneurshipGrants from "./pages/EntrepreneurshipGrants";
 import Donate from "./pages/Donate";
 import InnerCenter from "./pages/InnerCenter";
 import Newsletter from "./pages/Newsletter";
+import Application from "./pages/Application";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/health" element={<Health />} />
         <Route path="/programs/education" element={<Education />} />
+        <Route path="/donation/application" element={<Application />} />
         <Route
           path="/programs/entrepreneurship-business-grants"
           element={<EntrepreneurshipGrants />}
