@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SectionWrapper from "../../sub-comp/SectionWrapper";
+import Slogan from "../../sub-comp/slogan";
+import eduIcon from "../../../assets/education_04.png";
 
 function EducationTestimonials() {
     const testimonials = [
@@ -57,9 +59,13 @@ function EducationTestimonials() {
                 <div className="container mx-auto px-4">
                     {/* Section Header */}
                     <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-                        <span className="inline-block py-1 px-3 bg-[#FFC107]/20 text-[#FFC107] font-medium rounded-full text-sm mb-4">
+                        <div className="flex justify-center">
+                            <Slogan text="Our Student Voice" image={eduIcon} />
+                        </div>
+                        {/*<span className="inline-block py-1 px-3 bg-[#FFC107]/20 text-[#FFC107] font-medium rounded-full text-sm mb-4">
                             Student Voices
                         </span>
+                        */}
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Hear From Our Students
                         </h2>

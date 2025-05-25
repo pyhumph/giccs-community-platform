@@ -1,6 +1,8 @@
 import React from "react";
 import { ArrowRight, Play, FileText } from "lucide-react";
 import innerCenterbg from "../../assets/inner-center-bg.jpg";
+import cityIcon from "../../assets/city (1).png";
+import Slogan from "../sub-comp/slogan";
 
 const InnerCenterHero = ({ onShowAgreement }) => {
   return (
@@ -36,12 +38,17 @@ const InnerCenterHero = ({ onShowAgreement }) => {
       {/* Content */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Tagline */}
-        <div className="inline-flex items-center gap-2 bg-yellow-400 bg-opacity-20 backdrop-blur-sm border border-yellow-400 border-opacity-30 rounded-full px-6 py-2 mb-8 animate-fade-in-up">
-          <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-          <span className="text-[#1E1E20] font-medium text-sm sm:text-base">
-            Holistic Wellness & Community Empowerment
-          </span>
+        <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+        <div className="flex justify-center">
+          <Slogan
+            text="Holistic Wellness & Community Empowerment"
+            image={cityIcon}
+          />
         </div>
+        {/*<span className="text-[#1E1E20] font-medium text-sm sm:text-base">
+            Ho0listic Wellness & Community Empowerment
+          </span>
+          */}
 
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up animation-delay-200">

@@ -6,8 +6,10 @@ import womanBusiness from "../../../assets/entrepreneurship-woman_02.jpg";
 import successWoman from "../../../assets/entrepreneur-woman-03.jpg";
 import workshop from "../../../assets/woman-entrepreneur.jpg";
 import fatma from "../../../assets/woman-modified.png";
+import businessIcon from "../../../assets/business-strategy.png";
 import SectionWrapper from "../../sub-comp/SectionWrapper";
 import NumberCounter from "../../NumberCounter";
+import Slogan from "../../sub-comp/slogan";
 
 function EntrepreneurshipImpact() {
   const stats = [
@@ -43,7 +45,11 @@ function EntrepreneurshipImpact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left side - Content */}
           <div>
-            <h2 className="text-sm md:text-base text-[#FFC107] font-bold mb-3">
+            <Slogan
+              text="Empowering Women, Strengthening Communities"
+              image={businessIcon}
+            />
+            <h2 className="text-sm md:text-base lg:text-2xl text-[#FFC107] font-extrabold font-[Caveat] mb-3">
               OUR IMPACT
             </h2>
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1E1E20] mb-6">

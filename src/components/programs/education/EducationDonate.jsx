@@ -1,6 +1,11 @@
 import React from "react";
 import SectionWrapper from "../../sub-comp/SectionWrapper";
 import Button from "../../sub-comp/Button";
+import eduImg from "../../../assets/education-001.jpg";
+import eduIcon from "../../../assets/education_04.png";
+import EducationalPartner from "./EducationalPartner";
+import Slogan from "../../sub-comp/slogan";
+import LearnMoreButton from "../../sub-comp/LearnMoreBTN";
 
 function EducationDonate() {
     return (
@@ -10,9 +15,7 @@ function EducationDonate() {
                     <div className="flex flex-col lg:flex-row">
                         {/* Content */}
                         <div className="w-full lg:w-3/5 p-8 md:p-12 text-white">
-                            <span className="inline-block py-1 px-3 bg-[#FFC107]/20 text-[#FFC107] font-medium rounded-full text-sm mb-4">
-                                Support Our Cause
-                            </span>
+                            <Slogan text="Support Our Cause" image={eduIcon} />
                             <h2 className="text-3xl md:text-4xl font-bold mb-6">
                                 Help Us Educate More Students
                             </h2>
@@ -71,9 +74,11 @@ function EducationDonate() {
 
                             <div className="flex flex-wrap gap-4">
                                 <Button>Donate Now</Button>
-                                <button className="bg-transparent hover:bg-white/10 text-white border-2 border-white font-bold py-3 px-8 rounded-full transition duration-300">
-                                    Contact Us
+                                <LearnMoreButton text="Contact Us" />
+                                {/*<button className="bg-transparent hover:bg-white/10 text-white border-2 border-white font-bold py-3 px-8 rounded-full transition duration-300">
+                                    Contact Us..
                                 </button>
+                                */}
                             </div>
                         </div>
 
@@ -81,7 +86,7 @@ function EducationDonate() {
                         <div className="w-full lg:w-2/5 flex items-center justify-center bg-[#FFC107]/10">
                             <div className="relative w-full h-full min-h-[300px]">
                                 <img
-                                    src="/api/placeholder/800/800"
+                                    src={eduImg}
                                     alt="Support Education"
                                     className="object-cover w-full h-full"
                                 />
@@ -102,28 +107,7 @@ function EducationDonate() {
 
                 {/* Partners Section */}
                 <div className="mt-16 text-center">
-                    <h3 className="text-2xl font-bold mb-8 text-[#1E1E20]">
-                        Our Educational Partners
-                    </h3>
-
-                    <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70">
-                        {/* Partner logos would go here, using placeholders for now */}
-                        <div className="w-32 h-16 bg-gray-200 rounded flex items-center justify-center">
-                            <span className="text-gray-500 font-medium">Partner 1</span>
-                        </div>
-                        <div className="w-32 h-16 bg-gray-200 rounded flex items-center justify-center">
-                            <span className="text-gray-500 font-medium">Partner 2</span>
-                        </div>
-                        <div className="w-32 h-16 bg-gray-200 rounded flex items-center justify-center">
-                            <span className="text-gray-500 font-medium">JRIIT</span>
-                        </div>
-                        <div className="w-32 h-16 bg-gray-200 rounded flex items-center justify-center">
-                            <span className="text-gray-500 font-medium">Partner 4</span>
-                        </div>
-                        <div className="w-32 h-16 bg-gray-200 rounded flex items-center justify-center">
-                            <span className="text-gray-500 font-medium">Partner 5</span>
-                        </div>
-                    </div>
+                    <EducationalPartner />
                 </div>
             </div>
         </SectionWrapper>

@@ -1,6 +1,6 @@
 import React from "react";
 import entrepreneurBg from "../../../assets/entrepreneur-woman-01.jpg";
-import eduIcon from "../../../assets/education_04.png";
+import businessIcon from "../../../assets/business-strategy.png";
 import CTAButton from "../../sub-comp/Button";
 import LearnMoreButton from "../../sub-comp/LearnMoreBTN";
 import Slogan from "../../sub-comp/slogan";
@@ -27,7 +27,7 @@ function EntrepreneurshipHeader() {
               text="Empowering Women, Strengthening Communities
 
 "
-              image={eduIcon}
+              image={businessIcon}
             />
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">

@@ -10,6 +10,8 @@ import {
 import SectionWrapper from "../../sub-comp/SectionWrapper";
 import CTAButton from "../../sub-comp/Button";
 import LearnMoreButton from "../../sub-comp/LearnMoreBTN";
+import Slogan from "../../sub-comp/slogan";
+import businessIcon from "../../../assets/business-strategy.png";
 
 function EntrepreneurshipServices() {
   const services = [
@@ -55,7 +57,13 @@ function EntrepreneurshipServices() {
     <SectionWrapper>
       <div className="container mx-auto px-4 py-16 md:py-20 lg:py-24">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-sm md:text-base text-[#FFC107] font-bold mb-3">
+          <div className="flex justify-center">
+            <Slogan
+              text="Empowering Women, Strengthening Communities"
+              image={businessIcon}
+            />
+          </div>
+          <h2 className="text-sm md:text-base lg:text-2xl text-[#FFC107] font-[Caveat] font-extrabold mb-3">
             WHAT WE OFFER
           </h2>
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1E1E20] mb-4">

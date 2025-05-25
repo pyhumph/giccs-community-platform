@@ -8,6 +8,8 @@ import {
 } from "lucide-react";
 import SectionWrapper from "../../sub-comp/SectionWrapper";
 import entrepreneurImg from "../../../assets/entrepreneurs_training.jpg";
+import businessIcon from "../../../assets/business-strategy.png";
+import Slogan from "../../sub-comp/slogan";
 
 function EntrepreneurshipIntro() {
   return (
@@ -62,7 +64,11 @@ function EntrepreneurshipIntro() {
 
           {/* Right side - Content */}
           <div className="flex flex-col justify-center">
-            <h2 className="text-sm md:text-base text-[#FFC107] font-bold mb-3">
+            <Slogan
+              text="Empowering Women, Strengthening Communities"
+              image={businessIcon}
+            />
+            <h2 className="text-sm md:text-base lg:text-2xl text-[#FFC107] font-extrabold font-[Caveat] mb-3">
               ABOUT THE PROGRAM
             </h2>
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1E1E20] mb-6">

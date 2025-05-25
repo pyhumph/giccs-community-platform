@@ -10,6 +10,8 @@ import InnerCenter from "./pages/InnerCenter";
 import Newsletter from "./pages/Newsletter";
 import NewsletterDetailPage from "./components/newsletter/pages/NewsletterDetail";
 import Application from "./pages/Application";
+import Volunteer from "./pages/BecomeVolunteer";
+import RenewableEnergyPage from "./pages/RenewableEnergy";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/health" element={<Health />} />
         <Route path="/programs/education" element={<Education />} />
+        <Route path="/renewable-energy" element={<RenewableEnergyPage />} />
         <Route path="/donation/application" element={<Application />} />
         <Route
           path="/programs/entrepreneurship-business-grants"
@@ -28,6 +31,7 @@ function App() {
         <Route path="/inner-center" element={<InnerCenter />} />
         <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/newsletter/:id" element={<NewsletterDetailPage />} />
+        <Route path="/volunteer" element={<Volunteer />} />
 
         <Route path="/donate" element={<Donate />} />
       </Routes>

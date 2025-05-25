@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import SectionWrapper from "../../sub-comp/SectionWrapper";
+import Slogan from "../../sub-comp/slogan";
+import businessIcon from "../../../assets/business-strategy.png";
 
 function EntrepreneurshipTestimonials() {
   const testimonials = [
@@ -63,14 +65,22 @@ function EntrepreneurshipTestimonials() {
 
       <SectionWrapper>
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-sm md:text-base text-[#FFC107] font-bold mb-3">
+          <div className="flex justify-center">
+            <Slogan
+              text="Empowering Women, Strengthening Communities"
+              image={businessIcon}
+            />
+          </div>
+          <h2 className="text-sm md:text-base lg:text-2xl text-[#FFC107] font-extrabold font-[Caveat] mb-3">
             TESTIMONIALS
           </h2>
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
             Success Stories from{" "}
-            <span className="text-[#FFC107]">Our Beneficiaries</span>
+            <span className="text-[#FFC107] flex justify-center">
+              Our Beneficiaries
+            </span>
           </h3>
-          <p className="text-gray-300 max-w-3xl mx-auto">
+          <p className="max-w-3xl mx-auto text-[#1E1E20]">
             Hear directly from the women whose lives and businesses have been
             transformed through our Entrepreneurship & Business Grants program.
           </p>
@@ -78,7 +88,7 @@ function EntrepreneurshipTestimonials() {
 
         {/* Testimonials carousel */}
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-xl p-6 md:p-8 lg:p-10 shadow-xl relative">
+          <div className="bg-[#353537] rounded-xl p-6 md:p-8 lg:p-10 shadow-xl relative">
             {/* Quote icon */}
             <div className="absolute top-6 right-6 md:top-8 md:right-8 lg:top-10 lg:right-10">
               <svg
@@ -90,7 +100,7 @@ function EntrepreneurshipTestimonials() {
               </svg>
             </div>
 
-            <div className="text-lg md:text-xl lg:text-2xl text-gray-800 italic mb-8">
+            <div className="text-lg md:text-xl lg:text-2xl text-white italic mb-8">
               "{testimonials[currentIndex].quote}"
             </div>
 
@@ -101,12 +111,10 @@ function EntrepreneurshipTestimonials() {
                 className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover mr-4"
               />
               <div>
-                <h4 className="font-bold text-lg text-[#1E1E20]">
+                <h4 className="font-bold text-lg text-white">
                   {testimonials[currentIndex].name}
                 </h4>
-                <p className="text-gray-600">
-                  {testimonials[currentIndex].role}
-                </p>
+                <p className="text-white">{testimonials[currentIndex].role}</p>
                 <div className="flex mt-1">
                   {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                     <Star
@@ -142,9 +150,8 @@ function EntrepreneurshipTestimonials() {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all ${
-                index === currentIndex ? "bg-[#FFC107] w-5" : "bg-white/30"
-              }`}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentIndex ? "bg-[#FFC107] w-5" : "bg-black/30"
+                }`}
             />
           ))}
         </div>

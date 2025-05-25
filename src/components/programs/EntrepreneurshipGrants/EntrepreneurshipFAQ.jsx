@@ -2,6 +2,7 @@ import { useState } from "react";
 import Slogan from "../../sub-comp/slogan";
 import children from "../../../assets/children-playing.png";
 import mother from "../../../assets/mother-child.png";
+import businessIcon from "../../../assets/business-strategy.png";
 
 const FAQItem = ({ question, answer, isOpen, toggle }) => {
   return (
@@ -81,7 +82,10 @@ export default function EntrepreneurshipFAQ() {
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-20">
         <div className="md:w-1/2 mb-8 md:mb-0">
           <div className="flex justify-start mb-4">
-            <Slogan />
+            <Slogan
+              text="Empowering Women, Strengthening Communities"
+              image={businessIcon}
+            />
           </div>
           <h2 className="text-6xl font-extrabold mb-10">
             <span className="text-[#1E1E20]">Frequently </span>
