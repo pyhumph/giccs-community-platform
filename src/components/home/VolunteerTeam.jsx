@@ -163,13 +163,16 @@ export default function VolunteerTeamSection() {
           <Slogan />
         </div>
         <div className="text-center mb-10">
-          <h2 className="text-4xl lg:text-6xl font-bold mb-2">
-            <span className="text-dark-green">Meet Our Volunteer</span>
-            <br />
-            <span className="text-[#1E1E02]">The </span>
-            <span className="text-yellow-500">Board</span>{" "}
-            <span className="text-dark-green">Members</span>
-          </h2>
+        <h2 className="text-4xl lg:text-6xl font-bold mb-4">
+        <span className="text-[#1E1E02]">Passionate </span>
+        <span className="text-yellow-500">Hearts</span>{" "}
+        <span className="text-dark-green">Making a Difference</span>
+      </h2>
+      <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
+        Behind every meaningful impact is a dedicated team. Get to know the
+        incredible individuals who give their time, energy, and compassion
+        to bring our mission to life.
+      </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {volunteers.map((volunteer) => (
