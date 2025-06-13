@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import CTAButton from "../../sub-comp/Button";
 import LearnMoreButton from "../../sub-comp/LearnMoreBTN";
+import { Link } from "react-router-dom";
 
 function EntrepreneurshipDonate() {
   return (
@@ -24,8 +25,12 @@ function EntrepreneurshipDonate() {
                 economic independence and community transformation.
               </p>
               <div className="flex flex-wrap gap-4">
-                <CTAButton text="Donate Now" />
-                <LearnMoreButton text="Become a Partner" />
+                <Link to={`/donate`}>
+                  <CTAButton text="Donate Now" />
+                </Link>
+                <Link to={`/volunteer`}>
+                  <LearnMoreButton text="Become a Partner" />
+                </Link>
               </div>
             </div>
 

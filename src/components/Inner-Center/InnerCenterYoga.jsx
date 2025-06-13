@@ -225,11 +225,11 @@ const InnerCenterYoga = () => {
                     </p>
                   </div>
                   {/* Play button overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  {/*<div className="absolute inset-0 flex items-center justify-center">
                     <button className="w-20 h-20 bg-yellow-400 bg-opacity-90 rounded-full flex items-center justify-center hover:bg-opacity-100 transition-all duration-300 transform hover:scale-110 shadow-2xl">
                       <Play className="w-8 h-8 text-gray-900 ml-1" />
                     </button>
-                  </div>
+                  </div>*/}
                 </div>
                 {/* Floating stats */}
                 <div className="absolute -top-4 -right-4 bg-yellow-400 rounded-2xl p-4 shadow-xl">
@@ -332,12 +332,13 @@ const InnerCenterYoga = () => {
                     </div>
 
                     {/* CTA */}
-                    <button
+                    {/*<button
                       className={`w-full bg-gradient-to-r ${audience.color} text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2`}
                     >
                       Learn More
                       <ArrowRight className="w-4 h-4" />
                     </button>
+                    */}
                   </div>
                 </div>
               ))}
@@ -346,7 +347,7 @@ const InnerCenterYoga = () => {
         )}
 
         {/* Bottom CTA */}
-        <div
+        {/* <div
           className={`text-center mt-20 transform transition-all duration-1000 delay-700 ${inView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
           <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-3xl p-8 md:p-12 text-gray-900 shadow-2xl hover:shadow-yellow-400/25 transition-all duration-300 hover:scale-105">
@@ -367,6 +368,7 @@ const InnerCenterYoga = () => {
             </div>
           </div>
         </div>
+      */}
       </div>
     </section>
   );

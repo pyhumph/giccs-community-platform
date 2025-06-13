@@ -299,13 +299,14 @@ const InnerCenterAgreementModal = ({ isOpen, onClose }) => {
               Last updated: January 2025 | Version 1.0
             </div>
             <div className="flex gap-4">
-              <button
+              {/*<button
                 onClick={handleDownload}
                 className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
               >
                 <Download className="w-4 h-4" />
                 Download PDF
               </button>
+              */}
               <button
                 onClick={onClose}
                 className="border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 transform hover:scale-105"

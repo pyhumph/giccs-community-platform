@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Star, Heart, Users, Target, Zap, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const InnerCenterMission = () => {
   const [inView, setInView] = useState(false);
@@ -190,9 +191,11 @@ const InnerCenterMission = () => {
               Join our community of wellness warriors and embark on your journey
               to holistic health
             </p>
-            <button className="bg-white text-gray-800 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-              Start Your Journey Today
-            </button>
+            <Link to={`/volunteer`}>
+              <button className="bg-white cursor-pointer text-gray-800 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                Start Your Journey Today
+              </button>
+            </Link>
           </div>
         </div>
       </div>

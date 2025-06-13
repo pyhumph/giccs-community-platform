@@ -611,7 +611,7 @@ const BecomeVolunteerPage = () => {
                 className="flex items-center gap-3 text-[#FFC107] hover:text-yellow-400 transition-colors"
               >
                 <Phone className="w-5 h-5" />
-                +1 (234) 567-8900
+                +255 785 044 220
               </a>
             </div>
           </div>

@@ -327,13 +327,14 @@ const InnerCenterContact = () => {
                   </p>
                 </div>
               </div>
-              <button className="w-full mt-6 border-2 border-yellow-400 text-yellow-600 py-3 rounded-xl font-semibold hover:bg-yellow-400 hover:text-white transition-all duration-300">
+              {/*<button className="w-full mt-6 border-2 border-yellow-400 text-yellow-600 py-3 rounded-xl font-semibold hover:bg-yellow-400 hover:text-white transition-all duration-300">
                 View All FAQs
               </button>
+              */}
             </div>
 
             {/* Emergency Contact */}
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 text-white shadow-2xl">
+            {/*<div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 text-white shadow-2xl">
               <h3 className="text-xl font-bold mb-4">
                 Need Immediate Support?
               </h3>
@@ -351,12 +352,12 @@ const InnerCenterContact = () => {
                   Crisis Chat
                 </button>
               </div>
-            </div>
+            </div>*/}
           </div>
         </div>
 
         {/* Bottom CTA */}
-        <div
+        {/* <div
           className={`text-center mt-16 transform transition-all duration-1000 delay-700 ${inView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
           <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100 hover:shadow-yellow-400/10 transition-all duration-300">
@@ -383,7 +384,7 @@ const InnerCenterContact = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   );

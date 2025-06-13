@@ -45,8 +45,9 @@ function EntrepreneurshipHeader() {
             financial independence.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <CTAButton />
+            {/*<CTAButton />
             <LearnMoreButton />
+            */}
           </div>
         </div>
       </div>

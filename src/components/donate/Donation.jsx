@@ -59,22 +59,20 @@ export default function Donation() {
                     {presetAmounts.map((amount) => (
                       <button
                         key={amount}
-                        className={`py-2 px-4 rounded-full transition-all transform hover:scale-105 duration-200 ${
-                          donationAmount === amount
+                        className={`py-2 px-4 rounded-full transition-all transform hover:scale-105 duration-200 ${donationAmount === amount
                             ? "bg-orange-500 text-white shadow-md"
                             : "bg-gray-100 text-gray-800 hover:bg-orange-400"
-                        }`}
+                          }`}
                         onClick={() => setDonationAmount(amount)}
                       >
                         ${amount}
                       </button>
                     ))}
                     <button
-                      className={`py-2 px-4 rounded-full transition-all transform hover:scale-105 duration-200 ${
-                        !presetAmounts.includes(donationAmount)
+                      className={`py-2 px-4 rounded-full transition-all transform hover:scale-105 duration-200 ${!presetAmounts.includes(donationAmount)
                           ? "bg-orange-500 text-white shadow-md"
                           : "bg-gray-100 text-gray-800 hover:bg-orange-400"
-                      }`}
+                        }`}
                       onClick={() => {
                         setDonationAmount(0);
                         document.querySelector('input[type=["text"]').focus();
@@ -325,7 +323,7 @@ export default function Donation() {
             </div>
 
             {/* Tag Cloud */}
-            <div className="bg-white rounded-lg shadow-md p-6">
+            {/*<div className="bg-white rounded-lg shadow-md p-6">
               <h3 className="text-lg font-semibold mb-4">Tag Cloud</h3>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-gray-100 text-sm rounded-md hover:bg-orange-500 hover:text-white cursor-pointer">
@@ -353,7 +351,7 @@ export default function Donation() {
                   Court
                 </span>
               </div>
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>

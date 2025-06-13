@@ -9,6 +9,7 @@ import {
   Zap,
   Activity,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const InnerCenterPrograms = () => {
   const [inView, setInView] = useState(false);
@@ -200,11 +201,10 @@ const InnerCenterPrograms = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
-                  activeCategory === category.id
+                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${activeCategory === category.id
                     ? "bg-yellow-400 text-gray-800 shadow-lg shadow-yellow-400/25"
                     : "bg-white text-gray-600 hover:bg-gray-50 shadow-md hover:shadow-lg border border-gray-200"
-                }`}
+                  }`}
               >
                 {category.name}
                 <span className="ml-2 text-sm opacity-75">
@@ -241,11 +241,12 @@ const InnerCenterPrograms = () => {
 
               {/* Action Button */}
               <div className="flex items-center justify-between">
-                <button
+                {/*<button
                   className={`text-sm font-semibold bg-gradient-to-r ${program.color} text-white px-4 py-2 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
                 >
                   Learn More
                 </button>
+                */}
                 <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
                   <Star className="w-4 h-4 text-yellow-500" />
                 </div>
@@ -270,12 +271,16 @@ const InnerCenterPrograms = () => {
               us know what you'd like to see!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/*
               <button className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105">
                 Suggest a Program
               </button>
-              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 transform hover:scale-105">
-                Contact Us
-              </button>
+              */}
+              <Link to={`/contact`}>
+                <button className="border-2 cursor-pointer border-gray-300 text-gray-700 px-8 bg-[#FFC107] py-4 rounded-full font-bold text-lg hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 transform hover:scale-105">
+                  Contact Us
+                </button>
+              </Link>
             </div>
           </div>
         </div>

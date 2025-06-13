@@ -12,6 +12,7 @@ import CTAButton from "../../sub-comp/Button";
 import LearnMoreButton from "../../sub-comp/LearnMoreBTN";
 import Slogan from "../../sub-comp/slogan";
 import businessIcon from "../../../assets/business-strategy.png";
+import { Link } from "react-router-dom";
 
 function EntrepreneurshipServices() {
   const services = [
@@ -106,8 +107,9 @@ function EntrepreneurshipServices() {
                 impact in their communities.
               </p>
               <div className="flex flex-wrap gap-4">
-                <CTAButton text="Apply Now" />
-                <LearnMoreButton text="Contact Us" />
+                <Link to={`/contact`}>
+                  <LearnMoreButton text="Contact Us" />
+                </Link>
               </div>
             </div>
             <div className="hidden lg:block lg:col-span-2 relative">
