@@ -24,22 +24,41 @@ const ContactForm = () => {
     setSubmitStatus("");
 
     try {
-      const res = await fetch("http://localhost:3001/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      // Check if Email is available (SMTP.js)
+      if (typeof window.Email === "undefined") {
+        throw new Error(
+          "SMTP.js not loaded. Please add the script to your HTML.",
+        );
+      }
+
+      const result = await window.Email.send({
+        Host: import.meta.env.VITE_SMTP_HOST,
+        Username: import.meta.env.VITE_SMTP_USERNAME,
+        Password: import.meta.env.VITE_SMTP_PASSWORD,
+        To: import.meta.env.VITE_SMTP_USERNAME,
+        From: import.meta.env.VITE_SMTP_USERNAME,
+        Subject: `New Contact Form Message from ${formData.name}`,
+        Body: `
+          <h3>New Contact Form Submission</h3>
+          <p><strong>Name:</strong> ${formData.name}</p>
+          <p><strong>Email:</strong> ${formData.email}</p>
+          <p><strong>Phone:</strong> ${formData.phone || "Not provided"}</p>
+          <p><strong>Message:</strong></p>
+          <p>${formData.message.replace(/\n/g, "<br>")}</p>
+          <hr>
+          <p><em>This message was sent from your website contact form.</em></p>
+        `,
       });
 
-      const data = await res.json();
-
-      if (res.ok) {
+      if (result === "OK") {
         setSubmitStatus("success");
         setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
         setSubmitStatus("error");
+        console.error("Email send result:", result);
       }
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error sending email:", error);
       setSubmitStatus("error");
     } finally {
       setLoading(false);
@@ -66,7 +85,7 @@ const ContactForm = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit}>
+      <div onSubmit={handleSubmit}>
         <div className="mb-4">
           <div className="relative">
             <input
@@ -122,7 +141,8 @@ const ContactForm = () => {
           </div>
         </div>
         <button
-          type="submit"
+          type="button"
+          onClick={handleSubmit}
           disabled={loading}
           className="bg-yellow-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-yellow-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
@@ -154,7 +174,7 @@ const ContactForm = () => {
             "Send Message"
           )}
         </button>
-      </form>
+      </div>
     </div>
   );
 };
