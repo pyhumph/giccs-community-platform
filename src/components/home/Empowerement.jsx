@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import {
   FaGraduationCap,
   FaHeartbeat,
@@ -88,7 +89,7 @@ const EmpowermentShowcase = () => {
       bgColor: "bg-purple-500",
       borderColor: "border-purple-500",
     },
-    {
+    /*{
       title: "Entrepreneurship",
       icon: <FaLightbulb className="text-white text-3xl" />,
       description:
@@ -97,6 +98,7 @@ const EmpowermentShowcase = () => {
       bgColor: "bg-indigo-500",
       borderColor: "border-indigo-500",
     },
+    */
     {
       title: "Startup Business Grants",
       icon: <FaMoneyCheckAlt className="text-white text-3xl" />,
@@ -318,13 +320,15 @@ const EmpowermentShowcase = () => {
                   We Give Child A Gift Of A Education
                 </p>
                 <h3 className="text-4xl font-bold mb-6">Become A Volunteer?</h3>
-                <CTAButton
-                  text="Contact Now"
-                  bgColor="#00715d"
-                  textColor="white"
-                  hoverBgColor="#FFC107"
-                  hoverTextColor="#1E1E20"
-                />
+                <Link to={`/contact`}>
+                  <CTAButton
+                    text="Contact Now"
+                    bgColor="#00715d"
+                    textColor="white"
+                    hoverBgColor="#FFC107"
+                    hoverTextColor="#1E1E20"
+                  />
+                </Link>
               </div>
             </div>
 
@@ -420,7 +424,9 @@ const EmpowermentShowcase = () => {
                 <h3 className="text-4xl font-bold mb-6">
                   Make Donation To Us?
                 </h3>
-                <CTAButton text="Donate Now" />
+                <Link to={`/donate`}>
+                  <CTAButton text="Donate Now" />
+                </Link>
               </div>
             </div>
           </div>
@@ -449,13 +455,14 @@ const EmpowermentShowcase = () => {
             {/* Video Player */}
             <div className="aspect-w-16 aspect-h-9">
               <iframe
-                ref={videoRef}
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                title="YouTube video"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/uyVCneA_e3o?si=_3vvpmKcI7PfUKDi&autoplay=1&mute=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
               ></iframe>
             </div>
           </div>

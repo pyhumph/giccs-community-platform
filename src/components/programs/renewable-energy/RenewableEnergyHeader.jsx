@@ -66,7 +66,7 @@ const RenewableEnergyHeader = () => {
                         planet.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    {/*<div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <button className="group bg-[#FFC107] text-[#1E1E20] px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-[#FFC107]/50 flex items-center">
                             Get Involved
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -79,7 +79,7 @@ const RenewableEnergyHeader = () => {
                             <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
                             Watch Story
                         </button>
-                    </div>
+                    </div>*/}
                 </div>
             </div>
 

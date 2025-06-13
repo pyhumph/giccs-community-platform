@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Upload, FileText, X, CheckCircle } from "lucide-react";
 
 const DocumentsForm = ({ onNext, onPrev, onUpdate, data }) => {
   const [uploadedFiles, setUploadedFiles] = useState(data.documents || []);
+  const [isDragOver, setIsDragOver] = useState(false);
+  const fileInputRef = useRef(null);
 
   const documentTypes = [
     {
@@ -33,11 +35,80 @@ const DocumentsForm = ({ onNext, onPrev, onUpdate, data }) => {
     },
   ];
 
-  const handleFileUpload = (event) => {
-    const files = Array.from(event.target.files || []);
-    const newFiles = [...uploadedFiles, ...files];
-    setUploadedFiles(newFiles);
-    onUpdate({ documents: newFiles });
+  const handleFileUpload = (files) => {
+    const validFiles = Array.from(files).filter((file) => {
+      const validTypes = [
+        "application/pdf",
+        "image/jpeg",
+        "image/jpg",
+        "image/png",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      ];
+      const maxSize = 5 * 1024 * 1024; // 5MB
+
+      if (!validTypes.includes(file.type)) {
+        alert(
+          `${file.name} is not a supported file type. Please upload PDF, JPG, PNG, DOC, or DOCX files.`,
+        );
+        return false;
+      }
+
+      if (file.size > maxSize) {
+        alert(
+          `${file.name} is too large. Please upload files smaller than 5MB.`,
+        );
+        return false;
+      }
+
+      return true;
+    });
+
+    if (validFiles.length > 0) {
+      const newFiles = [...uploadedFiles, ...validFiles];
+      setUploadedFiles(newFiles);
+      onUpdate({ documents: newFiles });
+    }
+  };
+
+  const handleInputChange = (event) => {
+    const files = event.target.files;
+    if (files && files.length > 0) {
+      handleFileUpload(files);
+    }
+    // Reset the input value so the same file can be selected again
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
+  const handleChooseFiles = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragOver(true);
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragOver(false);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragOver(false);
+
+    const files = e.dataTransfer.files;
+    if (files && files.length > 0) {
+      handleFileUpload(files);
+    }
   };
 
   const removeFile = (index) => {
@@ -100,32 +171,47 @@ const DocumentsForm = ({ onNext, onPrev, onUpdate, data }) => {
       </div>
 
       {/* File Upload Area */}
-      <div className="border-2 border-dashed border-gray-300 hover:border-blue-400 transition-colors duration-300 rounded-lg">
+      <div
+        className={`border-2 border-dashed transition-colors duration-300 rounded-lg ${
+          isDragOver
+            ? "border-blue-500 bg-blue-50"
+            : "border-gray-300 hover:border-blue-400"
+        }`}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+      >
         <div className="p-8">
           <div className="text-center">
-            <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+            <Upload
+              className={`w-12 h-12 mx-auto mb-4 ${
+                isDragOver ? "text-blue-500" : "text-gray-400"
+              }`}
+            />
             <h4 className="text-lg font-medium text-gray-800 mb-2">
               Upload Documents
             </h4>
             <p className="text-gray-600 mb-4">
               Drag and drop your files here, or click to browse
             </p>
+
             <input
+              ref={fileInputRef}
               type="file"
               multiple
               accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
-              onChange={handleFileUpload}
+              onChange={handleInputChange}
               className="hidden"
-              id="file-upload"
             />
-            <label htmlFor="file-upload">
-              <button
-                type="button"
-                className="cursor-pointer border border-gray-300 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 px-4 py-2 rounded-lg text-gray-700 font-medium"
-              >
-                Choose Files
-              </button>
-            </label>
+
+            <button
+              type="button"
+              onClick={handleChooseFiles}
+              className="border border-gray-300 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 px-4 py-2 rounded-lg text-gray-700 font-medium"
+            >
+              Choose Files
+            </button>
+
             <p className="text-xs text-gray-500 mt-2">
               Supported formats: PDF, JPG, PNG, DOC, DOCX (Max 5MB per file)
             </p>
@@ -136,7 +222,9 @@ const DocumentsForm = ({ onNext, onPrev, onUpdate, data }) => {
       {/* Uploaded Files */}
       {uploadedFiles.length > 0 && (
         <div className="space-y-4">
-          <h4 className="text-lg font-medium text-gray-800">Uploaded Files</h4>
+          <h4 className="text-lg font-medium text-gray-800">
+            Uploaded Files ({uploadedFiles.length})
+          </h4>
           <div className="space-y-3">
             {uploadedFiles.map((file, index) => (
               <div
@@ -152,7 +240,8 @@ const DocumentsForm = ({ onNext, onPrev, onUpdate, data }) => {
                       <div>
                         <p className="font-medium text-gray-800">{file.name}</p>
                         <p className="text-sm text-gray-600">
-                          {formatFileSize(file.size)}
+                          {formatFileSize(file.size)} •{" "}
+                          {file.type.split("/")[1].toUpperCase()}
                         </p>
                       </div>
                     </div>
@@ -161,6 +250,7 @@ const DocumentsForm = ({ onNext, onPrev, onUpdate, data }) => {
                       <button
                         onClick={() => removeFile(index)}
                         className="p-1 text-red-500 hover:bg-red-100 rounded-full transition-colors duration-200"
+                        title="Remove file"
                       >
                         <X className="w-4 h-4" />
                       </button>

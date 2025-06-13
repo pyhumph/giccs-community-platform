@@ -24,7 +24,7 @@ export default function AboutUs() {
               Project Management, And Teamwork Skills.
             </p>
 
-            <div className="flex flex-col md:flex-row gap-4">
+            {/*<div className="flex flex-col md:flex-row gap-4">
               <div className="flex items-center p-4 rounded-lg border border-gray-200">
                 <div className="p-2 bg-yellow-50 rounded-full mr-3 animate-bounce">
                   <Heart className="w-6 h-6 text-yellow-500 animate-pulse" />
@@ -49,6 +49,7 @@ export default function AboutUs() {
                 </div>
               </div>
             </div>
+            */}
 
             <div className="space-y-3">
               <div className="flex items-center">
@@ -117,9 +118,10 @@ export default function AboutUs() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-6 py-3 bg-yellow-400 text-white rounded-full font-medium hover:bg-yellow-500 flex items-center justify-center">
+              {/*<button className="px-6 py-3 bg-yellow-400 text-white rounded-full font-medium hover:bg-yellow-500 flex items-center justify-center">
                 More About Us
               </button>
+              */}
 
               <div className="flex items-center">
                 <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center mr-3">

@@ -1,44 +1,54 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { BookOpen, Heart, Zap, Users } from "lucide-react";
 import spade from "../../assets/spade-base.png";
 import spiral from "../../assets/hand-with-love.svg";
+import Slogan from "../sub-comp/slogan";
+
+// Placeholder images - in your actual implementation, replace these with your actual imports
+//const spade =
+// "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 10 C30 30, 30 50, 50 70 C70 50, 70 30, 50 10 Z' fill='%23ff6b35'/%3E%3C/svg%3E";
+//const spiral =
+//"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='120' viewBox='0 0 100 120'%3E%3Cpath d='M50 10 Q80 30 60 60 Q20 80 40 110' stroke='%234AD295' stroke-width='3' fill='none'/%3E%3C/svg%3E";
 
 // Circular ServiceCard Component
 const ServiceCard = ({ icon, title, description, color }) => {
   return (
     <div className="flex flex-col items-center">
       <div
-        className="w-56 h-56 md:w-64 md:h-64 rounded-full bg-white shadow-lg flex flex-col items-center justify-center p-6 transition-all duration-300 hover:shadow-xl border-4"
+        className="w-52 h-52 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full bg-white shadow-lg flex flex-col items-center justify-center p-4 sm:p-6 transition-all duration-300 hover:shadow-xl border-4"
         style={{ borderColor: color }}
       >
         <div
-          className="w-16 h-16 flex items-center justify-center rounded-full mb-4"
+          className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full mb-3 md:mb-4"
           style={{ backgroundColor: color }}
         >
-          {icon.element}
+          {icon}
         </div>
-        <h3 className="text-xl font-bold mb-2 text-gray-800 text-center">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 md:mb-3 text-gray-800 text-center">
           {title}
         </h3>
-        <p className="text-gray-600 text-center text-sm mb-4">{description}</p>
-        <button className="flex items-center text-gray-700 font-medium hover:text-blue-500 transition-colors">
-          Read More <ArrowRight className="ml-2 w-4 h-4" />
-        </button>
+        <p className="text-gray-600 text-center text-xs sm:text-sm md:text-sm leading-relaxed px-2">
+          {description}
+        </p>
       </div>
     </div>
   );
 };
 
 const SpiralAnimation = () => (
-  <div className="absolute right-0 bottom-0">
+  <div className="absolute right-0 bottom-0 hidden lg:block">
     <div className="animate-none">
-      <img src={spiral} alt="spiral" className="w-70 h-80 animate-none" />
+      <img
+        src={spiral}
+        alt="spiral"
+        className="w-20 h-24 xl:w-auto xl:h-auto animate-none"
+      />
     </div>
   </div>
 );
 
 const SpadeAnimation = () => (
-  <div className="absolute left-24 top-60">
+  <div className="absolute left-4 sm:left-8 lg:left-24 top-40 sm:top-52 lg:top-60 hidden lg:block">
     <style jsx>{`
       @keyframes floatAnimation {
         0% {
@@ -58,15 +68,15 @@ const SpadeAnimation = () => (
 
       @keyframes gentlePulse {
         0% {
-          opacity: 0.8;
+          opacity: 0.6;
           transform: scale(0.95);
         }
         50% {
-          opacity: 1;
-          transform: scale(2.05);
+          opacity: 0.8;
+          transform: scale(1.05);
         }
         100% {
-          opacity: 0.8;
+          opacity: 0.6;
           transform: scale(0.95);
         }
       }
@@ -76,12 +86,16 @@ const SpadeAnimation = () => (
       }
     `}</style>
     <div className="animate-float">
-      <img src={spade} alt="spade" className="w-35 h-35 animate-gentle-pulse" />
+      <img
+        src={spade}
+        alt="spade"
+        className="w-8 h-8 xl:w-36 xl:h-36 animate-gentle-pulse"
+      />
     </div>
   </div>
 );
 
-// Main Component with Triangle Formation
+// Main Component with Diamond Formation (4 circles)
 export default function ServicesSection() {
   const containerRef = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -103,83 +117,50 @@ export default function ServicesSection() {
 
   const services = [
     {
-      icon: {
-        element: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-8 h-8 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-            />
-          </svg>
-        ),
-      },
-      title: "Kids Education",
-      description: "Philanthropically to cultivate distinctively empower",
+      icon: (
+        <BookOpen className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
+      ),
+      title: "Learning",
+      description:
+        "Quality education programs and literacy initiatives for community empowerment.",
       color: "#FF7D54",
     },
     {
-      icon: {
-        element: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-8 h-8 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-            />
-          </svg>
-        ),
-      },
-      title: "Good Health",
-      description: "Philanthropically to cultivate distinctively empower",
+      icon: (
+        <Heart className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
+      ),
+      title: "Wellness",
+      description:
+        "Healthcare services and wellness programs for healthier communities.",
       color: "#4AD295",
     },
     {
-      icon: {
-        element: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-8 h-8 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
-            />
-          </svg>
-        ),
-      },
-      title: "Healthy Food",
-      description: "Philanthropically to cultivate distinctively empower",
+      icon: <Zap className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />,
+      title: "Clean Energy",
+      description:
+        "Sustainable solar and wind solutions for environmental responsibility.",
       color: "#27D0F3",
+    },
+    {
+      icon: (
+        <Users className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
+      ),
+      title: "Women's Enterprise",
+      description:
+        "Funding and mentorship for female entrepreneurs and business growth.",
+      color: "#9B59B6",
     },
   ];
 
   return (
-    <section className="relative py-20 px-4 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative py-12 sm:py-16 lg:py-20 px-4 bg-gray-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <div className="mb-16 text-center">
-          <span className="text-orange-500 font-medium">Change Everything</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">
+        <div className="mb-12 sm:mb-16 lg:mb-20 text-center">
+          <div className="flex justify-center">
+            <Slogan />
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mt-2">
             We're here to <span className="text-orange-500">Help</span>
           </h2>
         </div>
@@ -187,119 +168,139 @@ export default function ServicesSection() {
         <SpadeAnimation />
         <SpiralAnimation />
 
-        {/* Triangle Formation with Services */}
+        {/* Desktop/Tablet Diamond Formation */}
         <div className="hidden md:block">
-          {" "}
-          {/* Desktop view */}
           <div
             ref={containerRef}
             className="relative mx-auto"
-            style={{ height: "700px", maxWidth: "1000px" }}
+            style={{ height: "800px", maxWidth: "1200px" }}
           >
             {dimensions.width > 0 && (
               <svg className="absolute inset-0 w-full h-full">
                 <defs>
-                  <marker
-                    id="dot1"
-                    viewBox="0 0 10 10"
-                    refX="5"
-                    refY="5"
-                    markerWidth="5"
-                    markerHeight="5"
-                  >
-                    <circle cx="5" cy="5" r="4" fill="#FF7D54" />
-                  </marker>
-                  <marker
-                    id="dot2"
-                    viewBox="0 0 10 10"
-                    refX="5"
-                    refY="5"
-                    markerWidth="5"
-                    markerHeight="5"
-                  >
-                    <circle cx="5" cy="5" r="4" fill="#4AD295" />
-                  </marker>
-                  <marker
-                    id="dot3"
-                    viewBox="0 0 10 10"
-                    refX="5"
-                    refY="5"
-                    markerWidth="5"
-                    markerHeight="5"
-                  >
-                    <circle cx="5" cy="5" r="4" fill="#27D0F3" />
-                  </marker>
+                  {services.map((service, index) => (
+                    <marker
+                      key={`dot${index}`}
+                      id={`dot${index}`}
+                      viewBox="0 0 10 10"
+                      refX="5"
+                      refY="5"
+                      markerWidth="5"
+                      markerHeight="5"
+                    >
+                      <circle cx="5" cy="5" r="4" fill={service.color} />
+                    </marker>
+                  ))}
                 </defs>
 
-                {/* Curved path from Kids Education to Healthy Food */}
+                {/* Top to Right */}
                 <path
-                  d={`M ${dimensions.width / 2},110 Q ${dimensions.width * 0.75},300 ${dimensions.width * 0.75},500`}
+                  d={`M ${dimensions.width / 2},120 Q ${dimensions.width * 0.75},250 ${dimensions.width * 0.85},400`}
                   fill="none"
                   stroke="#FF7D54"
-                  strokeWidth="3"
-                  strokeDasharray="5,5"
-                  markerEnd="url(#dot3)"
-                />
-
-                {/* Curved path from Healthy Food to Good Health */}
-                <path
-                  d={`M ${dimensions.width * 0.75},500 Q ${dimensions.width / 2},600 ${dimensions.width * 0.25},500`}
-                  fill="none"
-                  stroke="#27D0F3"
-                  strokeWidth="3"
-                  strokeDasharray="5,5"
+                  strokeWidth="2"
+                  strokeDasharray="8,6"
                   markerEnd="url(#dot2)"
+                  opacity="0.7"
                 />
 
-                {/* Curved path from Good Health to Kids Education */}
+                {/* Right to Bottom */}
                 <path
-                  d={`M ${dimensions.width * 0.25},500 Q ${dimensions.width * 0.25},300 ${dimensions.width / 2},110`}
+                  d={`M ${dimensions.width * 0.85},400 Q ${dimensions.width * 0.75},550 ${dimensions.width / 2},680`}
                   fill="none"
                   stroke="#4AD295"
-                  strokeWidth="3"
-                  strokeDasharray="5,5"
+                  strokeWidth="2"
+                  strokeDasharray="8,6"
+                  markerEnd="url(#dot3)"
+                  opacity="0.7"
+                />
+
+                {/* Bottom to Left */}
+                <path
+                  d={`M ${dimensions.width / 2},680 Q ${dimensions.width * 0.25},550 ${dimensions.width * 0.15},400`}
+                  fill="none"
+                  stroke="#27D0F3"
+                  strokeWidth="2"
+                  strokeDasharray="8,6"
+                  markerEnd="url(#dot0)"
+                  opacity="0.7"
+                />
+
+                {/* Left to Top */}
+                <path
+                  d={`M ${dimensions.width * 0.15},400 Q ${dimensions.width * 0.25},250 ${dimensions.width / 2},120`}
+                  fill="none"
+                  stroke="#9B59B6"
+                  strokeWidth="2"
+                  strokeDasharray="8,6"
                   markerEnd="url(#dot1)"
+                  opacity="0.7"
                 />
               </svg>
             )}
 
-            {/* Top Center - Kids Education */}
+            {/* Top - Education */}
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
               <ServiceCard {...services[0]} />
             </div>
 
-            {/* Bottom Left - Good Health */}
+            {/* Right - Health */}
             <div
               className="absolute"
               style={{
-                top: "500px",
-                left: "25%",
+                top: "400px",
+                left: "85%",
                 transform: "translate(-50%, -50%)",
               }}
             >
               <ServiceCard {...services[1]} />
             </div>
 
-            {/* Bottom Right - Healthy Food */}
+            {/* Bottom - Renewable Energy */}
             <div
               className="absolute"
               style={{
-                top: "500px",
-                left: "75%",
+                top: "680px",
+                left: "50%",
                 transform: "translate(-50%, -50%)",
               }}
             >
               <ServiceCard {...services[2]} />
             </div>
+
+            {/* Left - Women's Business Grants */}
+            <div
+              className="absolute"
+              style={{
+                top: "400px",
+                left: "15%",
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <ServiceCard {...services[3]} />
+            </div>
           </div>
         </div>
 
-        {/* Mobile view */}
+        {/* Mobile/Small Tablet view */}
         <div className="md:hidden">
-          <div className="flex flex-col items-center space-y-8">
-            <ServiceCard {...services[0]} />
-            <ServiceCard {...services[1]} />
-            <ServiceCard {...services[2]} />
+          <div className="flex flex-col items-center space-y-8 sm:space-y-12">
+            {services.map((service, index) => (
+              <div key={index} className="relative">
+                <ServiceCard {...service} />
+                {index < services.length - 1 && (
+                  <div className="flex justify-center mt-4 sm:mt-6">
+                    <div
+                      className="w-0.5 h-8 sm:h-12"
+                      style={{
+                        background: `linear-gradient(to bottom, ${service.color}, ${services[index + 1].color})`,
+                        opacity: 0.6,
+                      }}
+                    />
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>

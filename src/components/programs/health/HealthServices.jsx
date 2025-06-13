@@ -89,7 +89,7 @@ const HealthServices = () => {
               <p className="text-gray-600">{service.description}</p>
 
               <div className="mt-6 pt-6 border-t border-gray-100">
-                <a
+                {/*<a
                   href="#"
                   className="inline-flex items-center text-[#FFC107] font-semibold group-hover:text-[#1E1E20] transition-colors duration-300"
                 >
@@ -108,7 +108,7 @@ const HealthServices = () => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </a>
+                </a>*/}
               </div>
             </div>
           ))}

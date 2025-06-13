@@ -15,8 +15,9 @@ const NewsletterCard = ({ newsletter, featured = false }) => {
 
   return (
     <article
-      className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${featured ? "lg:col-span-2" : ""
-        }`}
+      className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
+        featured ? "lg:col-span-2" : ""
+      }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -25,12 +26,14 @@ const NewsletterCard = ({ newsletter, featured = false }) => {
         <img
           src={newsletter.image}
           alt={newsletter.title}
-          className={`w-full object-cover transition-transform duration-700 ${isHovered ? "scale-110" : "scale-100"
-            } ${featured ? "h-64 lg:h-80" : "h-48"}`}
+          className={`w-full object-cover transition-transform duration-700 ${
+            isHovered ? "scale-110" : "scale-100"
+          } ${featured ? "h-64 lg:h-80" : "h-48"}`}
         />
         <div
-          className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"
-            }`}
+          className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-300 ${
+            isHovered ? "opacity-100" : "opacity-0"
+          }`}
         ></div>
 
         {/* Category Badge */}
@@ -52,8 +55,9 @@ const NewsletterCard = ({ newsletter, featured = false }) => {
 
         {/* Hover Actions */}
         <div
-          className={`absolute bottom-4 right-4 flex space-x-2 transition-all duration-300 ${isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
+          className={`absolute bottom-4 right-4 flex space-x-2 transition-all duration-300 ${
+            isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
         >
           <button className="bg-white/90 hover:bg-white text-gray-900 p-2 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110">
             <Eye className="w-4 h-4" />
@@ -70,7 +74,7 @@ const NewsletterCard = ({ newsletter, featured = false }) => {
       {/* Content Section */}
       <div className="p-6">
         {/* Meta Info */}
-        <div className="flex items-center text-sm text-gray-500 mb-3">
+        <div className="flex items-center text-[12px] text-gray-500 mb-3">
           <Calendar className="w-4 h-4 mr-2" />
           <span>{newsletter.date}</span>
           <span className="mx-2">•</span>
@@ -83,8 +87,9 @@ const NewsletterCard = ({ newsletter, featured = false }) => {
 
         {/* Title */}
         <h3
-          className={`font-bold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors duration-300 ${featured ? "text-xl lg:text-2xl" : "text-lg"
-            }`}
+          className={`font-bold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors duration-300 ${
+            featured ? "text-xl lg:text-2xl" : "text-lg"
+          }`}
         >
           {newsletter.title}
         </h3>

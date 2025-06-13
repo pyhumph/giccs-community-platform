@@ -19,6 +19,7 @@ import {
     Mail,
     Star,
 } from "lucide-react";
+import witness from "../../../assets/witness1.jpg";
 
 const RenewableEnergyTestimonials = () => {
     const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -30,8 +31,7 @@ const RenewableEnergyTestimonials = () => {
             location: "Rural Philippines",
             content:
                 "GICCS transformed our village with solar panels. Our children can now study at night, and our local businesses can operate longer hours. It's changed everything for us.",
-            image:
-                "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+            image: witness,
             rating: 5,
         },
         {
@@ -57,7 +57,7 @@ const RenewableEnergyTestimonials = () => {
     ];
 
     return (
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-gradient-to-br from-[#FFC107]/10 to-[#FFC107]/5">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-[#1E1E20] mb-6">

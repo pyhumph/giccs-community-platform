@@ -7,19 +7,19 @@ const FAQItem = ({ question, answer, isOpen, toggle }) => {
   return (
     <div className="mb-4 md:mb-6 lg:mb-8">
       <button
-        className={`w-full text-left py-3 md:py-4 lg:py-5 px-4 md:px-6 lg:px-8 rounded-full flex justify-between items-center transition-all duration-300 ${
-          isOpen 
-            ? "bg-yellow-400 border border-gray-300 text-white rounded-t-2xl md:rounded-t-3xl lg:rounded-t-4xl rounded-b-none" 
+        className={`w-full text-left py-3 md:py-4 lg:py-5 px-4 md:px-6 lg:px-8 rounded-full flex justify-between items-center transition-all duration-300 ${isOpen
+            ? "bg-yellow-400 border border-gray-300 text-white rounded-t-2xl md:rounded-t-3xl lg:rounded-t-4xl rounded-b-none"
             : "bg-transparent border-2 border-gray-300 text-black hover:border-teal-700"
-        }`}
+          }`}
         onClick={toggle}
       >
-        <span className="font-semibold text-sm md:text-lg lg:text-xl pr-4">{question}</span>
+        <span className="font-semibold text-sm md:text-lg lg:text-xl pr-4">
+          {question}
+        </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-5 w-5 md:h-6 md:w-6 transition-transform flex-shrink-0 ${
-            isOpen ? "transform rotate-180" : ""
-          }`}
+          className={`h-5 w-5 md:h-6 md:w-6 transition-transform flex-shrink-0 ${isOpen ? "transform rotate-180" : ""
+            }`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -34,7 +34,9 @@ const FAQItem = ({ question, answer, isOpen, toggle }) => {
       </button>
       {isOpen && (
         <div className="p-3 md:p-4 bg-white rounded-b-2xl md:rounded-b-3xl lg:rounded-b-4xl border border-gray-200 border-t-0">
-          <p className="text-gray-600 leading-6 md:leading-7 lg:leading-8 text-sm md:text-base">{answer}</p>
+          <p className="text-gray-600 leading-6 md:leading-7 lg:leading-8 text-sm md:text-base">
+            {answer}
+          </p>
         </div>
       )}
     </div>
@@ -49,25 +51,25 @@ export default function FAQSection() {
       id: 1,
       question: "How can I get involved with GICCS?",
       answer:
-        "It Is A Long Established Fact That A Reader Will Be Distracted By The Readable The A Content Of A Page When Looking At Its Layout. Many Desktop Publishing Packages And Web Page Editors.",
+        "Join our programs, volunteer, or support our community projects.",
     },
     {
       id: 2,
       question: "Does GICCS offer long-term support?",
       answer:
-        "Yes, we have recipes suitable for all skill levels, from beginners to advanced cooks.",
+        "Yes, we provide ongoing support through health, education, and empowerment programs.",
     },
     {
       id: 3,
       question: "What services does the Inner Center provide?",
       answer:
-        "Absolutely! We provide detailed cooking tips, techniques, and step-by-step instructions.",
+        "Free access to wellness, education, therapy, and skill-building sessions.",
     },
     {
       id: 4,
       question: "Who can benefit from GICCS programs?",
       answer:
-        "We update our recipe collection regularly with seasonal dishes and new culinary trends.",
+        "Underserved individuals, families, and women with existing businesses.",
     },
   ];
 
@@ -108,7 +110,9 @@ export default function FAQSection() {
           <div className="w-full lg:w-1/2 relative">
             {/* Background */}
             <div className="bg-yellow-100 absolute inset-0 rounded-2xl lg:rounded-none lg:right-0 lg:w-[120%]"></div>
-            
+
+            <div className="bg-teal-700 absolute inset-0 rounded-2xl lg:rounded-none lg:right-0 lg:w-[120%]"></div>
+
             {/* Images Container */}
             <div className="relative z-10 p-4 md:p-6 lg:p-8">
               <div className="relative max-w-full">
@@ -118,7 +122,7 @@ export default function FAQSection() {
                   alt="Children playing"
                   className="w-full max-w-md lg:max-w-lg xl:max-w-xl rounded-2xl border-4 md:border-8 lg:border-10 border-white shadow-2xl h-64 md:h-80 lg:h-96 xl:h-[43rem] object-cover mx-auto lg:mx-0"
                 />
-                
+
                 {/* Floating Image */}
                 <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 lg:bottom-12 lg:-right-16 xl:bottom-[12rem] xl:-right-20 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-64 xl:h-64">
                   <img

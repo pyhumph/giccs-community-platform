@@ -160,7 +160,7 @@ const HealthDonate = () => {
                     <input
                       type="number"
                       placeholder="Enter amount"
-                      className="mt-2 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#FFC107] focus:border-transparent"
+                      className="mt-2 w-full border text-black border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#FFC107] focus:border-transparent"
                     />
                   </div>
                 </div>

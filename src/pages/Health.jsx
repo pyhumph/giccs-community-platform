@@ -19,7 +19,7 @@ const Health = () => {
       <HealthServices />
       <HealthImpact />
       <HealthTestimonials />
-      <HealthDonate />
+      {/*<HealthDonate />*/}
       <Subscribe />
       <BackToTopButton />
       <Footer />

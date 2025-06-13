@@ -14,6 +14,8 @@ import ReviewForm from "../application/ReviewForm";
 
 const Application = () => {
   const [currentStep, setCurrentStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("");
   const [formData, setFormData] = useState({
     applicationType: "",
     personalInfo: {},
@@ -45,6 +47,38 @@ const Application = () => {
 
   const updateFormData = (stepData) => {
     setFormData((prev) => ({ ...prev, ...stepData }));
+  };
+
+  // Handle final application submission
+  const handleSubmitApplication = async () => {
+    setIsSubmitting(true);
+    setSubmitStatus("");
+
+    try {
+      const response = await fetch("http://localhost:3001/api/application", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        // Optional: Reset form or redirect
+        // setFormData({ applicationType: "", personalInfo: {}, documents: [], additionalInfo: "" });
+        // setCurrentStep(1);
+      } else {
+        const errorData = await response.json();
+        setSubmitStatus("error");
+        console.error("Submission error:", errorData);
+      }
+    } catch (error) {
+      console.error("Error submitting application:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const renderCurrentStep = () => {
@@ -80,7 +114,10 @@ const Application = () => {
           <ReviewForm
             onPrev={prevStep}
             onUpdate={updateFormData}
+            onSubmit={handleSubmitApplication}
             data={formData}
+            isSubmitting={isSubmitting}
+            submitStatus={submitStatus}
           />
         );
       default:
@@ -120,45 +157,69 @@ const Application = () => {
 
       {/* Application Form Section */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Success/Error Messages */}
+        {submitStatus === "success" && (
+          <div className="mb-8 bg-green-100 border border-green-400 text-green-700 px-6 py-4 rounded-lg">
+            <div className="flex items-center">
+              <CheckCircle className="w-5 h-5 mr-2" />
+              <div>
+                <h4 className="font-semibold">
+                  Application Submitted Successfully!
+                </h4>
+                <p className="text-sm">
+                  Thank you for your application. We'll review it and get back
+                  to you soon.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {submitStatus === "error" && (
+          <div className="mb-8 bg-red-100 border border-red-400 text-red-700 px-6 py-4 rounded-lg">
+            <h4 className="font-semibold">Submission Failed</h4>
+            <p className="text-sm">
+              Sorry, there was an error submitting your application. Please try
+              again.
+            </p>
+          </div>
+        )}
+
         {/* Progress Steps */}
         <div className="mb-12">
           <div className="flex justify-between items-center mb-8">
             {steps.map((step, index) => (
               <div key={step.number} className="flex items-center">
                 <div
-                  className={`flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-300 ${
-                    currentStep >= step.number
+                  className={`flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-300 ${currentStep >= step.number
                       ? "bg-blue-600 border-blue-600 text-white"
                       : "border-gray-300 text-gray-400"
-                  }`}
+                    }`}
                 >
                   <step.icon className="w-6 h-6" />
                 </div>
                 <div className="ml-4 hidden md:block">
                   <p
-                    className={`text-sm font-medium ${
-                      currentStep >= step.number
+                    className={`text-sm font-medium ${currentStep >= step.number
                         ? "text-blue-600"
                         : "text-gray-400"
-                    }`}
+                      }`}
                   >
                     Step {step.number}
                   </p>
                   <p
-                    className={`text-xs ${
-                      currentStep >= step.number
+                    className={`text-xs ${currentStep >= step.number
                         ? "text-gray-900"
                         : "text-gray-400"
-                    }`}
+                      }`}
                   >
                     {step.title}
                   </p>
                 </div>
                 {index < steps.length - 1 && (
                   <div
-                    className={`w-16 h-0.5 mx-4 ${
-                      currentStep > step.number ? "bg-blue-600" : "bg-gray-300"
-                    }`}
+                    className={`w-16 h-0.5 mx-4 ${currentStep > step.number ? "bg-blue-600" : "bg-gray-300"
+                      }`}
                   />
                 )}
               </div>

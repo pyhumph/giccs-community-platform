@@ -1,39 +1,35 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Instagram, Facebook, Twitter, Plus, X } from "lucide-react";
 
-// Simulated imports since we don't have access to the actual assets
-const handshake = "/api/placeholder/400/320";
 import volunteer01 from "../../assets/volunteer01.jpg";
-import volunteer02 from "../../assets/volunteer02.jpg";
 import volunteer03 from "../../assets/volunteer.jpg";
 
 import Slogan from "../sub-comp/slogan";
 import CTAButton from "../sub-comp/Button";
-// :ock components based on the imports in the original code
 
-const VolunteerCard = ({ name, role, image }) => {
+const VolunteerCard = ({ name, role, image, id }) => {
+  const navigate = useNavigate();
   const [showSocial, setShowSocial] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [tiltDirection, setTiltDirection] = useState({ x: 0, y: 0 });
 
-  // Handle tilt effect
+  const handleCardClick = () => {
+    navigate("/about", {
+      state: { memberId: id },
+    });
+  };
+
   const handleMouseMove = (e) => {
     if (!isHovered) return;
-
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
-
-    // Calculate the position of the mouse relative to the card
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-
-    // Calculate the tilt direction
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-
     const tiltX = (y - centerY) / 30;
     const tiltY = (centerX - x) / 30;
-
     setTiltDirection({ x: tiltX, y: tiltY });
   };
 
@@ -42,7 +38,6 @@ const VolunteerCard = ({ name, role, image }) => {
     setTiltDirection({ x: 0, y: 0 });
   };
 
-  // Social media icons
   const socialIcons = [
     { icon: <Instagram size={16} />, name: "Instagram" },
     { icon: <Facebook size={16} />, name: "Facebook" },
@@ -51,6 +46,7 @@ const VolunteerCard = ({ name, role, image }) => {
 
   return (
     <div
+      onClick={handleCardClick}
       className={`bg-gray-100 rounded-xl overflow-hidden relative transition-all duration-300 cursor-pointer ${isHovered ? "shadow-lg" : ""}`}
       style={{
         transform: `perspective(1000px) rotateX(${tiltDirection.x}deg) rotateY(${tiltDirection.y}deg)`,
@@ -59,7 +55,6 @@ const VolunteerCard = ({ name, role, image }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      onClick={() => console.log(`View details for ${name}`)}
     >
       <div className="relative overflow-hidden">
         <img
@@ -71,7 +66,6 @@ const VolunteerCard = ({ name, role, image }) => {
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/70 to-transparent"></div>
         )}
 
-        {/* Social media icons */}
         <div
           className={`absolute right-4 top-[76%] -translate-y-1/2 flex flex-col gap-2 transition-all duration-300 ${showSocial ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         >
@@ -98,7 +92,7 @@ const VolunteerCard = ({ name, role, image }) => {
         className={`p-8 transition-all duration-300 ${isHovered ? "bg-[#101828]" : "bg-[#FAE7F3]"}`}
       >
         <h3
-          className={`text-lg font-semibold transition-colors duration-300 ${isHovered ? "text-white" : "text-gray-800"}`}
+          className={`text-[1rem] font-semibold transition-colors duration-300 ${isHovered ? "text-white" : "text-gray-800"}`}
         >
           {name}
         </h3>
@@ -110,9 +104,8 @@ const VolunteerCard = ({ name, role, image }) => {
       </div>
 
       <button
-        className={`absolute top-[74%] right-4 p-1 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300 z-10 ${
-          showSocial ? "bg-[#FFC107] rotate-0" : "bg-[#101828] rotate-0"
-        }`}
+        className={`absolute top-[74%] right-4 p-1 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300 z-10 ${showSocial ? "bg-[#FFC107] rotate-0" : "bg-[#101828] rotate-0"
+          }`}
         onClick={(e) => {
           e.stopPropagation();
           setShowSocial(!showSocial);
@@ -129,28 +122,30 @@ const VolunteerCard = ({ name, role, image }) => {
 };
 
 export default function VolunteerTeamSection() {
+  const navigate = useNavigate(); // ✅ Fix: Add useNavigate here
+
   const volunteers = [
     {
       id: 1,
-      name: "Michel Fokluz",
+      name: "Daniel Ole Njooley",
       role: "Volunteer",
       image: volunteer01,
     },
     {
       id: 2,
-      name: "Arian Drobloas",
+      name: "Mirjean Ackbaraly Pirbhai",
       role: "Volunteer",
-      image: volunteer02,
+      image: volunteer01,
     },
     {
       id: 3,
-      name: "Jara Klintof",
+      name: "Muslim Mohamedtaki Remtula",
       role: "Volunteer",
       image: volunteer03,
     },
     {
       id: 4,
-      name: "Aiden Markram",
+      name: "Dr. Neduvoto Piniel Mollel",
       role: "Volunteer",
       image: volunteer01,
     },
@@ -163,21 +158,27 @@ export default function VolunteerTeamSection() {
           <Slogan />
         </div>
         <div className="text-center mb-10">
-        <h2 className="text-4xl lg:text-6xl font-bold mb-4">
-        <span className="text-[#1E1E02]">Passionate </span>
-        <span className="text-yellow-500">Hearts</span>{" "}
-        <span className="text-dark-green">Making a Difference</span>
-      </h2>
-      <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
-        Behind every meaningful impact is a dedicated team. Get to know the
-        incredible individuals who give their time, energy, and compassion
-        to bring our mission to life.
-      </p>
+          <h2 className="text-4xl lg:text-6xl font-bold mb-4">
+            <span className="text-[#1E1E02]">Passionate </span>
+            <span className="text-yellow-500">Hearts</span>{" "}
+            <span className="text-dark-green">Making a Difference</span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
+            Behind every meaningful impact is a dedicated team. Get to know the
+            incredible individuals who give their time, energy, and compassion
+            to bring our mission to life.
+          </p>
+          <h2 className="text-4xl lg:text-6xl font-bold mb-2">
+            <span className="text-dark-green">Our Board Leadership</span>
+            <br />
+            <span className="text-yellow-500">Team</span>
+          </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {volunteers.map((volunteer) => (
             <VolunteerCard
               key={volunteer.id}
+              id={volunteer.id}
               name={volunteer.name}
               role={volunteer.role}
               image={volunteer.image}
@@ -187,7 +188,9 @@ export default function VolunteerTeamSection() {
         <div className="mt-12 flex justify-center">
           <CTAButton
             text="View All"
-            onClick={() => console.log("Button Clicked!!")}
+            onClick={() =>
+              navigate("/about", { state: { scrollToBoard: true } })
+            }
           />
         </div>
       </div>

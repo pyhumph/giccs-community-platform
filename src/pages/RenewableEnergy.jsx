@@ -91,7 +91,7 @@ const RenewableEnergyPage = () => {
       <RenewableEnergyServices />
       <RenewableEnergyImpact />
       <RenewableEnergyTestimonials />
-      <RenewableEnergyDonate />
+      {/*<RenewableEnergyDonate />*/}
       <RenewableEnergyFAQ />
       <RenewableEnergyContact />
       <CallToAction />

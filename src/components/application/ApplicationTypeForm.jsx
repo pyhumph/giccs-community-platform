@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Heart, BookOpen, Briefcase, Home, Utensils } from "lucide-react";
+import { Heart, BookOpen, Briefcase, Home, Sun } from "lucide-react";
 
 const ApplicationTypeForm = ({ onNext, onUpdate, data }) => {
   const [selectedType, setSelectedType] = useState(data.applicationType || "");
@@ -27,18 +27,12 @@ const ApplicationTypeForm = ({ onNext, onUpdate, data }) => {
       color: "from-green-500 to-emerald-600",
     },
     {
-      id: "housing",
-      title: "Housing Support",
-      description: "Home repairs, rent assistance, and basic amenities",
-      icon: Home,
-      color: "from-purple-500 to-violet-600",
-    },
-    {
-      id: "food",
-      title: "Food Security",
-      description: "Nutrition programs and food assistance",
-      icon: Utensils,
-      color: "from-orange-500 to-amber-600",
+      id: "renewable-energy",
+      title: "Renewable Energy",
+      description:
+        "Clean energy access, solar power, and sustainability support",
+      icon: Sun,
+      color: "from-yellow-500 to-blue-600",
     },
   ];
 
@@ -68,11 +62,10 @@ const ApplicationTypeForm = ({ onNext, onUpdate, data }) => {
         {applicationTypes.map((type) => (
           <div
             key={type.id}
-            className={`cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg rounded-lg border bg-white shadow-sm p-6 ${
-              selectedType === type.id
+            className={`cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg rounded-lg border bg-white shadow-sm p-6 ${selectedType === type.id
                 ? "ring-2 ring-blue-500 shadow-lg"
                 : "hover:ring-2 hover:ring-blue-300"
-            }`}
+              }`}
             onClick={() => handleSelect(type.id)}
           >
             <div

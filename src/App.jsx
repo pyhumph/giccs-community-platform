@@ -12,10 +12,12 @@ import NewsletterDetailPage from "./components/newsletter/pages/NewsletterDetail
 import Application from "./pages/Application";
 import Volunteer from "./pages/BecomeVolunteer";
 import RenewableEnergyPage from "./pages/RenewableEnergy";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />

@@ -1,39 +1,42 @@
-
 import Slogan from "../sub-comp/slogan.jsx";
 import newz01 from "../../assets/mustafa-alabri-9gz10zK7mWo-unsplash.jpg";
 import newz02 from "../../assets/kate-bezzubets-WBzkNwjpvwc-unsplash.jpg";
 import newz03 from "../../assets/jorge-maya-9AiE2wfpwvY-unsplash.jpg";
 import CTAButton from "../sub-comp/Button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function NewsletterSection() {
   const newsItems = [
     {
       id: 1,
       date: "25 Apr",
-      category: "Community Development",
-      title: "Empowering Local Communities Through Sustainable Projects",
+      category: "Impact Stories",
+      title: "Year of Transformation: Our 2025 Impact Report",
       views: 12,
       shares: 0,
-      image: newz01,
+      image:
+        "https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 2,
-      date: "25 Apr",
-      category: "Community Development",
-      title: "Empowering Local Communities Through Sustainable Projects",
+      date: "02 May",
+      category: "Program Updates",
+      title: "New Educational Centers Opening Across Rural Communities",
       views: 12,
       shares: 0,
-      image: newz02,
+      image:
+        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 3,
-      date: "25 Apr",
+      date: "17 May",
       category: "Community Development",
-      title: "Empowering Local Communities Through Sustainable Projects",
+      title: "Health Heroes: Meet Our Volunteer Medical Team",
       views: 12,
       shares: 0,
-      image: newz03,
+      image:
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
   ];
 
@@ -82,9 +85,10 @@ export default function NewsletterSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
           {newsItems.map((item) => (
-            <div
+            <Link
+              to={`/newsletter/${item.id}`}
               key={item.id}
-              className="bg-white rounded-2xl shadow-md w-full max-w-sm mx-auto overflow-hidden transition-all duration-300 cursor-pointer"
+              className="bg-white rounded-2xl shadow-md w-full max-w-sm mx-auto overflow-hidden transition-all duration-300 cursor-pointer block"
               style={{
                 transform:
                   hoveredCard === item.id
@@ -153,7 +157,9 @@ export default function NewsletterSection() {
                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                       />
                     </svg>
-                    <span className="text-sm sm:text-base">Views ({item.views})</span>
+                    <span className="text-sm sm:text-base">
+                      Views ({item.views})
+                    </span>
                   </div>
 
                   <div className="flex items-center">
@@ -175,12 +181,14 @@ export default function NewsletterSection() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         <div className="mt-8 md:mt-12 flex justify-center">
-          <CTAButton text="View All" />
+          <Link to={`/newsletter`}>
+            <CTAButton text="View All" />
+          </Link>
         </div>
       </div>
     </div>

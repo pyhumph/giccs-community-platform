@@ -10,7 +10,7 @@ export default function Hero() {
   const [displayText, setDisplayText] = useState("");
 
   const slides = [bg01, bg02, bg03];
-  const fullText = "Bring Hope and Aid to Tanzanian in Need";
+  const fullText = "Bringing Hope and Aid to Tanzanians in Need";
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,17 +41,15 @@ export default function Hero() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
         >
           <div className="w-full h-full overflow-hidden">
             <img
               src={slide}
               alt={`Slide ${index + 1}`}
-              className={`w-full h-full object-cover transition-transform duration-5000 ease-out ${
-                index === currentSlide ? "scale-110" : "scale-70"
-              }`}
+              className={`w-full h-full object-cover transition-transform duration-5000 ease-out ${index === currentSlide ? "scale-110" : "scale-70"
+                }`}
             />
           </div>
         </div>
@@ -77,25 +75,25 @@ export default function Hero() {
         {/* Main Heading with Animation */}
         <h1 className="text-4xl md:text-[5.5rem] font-[750] text-white max-w-6xl mb-4">
           <span className="block">
-            {displayText.includes("Bring")
+            {displayText.includes("Bringing")
               ? displayText.substring(
-                  0,
-                  displayText.indexOf("Tanzanian") !== -1
-                    ? displayText.indexOf("Tanzanian")
-                    : displayText.length,
-                )
+                0,
+                displayText.indexOf("Tanzanians") !== -1
+                  ? displayText.indexOf("Tanzanians")
+                  : displayText.length,
+              )
               : ""}
           </span>
-          {displayText.includes("Tanzanian") && (
+          {displayText.includes("Tanzanians") && (
             <>
               <span className="text-[#FFC107] relative mr-4">
                 {displayText.substring(
-                  displayText.indexOf("Tanzanian"),
-                  displayText.indexOf("Tanzanian") + "Tanzanian".length,
+                  displayText.indexOf("Tanzanians"),
+                  displayText.indexOf("Tanzanians") + "Tanzanians".length,
                 )}
               </span>
               {displayText.substring(
-                displayText.indexOf("Tanzanian") + "Tanzanian".length,
+                displayText.indexOf("Tanzanians") + "Tanzanians".length,
               )}
             </>
           )}
@@ -111,7 +109,7 @@ export default function Hero() {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
           {/* Learn More Button */}
-          <button className="hover:scale-105 transition-transform bg-[#C2B3B3]/45 text-white cursor-pointer font-bold px-4 md:px-5 lg:px-8 xl:px-10 py-3 md:py-3 lg:py-4 xl:py-[22px] rounded-full relative group overflow-hidden duration-300 text-xs md:text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem]">
+          {/*<button className="hover:scale-105 transition-transform bg-[#C2B3B3]/45 text-white cursor-pointer font-bold px-4 md:px-5 lg:px-8 xl:px-10 py-3 md:py-3 lg:py-4 xl:py-[22px] rounded-full relative group overflow-hidden duration-300 text-xs md:text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem]">
             <span className="absolute inset-0 bg-[#FFC107] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
             <div className="flex items-center space-x-1 md:space-x-2 relative z-10">
               <span className="group-hover:text-black transition-colors duration-300">
@@ -119,10 +117,10 @@ export default function Hero() {
               </span>
               <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 transition-all duration-300 transform group-hover:translate-x-1 group-hover:rotate-45 group-hover:text-black" />
             </div>
-          </button>
+          </button>*/}
 
           {/* Apply Now Button */}
-          <button className="hover:scale-105 bg-[#FFC107] text-[#1E1E20] cursor-pointer font-bold px-4 md:px-5 lg:px-8 xl:px-10 py-3 md:py-3 lg:py-4 xl:py-[22px] rounded-full relative group overflow-hidden transition-all duration-300 text-xs md:text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem]">
+          {/*<button className="hover:scale-105 bg-[#FFC107] text-[#1E1E20] cursor-pointer font-bold px-4 md:px-5 lg:px-8 xl:px-10 py-3 md:py-3 lg:py-4 xl:py-[22px] rounded-full relative group overflow-hidden transition-all duration-300 text-xs md:text-[0.7rem] lg:text-[0.8rem] xl:text-[0.9rem]">
             <span className="absolute inset-0 bg-[#1E1E20] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
             <div className="flex items-center space-x-1 md:space-x-2 relative z-10">
               <span className="group-hover:text-white transition-colors duration-300">
@@ -130,7 +128,7 @@ export default function Hero() {
               </span>
               <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 transition-all duration-300 transform group-hover:translate-x-1 group-hover:rotate-45 group-hover:text-white" />
             </div>
-          </button>
+          </button>*/}
         </div>
       </div>
     </div>

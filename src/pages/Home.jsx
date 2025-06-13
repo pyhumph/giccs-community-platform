@@ -37,9 +37,10 @@ function Home() {
         <ImpactStatsSection />
       </SectionWrapper>
 
-      <SectionWrapper bgColorHex="#f2f5f3">
+      {/*<SectionWrapper bgColorHex="#f2f5f3">
         <SupportCarousel />
       </SectionWrapper>
+      */}
 
       <SectionWrapper bgColorHex="#ffffff">
         <VolunteerTeamSection />

@@ -23,6 +23,7 @@ const PersonalInfoForm = ({ onNext, onPrev, onUpdate, data }) => {
     city: data.personalInfo?.city || "",
     state: data.personalInfo?.state || "",
     zipCode: data.personalInfo?.zipCode || "",
+    country: data.personalInfo?.country || "",
     occupation: data.personalInfo?.occupation || "",
     monthlyIncome: data.personalInfo?.monthlyIncome || "",
     familySize: data.personalInfo?.familySize || "",
@@ -125,7 +126,7 @@ const PersonalInfoForm = ({ onNext, onPrev, onUpdate, data }) => {
             <SelectTrigger className="transition-all duration-300 focus:ring-2 focus:ring-blue-500">
               <SelectValue placeholder="Select gender" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white">
               <SelectItem value="male">Male</SelectItem>
               <SelectItem value="female">Female</SelectItem>
               <SelectItem value="other">Other</SelectItem>
@@ -159,25 +160,50 @@ const PersonalInfoForm = ({ onNext, onPrev, onUpdate, data }) => {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="state">State</Label>
+          <Label htmlFor="state">State/Region</Label>
           <Input
             id="state"
             value={formData.state}
             onChange={(e) => handleChange("state", e.target.value)}
-            placeholder="State"
+            placeholder="State or Region"
             className="transition-all duration-300 focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="zipCode">Zip Code</Label>
+          <Label htmlFor="zipCode">Zip/Postal Code</Label>
           <Input
             id="zipCode"
             value={formData.zipCode}
             onChange={(e) => handleChange("zipCode", e.target.value)}
-            placeholder="Zip code"
+            placeholder="Zip or postal code"
             className="transition-all duration-300 focus:ring-2 focus:ring-blue-500"
           />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="country">Country</Label>
+          <Select
+            value={formData.country}
+            onValueChange={(value) => handleChange("country", value)}
+          >
+            <SelectTrigger className="transition-all duration-300 focus:ring-2 focus:ring-blue-500">
+              <SelectValue placeholder="Select country" />
+            </SelectTrigger>
+            <SelectContent className="bg-white">
+              <SelectItem value="tanzania">Tanzania</SelectItem>
+              <SelectItem value="kenya">Kenya</SelectItem>
+              <SelectItem value="uganda">Uganda</SelectItem>
+              <SelectItem value="rwanda">Rwanda</SelectItem>
+              <SelectItem value="burundi">Burundi</SelectItem>
+              <SelectItem value="south-sudan">South Sudan</SelectItem>
+              <SelectItem value="drc">Democratic Republic of Congo</SelectItem>
+              <SelectItem value="zambia">Zambia</SelectItem>
+              <SelectItem value="malawi">Malawi</SelectItem>
+              <SelectItem value="mozambique">Mozambique</SelectItem>
+              <SelectItem value="other">Other</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
 
         <div className="space-y-2">
@@ -197,7 +223,7 @@ const PersonalInfoForm = ({ onNext, onPrev, onUpdate, data }) => {
             id="monthlyIncome"
             value={formData.monthlyIncome}
             onChange={(e) => handleChange("monthlyIncome", e.target.value)}
-            placeholder="Monthly income"
+            placeholder="Monthly income (e.g., 500,000 TSh)"
             className="transition-all duration-300 focus:ring-2 focus:ring-blue-500"
           />
         </div>

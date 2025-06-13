@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Slogan from "../sub-comp/slogan";
 import CTAButton from "../sub-comp/Button";
 import heart from "../../assets/balloon-hearts (1).png";
@@ -11,7 +12,6 @@ import phone from "../../assets/phone-call (2).png";
 import grid from "../../assets/grid.png";
 import hand from "../../assets/hand.png";
 import parachute from "../../assets/parachute2.svg";
-import BackToTopButton from "../sub-comp/BackToTopButton";
 
 // Parachute Animation Component
 const ParachuteAnimation = () => (
@@ -124,7 +124,7 @@ const InnerCenter = () => {
 
           {/* Play button overlay */}
           <a
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            href="https://www.youtube.com/watch?v=uyVCneA_e3o&t=11s&pp=0gcJCbAJAYcqIYzv"
             target="_blank"
             rel="noopener noreferrer"
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
@@ -321,7 +321,9 @@ const InnerCenter = () => {
 
           {/* CTA and Contact */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-6">
-            <CTAButton text="View All" />
+            <Link to={`/inner-center`}>
+              <CTAButton text="View All" />
+            </Link>
             <div className="flex flex-col items-center lg:items-start mr-8 sm:mr-16 md:mr-24 lg:mr-32">
               <p className="font-semibold text-gray-700 mb-1 text-sm sm:text-base">
                 Phone

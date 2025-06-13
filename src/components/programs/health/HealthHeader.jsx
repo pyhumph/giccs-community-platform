@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import headerImg from "../../../assets/health_02.jpg";
 import Slogan from "../../sub-comp/slogan";
 import healthcare from "../../../assets/handshake_health.png";
@@ -36,10 +36,14 @@ const HealthHeader = () => {
           treatment, focusing on chronic illnesses and preventative care.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <LearnMoreButton text="Volunteer Now" />
-          <CTAButton />
-        </div>
+        {/* <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <Link to={`/volunteer`}>
+            <LearnMoreButton text="Volunteer Now" />
+          </Link>
+          <Link to={`/donation/application`}>
+            <CTAButton />
+          </Link>
+        </div>*/}
       </div>
 
       {/* Wave shape at bottom */}

@@ -103,7 +103,7 @@ const HealthIntro = () => {
               </div>
             </div>
 
-            <button className="bg-[#1E1E20] text-white px-8 py-4 rounded-full font-semibold flex items-center group transition-all duration-300 hover:bg-[#FFC107] hover:text-[#1E1E20]">
+            {/*<button className="bg-[#1E1E20] text-white px-8 py-4 rounded-full font-semibold flex items-center group transition-all duration-300 hover:bg-[#FFC107] hover:text-[#1E1E20]">
               <span>Learn More About Our Approach</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +119,7 @@ const HealthIntro = () => {
                   d="M14 5l7 7m0 0l-7 7m7-7H3"
                 />
               </svg>
-            </button>
+            </button>*/}
           </div>
         </div>
       </div>
