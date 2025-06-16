@@ -10,8 +10,60 @@ export default function Donation() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [address, setAddress] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const presetAmounts = [10, 50, 100, 300, 500];
+
+  const handleSubmit = async () => {
+    if (!firstName || !lastName || !email || !donationAmount) {
+      alert("Please fill in all required fields and enter a donation amount.");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      if (typeof window.Email === "undefined") {
+        throw new Error("SMTP.js not loaded. Add the script to index.html");
+      }
+
+      const result = await window.Email.send({
+        Host: import.meta.env.VITE_SMTP_HOST,
+        Username: import.meta.env.VITE_SMTP_USERNAME,
+        Password: import.meta.env.VITE_SMTP_PASSWORD,
+        To: import.meta.env.VITE_SMTP_USERNAME,
+        From: import.meta.env.VITE_SMTP_USERNAME,
+        Subject: `New Donation from ${firstName} ${lastName}`,
+        Body: `
+          <h2>New Donation</h2>
+          <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phoneNumber || "Not provided"}</p>
+          <p><strong>Address:</strong> ${address || "Not provided"}</p>
+          <p><strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}</p>
+          <p><strong>Donation Amount:</strong> $${donationAmount}</p>
+        `,
+      });
+
+      if (result === "OK") {
+        alert("🎉 Thank you for your donation!");
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setPhoneNumber("");
+        setAddress("");
+        setMessage("");
+        setDonationAmount(10);
+      } else {
+        alert("Failed to send. Please try again.");
+        console.error(result);
+      }
+    } catch (error) {
+      console.error("SMTP Error:", error);
+      alert("Error occurred while sending your donation message.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -118,6 +170,7 @@ export default function Donation() {
                     <div>
                       <input
                         type="email"
+                        required
                         placeholder="Email Address *"
                         className="w-full px-4 py-3 bg-gray-100 focus:outline-none focus:ring-1 focus:ring-orange-500 border border-gray-300 rounded-md"
                         value={email}
@@ -155,9 +208,13 @@ export default function Donation() {
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <button className="py-2 px-6 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-all transform hover:scale-105 duration-200 flex items-center">
+                    <button
+                      onClick={handleSubmit}
+                      disabled={loading}
+                      className="py-2 px-6 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-all transform hover:scale-105 duration-200 flex items-center disabled:opacity-50"
+                    >
                       <Heart size={18} className="mr-2" />
-                      Donate Now
+                      {loading ? "Sending..." : "Donate Now"}
                     </button>
                     <div className="text-md text-gray-700">
                       Donation Total:{" "}

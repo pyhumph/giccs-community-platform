@@ -525,11 +525,6 @@ function Navbar() {
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="block py-1">
-                        Partnership
-                      </a>
-                    </li>
-                    <li>
                       <a href="/newsletter" className="block py-1">
                         Newsletter
                       </a>
@@ -677,15 +672,6 @@ function Navbar() {
                     className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 relative group/item"
                   >
                     Donate Us
-                    <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
-                      →
-                    </span>
-                  </a>
-                  <a
-                    href="/partnership"
-                    className="flex justify-between items-center px-4 py-2 text-xs md:text-sm text-[#1E1E20] hover:text-[#FBC02D] transition-all duration-300 whitespace-nowrap relative group/item"
-                  >
-                    Partnership
                     <span className="ml-2 transform opacity-0 translate-x-[-4px] group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300">
                       →
                     </span>

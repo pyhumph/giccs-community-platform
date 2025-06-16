@@ -123,8 +123,21 @@ const BecomeVolunteerPage = () => {
   };
 
   const nextStep = () => {
-    if (activeStep < applicationSteps.length - 1) {
+    const requiredFields = {
+      0: ["name", "email", "location"],
+      1: [], // Optional, no required fields in step 1
+      2: [], // Optional, no required fields in step 2
+    };
+
+    const fieldsToCheck = requiredFields[activeStep] || [];
+    const allFilled = fieldsToCheck.every(
+      (field) => formData[field].trim() !== "",
+    );
+
+    if (allFilled) {
       setActiveStep(activeStep + 1);
+    } else {
+      alert("Please fill in all required fields before proceeding.");
     }
   };
 
@@ -134,9 +147,59 @@ const BecomeVolunteerPage = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for your application! We will contact you soon.");
+
+    try {
+      if (typeof window.Email === "undefined") {
+        throw new Error(
+          "SMTP.js not loaded. Please add the script to index.html.",
+        );
+      }
+
+      const result = await window.Email.send({
+        Host: import.meta.env.VITE_SMTP_HOST,
+        Username: import.meta.env.VITE_SMTP_USERNAME,
+        Password: import.meta.env.VITE_SMTP_PASSWORD,
+        To: import.meta.env.VITE_SMTP_USERNAME,
+        From: import.meta.env.VITE_SMTP_USERNAME,
+        Subject: `New Volunteer Application from ${formData.name}`,
+        Body: `
+        <h2>New Volunteer Application</h2>
+        <p><strong>Name:</strong> ${formData.name}</p>
+        <p><strong>Email:</strong> ${formData.email}</p>
+        <p><strong>Phone:</strong> ${formData.phone}</p>
+        <p><strong>Location:</strong> ${formData.location}</p>
+        <p><strong>Skills:</strong> ${formData.skills}</p>
+        <p><strong>Availability:</strong> ${formData.availability}</p>
+        <p><strong>Experience:</strong> ${formData.experience}</p>
+        <p><strong>Motivation:</strong> ${formData.motivation}</p>
+        <hr>
+        <p><em>Submitted via the GICCS Volunteer Page</em></p>
+      `,
+      });
+
+      if (result === "OK") {
+        alert("✅ Thank you for your application! We’ll contact you soon.");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          location: "",
+          skills: "",
+          availability: "",
+          experience: "",
+          motivation: "",
+        });
+        setActiveStep(0);
+      } else {
+        alert("❌ Error sending application. Please try again.");
+        console.error(result);
+      }
+    } catch (error) {
+      console.error("SMTP error:", error);
+      alert("❌ An error occurred. Check your network or email config.");
+    }
   };
 
   return (

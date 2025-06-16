@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 const InnerCenterContact = () => {
+  const [loading, setLoading] = useState(false);
   const [inView, setInView] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -47,10 +48,53 @@ const InnerCenterContact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
+    setLoading(true);
+
+    try {
+      if (typeof window.Email === "undefined") {
+        throw new Error("SMTP.js not loaded. Check if the script is added.");
+      }
+
+      const result = await window.Email.send({
+        Host: import.meta.env.VITE_SMTP_HOST,
+        Username: import.meta.env.VITE_SMTP_USERNAME,
+        Password: import.meta.env.VITE_SMTP_PASSWORD,
+        To: import.meta.env.VITE_SMTP_USERNAME,
+        From: import.meta.env.VITE_SMTP_USERNAME,
+        Subject: `New Inner Center Inquiry from ${formData.name}`,
+        Body: `
+        <h2>New Inquiry from Inner Center Page</h2>
+        <p><strong>Name:</strong> ${formData.name}</p>
+        <p><strong>Email:</strong> ${formData.email}</p>
+        <p><strong>Phone:</strong> ${formData.phone || "Not Provided"}</p>
+        <p><strong>Program Interested:</strong> ${formData.program || "Not Selected"}</p>
+        <p><strong>Message:</strong><br>${formData.message.replace(/\n/g, "<br>")}</p>
+        <hr>
+        <p><em>This message was sent from the GICCS Inner Center form.</em></p>
+      `,
+      });
+
+      if (result === "OK") {
+        alert("✅ Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          program: "",
+          message: "",
+        });
+      } else {
+        console.error("Email sending error:", result);
+        alert("❌ Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("❌ An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactInfo = [
@@ -258,10 +302,39 @@ const InnerCenterContact = () => {
 
               <button
                 onClick={handleSubmit}
-                className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-white py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3"
+                disabled={loading}
+                className={`w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 transition-all duration-300 transform ${loading ? "opacity-60 cursor-not-allowed" : "hover:shadow-lg hover:shadow-yellow-400/25 hover:scale-105"}`}
               >
-                Send Message
-                <ArrowRight className="w-5 h-5" />
+                {loading ? (
+                  <>
+                    <svg
+                      className="animate-spin h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v8H4z"
+                      ></path>
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <ArrowRight className="w-5 h-5" />
+                  </>
+                )}
               </button>
             </div>
           </div>
