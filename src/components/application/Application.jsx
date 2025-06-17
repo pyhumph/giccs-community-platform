@@ -1,128 +1,85 @@
 import React, { useState } from "react";
 import {
   Heart,
-  Users,
   BookOpen,
-  Briefcase,
-  Upload,
+  Users,
+  ExternalLink,
+  ArrowRight,
   CheckCircle,
+  Clock,
 } from "lucide-react";
-import PersonalInfoForm from "../application/PersonalInfoForm";
-import ApplicationTypeForm from "../application/ApplicationTypeForm";
-import DocumentsForm from "../application/DocumentsForm";
-import ReviewForm from "../application/ReviewForm";
 
 const Application = () => {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState("");
-  const [formData, setFormData] = useState({
-    applicationType: "",
-    personalInfo: {},
-    documents: [],
-    additionalInfo: "",
-  });
+  const [hoveredCard, setHoveredCard] = useState(null);
 
-  const totalSteps = 4;
-  const progress = (currentStep / totalSteps) * 100;
-
-  const steps = [
-    { number: 1, title: "Application Type", icon: Heart },
-    { number: 2, title: "Personal Information", icon: Users },
-    { number: 3, title: "Documents", icon: Upload },
-    { number: 4, title: "Review & Submit", icon: CheckCircle },
+  const applicationTypes = [
+    {
+      id: "education",
+      title: "Education Assistance",
+      description:
+        "School fees, books, uniforms, and educational materials to support your learning journey",
+      icon: BookOpen,
+      color: "from-blue-500 to-indigo-600",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200",
+      hoverColor: "hover:border-blue-400",
+      formLink: "https://forms.gle/aoVj3Mpb7wn75afr8",
+      features: [
+        "School fees and tuition support",
+        "Educational materials and books",
+        "Uniforms and supplies",
+        "Transportation assistance",
+      ],
+      estimatedTime: "5-7 minutes",
+    },
+    {
+      id: "women-empowerment",
+      title: "Women Empowerment",
+      description:
+        "Supporting women through business opportunities, skills development, and empowerment programs",
+      icon: Users,
+      color: "from-purple-500 to-pink-600",
+      bgColor: "bg-purple-50",
+      borderColor: "border-purple-200",
+      hoverColor: "hover:border-purple-400",
+      formLink: "https://forms.gle/CG6252eZDQdZijW7A",
+      features: [
+        "Business startup capital",
+        "Skills training programs",
+        "Mentorship opportunities",
+        "Leadership development",
+      ],
+      estimatedTime: "6-8 minutes",
+    },
+    {
+      id: "health",
+      title: "Healthcare Support",
+      description:
+        "Medical expenses, treatments, and healthcare equipment for you and your family",
+      icon: Heart,
+      color: "from-red-500 to-pink-600",
+      bgColor: "bg-red-50",
+      borderColor: "border-red-200",
+      hoverColor: "hover:border-red-400",
+      formLink: "#", // Placeholder - will be updated later
+      features: [
+        "Medical treatment costs",
+        "Prescription medications",
+        "Healthcare equipment",
+        "Emergency medical support",
+      ],
+      estimatedTime: "5-6 minutes",
+      comingSoon: true,
+    },
   ];
 
-  const nextStep = () => {
-    if (currentStep < totalSteps) {
-      setCurrentStep(currentStep + 1);
+  const handleApplyClick = (application) => {
+    if (application.comingSoon) {
+      return;
     }
-  };
 
-  const prevStep = () => {
-    if (currentStep > 1) {
-      setCurrentStep(currentStep - 1);
-    }
-  };
-
-  const updateFormData = (stepData) => {
-    setFormData((prev) => ({ ...prev, ...stepData }));
-  };
-
-  // Handle final application submission
-  const handleSubmitApplication = async () => {
-    setIsSubmitting(true);
-    setSubmitStatus("");
-
-    try {
-      const response = await fetch("http://localhost:3001/api/application", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        // Optional: Reset form or redirect
-        // setFormData({ applicationType: "", personalInfo: {}, documents: [], additionalInfo: "" });
-        // setCurrentStep(1);
-      } else {
-        const errorData = await response.json();
-        setSubmitStatus("error");
-        console.error("Submission error:", errorData);
-      }
-    } catch (error) {
-      console.error("Error submitting application:", error);
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const renderCurrentStep = () => {
-    switch (currentStep) {
-      case 1:
-        return (
-          <ApplicationTypeForm
-            onNext={nextStep}
-            onUpdate={updateFormData}
-            data={formData}
-          />
-        );
-      case 2:
-        return (
-          <PersonalInfoForm
-            onNext={nextStep}
-            onPrev={prevStep}
-            onUpdate={updateFormData}
-            data={formData}
-          />
-        );
-      case 3:
-        return (
-          <DocumentsForm
-            onNext={nextStep}
-            onPrev={prevStep}
-            onUpdate={updateFormData}
-            data={formData}
-          />
-        );
-      case 4:
-        return (
-          <ReviewForm
-            onPrev={prevStep}
-            onUpdate={updateFormData}
-            onSubmit={handleSubmitApplication}
-            data={formData}
-            isSubmitting={isSubmitting}
-            submitStatus={submitStatus}
-          />
-        );
-      default:
-        return null;
-    }
+    // Open Google Form in new tab
+    window.open(application.formLink, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -135,117 +92,210 @@ const Application = () => {
             Apply for Support
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90 animate-fade-in">
-            We're here to help you achieve your dreams. Submit your application
-            and let us support your journey towards a better future.
+            We're here to help you achieve your dreams. Choose the support
+            category that best fits your needs and submit your application
+            through our secure forms.
           </p>
           <div className="flex justify-center items-center space-x-8 mt-12">
-            <div className="text-center">
+            <div className="text-center transform hover:scale-105 transition-transform duration-300">
               <BookOpen className="w-12 h-12 mx-auto mb-2" />
               <p className="text-sm">Education Support</p>
             </div>
-            <div className="text-center">
+            <div className="text-center transform hover:scale-105 transition-transform duration-300">
+              <Users className="w-12 h-12 mx-auto mb-2" />
+              <p className="text-sm">Women Empowerment</p>
+            </div>
+            <div className="text-center transform hover:scale-105 transition-transform duration-300">
               <Heart className="w-12 h-12 mx-auto mb-2" />
               <p className="text-sm">Healthcare Aid</p>
-            </div>
-            <div className="text-center">
-              <Briefcase className="w-12 h-12 mx-auto mb-2" />
-              <p className="text-sm">Business Grants</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Application Form Section */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Success/Error Messages */}
-        {submitStatus === "success" && (
-          <div className="mb-8 bg-green-100 border border-green-400 text-green-700 px-6 py-4 rounded-lg">
-            <div className="flex items-center">
-              <CheckCircle className="w-5 h-5 mr-2" />
-              <div>
-                <h4 className="font-semibold">
-                  Application Submitted Successfully!
-                </h4>
-                <p className="text-sm">
-                  Thank you for your application. We'll review it and get back
-                  to you soon.
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {submitStatus === "error" && (
-          <div className="mb-8 bg-red-100 border border-red-400 text-red-700 px-6 py-4 rounded-lg">
-            <h4 className="font-semibold">Submission Failed</h4>
-            <p className="text-sm">
-              Sorry, there was an error submitting your application. Please try
-              again.
-            </p>
-          </div>
-        )}
-
-        {/* Progress Steps */}
-        <div className="mb-12">
-          <div className="flex justify-between items-center mb-8">
-            {steps.map((step, index) => (
-              <div key={step.number} className="flex items-center">
-                <div
-                  className={`flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-300 ${currentStep >= step.number
-                      ? "bg-blue-600 border-blue-600 text-white"
-                      : "border-gray-300 text-gray-400"
-                    }`}
-                >
-                  <step.icon className="w-6 h-6" />
-                </div>
-                <div className="ml-4 hidden md:block">
-                  <p
-                    className={`text-sm font-medium ${currentStep >= step.number
-                        ? "text-blue-600"
-                        : "text-gray-400"
-                      }`}
-                  >
-                    Step {step.number}
-                  </p>
-                  <p
-                    className={`text-xs ${currentStep >= step.number
-                        ? "text-gray-900"
-                        : "text-gray-400"
-                      }`}
-                  >
-                    {step.title}
-                  </p>
-                </div>
-                {index < steps.length - 1 && (
-                  <div
-                    className={`w-16 h-0.5 mx-4 ${currentStep > step.number ? "bg-blue-600" : "bg-gray-300"
-                      }`}
-                  />
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Custom Progress Bar */}
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div
-              className="bg-blue-600 h-2 rounded-full transition-all duration-300 ease-in-out"
-              style={{ width: `${progress}%` }}
-            ></div>
-          </div>
-          <p className="text-center text-sm text-gray-600 mt-2">
-            Step {currentStep} of {totalSteps}
+      {/* Application Forms Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Choose Your Application Type
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Select the category that best describes your needs. Each application
+            form is tailored to gather the specific information required for
+            your support request.
           </p>
         </div>
 
-        {/* Form Content */}
-        <div className="shadow-xl border-0 bg-white/80 backdrop-blur-sm rounded-lg">
-          <div className="text-center pb-8 p-6">
-            <h3 className="text-2xl font-bold text-gray-800">
-              {steps[currentStep - 1].title}
+        {/* Application Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {applicationTypes.map((application) => {
+            const IconComponent = application.icon;
+            return (
+              <div
+                key={application.id}
+                className={`relative bg-white rounded-2xl shadow-lg border-2 ${application.borderColor} ${application.hoverColor} transition-all duration-300 hover:shadow-2xl hover:scale-105 overflow-hidden ${application.comingSoon ? "opacity-75" : ""
+                  }`}
+                onMouseEnter={() => setHoveredCard(application.id)}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
+                {/* Coming Soon Badge */}
+                {application.comingSoon && (
+                  <div className="absolute top-4 right-4 z-10">
+                    <span className="bg-yellow-100 text-yellow-800 text-xs font-medium px-3 py-1 rounded-full border border-yellow-200">
+                      Coming Soon
+                    </span>
+                  </div>
+                )}
+
+                {/* Card Header */}
+                <div className={`${application.bgColor} p-8 text-center`}>
+                  <div
+                    className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${application.color} flex items-center justify-center mb-6 mx-auto transform transition-transform duration-300 ${hoveredCard === application.id ? "scale-110 rotate-3" : ""
+                      }`}
+                  >
+                    <IconComponent className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-3">
+                    {application.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {application.description}
+                  </p>
+                </div>
+
+                {/* Card Body */}
+                <div className="p-8">
+                  {/* Features List */}
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-gray-800 mb-4 flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
+                      What we support:
+                    </h4>
+                    <ul className="space-y-2">
+                      {application.features.map((feature, index) => (
+                        <li
+                          key={index}
+                          className="flex items-start text-sm text-gray-600"
+                        >
+                          <ArrowRight className="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Estimated Time */}
+                  <div className="mb-6 p-3 bg-gray-50 rounded-lg">
+                    <div className="flex items-center text-sm text-gray-600">
+                      <Clock className="w-4 h-4 mr-2" />
+                      <span>
+                        Estimated completion time:{" "}
+                        <strong>{application.estimatedTime}</strong>
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Apply Button */}
+                  <button
+                    onClick={() => handleApplyClick(application)}
+                    disabled={application.comingSoon}
+                    className={`w-full py-4 px-6 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2 ${application.comingSoon
+                        ? "bg-gray-200 text-gray-500 cursor-not-allowed"
+                        : `bg-gradient-to-r ${application.color} text-white hover:shadow-lg hover:scale-105 transform`
+                      }`}
+                  >
+                    {application.comingSoon ? (
+                      <span>Coming Soon</span>
+                    ) : (
+                      <>
+                        <span>Apply Now</span>
+                        <ExternalLink className="w-5 h-5" />
+                      </>
+                    )}
+                  </button>
+
+                  {!application.comingSoon && (
+                    <p className="text-xs text-gray-500 text-center mt-3">
+                      Opens in a new tab • Secure Google Form
+                    </p>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Information Section */}
+        <div className="mt-16 bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              Application Process
             </h3>
+            <p className="text-gray-600">
+              Here's what you can expect after submitting your application
+            </p>
           </div>
-          <div className="px-8 pb-8">{renderCurrentStep()}</div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-blue-600">1</span>
+              </div>
+              <h4 className="font-semibold text-gray-800 mb-2">
+                Submit Application
+              </h4>
+              <p className="text-sm text-gray-600">
+                Complete the appropriate form with accurate information and
+                required documents
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-purple-600">2</span>
+              </div>
+              <h4 className="font-semibold text-gray-800 mb-2">
+                Review Process
+              </h4>
+              <p className="text-sm text-gray-600">
+                Our team reviews your application within 3-5 business days
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-green-600">3</span>
+              </div>
+              <h4 className="font-semibold text-gray-800 mb-2">Get Response</h4>
+              <p className="text-sm text-gray-600">
+                Receive notification about your application status via email
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Information */}
+        <div className="mt-12 text-center">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+            <h3 className="text-xl font-bold mb-4">
+              Need Help with Your Application?
+            </h3>
+            <p className="mb-6 opacity-90">
+              Our support team is here to assist you throughout the application
+              process
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex items-center space-x-2">
+                <span className="text-sm">📧</span>
+                <span className="text-sm">support@example.com</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-sm">📞</span>
+                <span className="text-sm">+255 123 456 789</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
