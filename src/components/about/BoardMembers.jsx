@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Slogan from "../sub-comp/slogan";
 import user from "../../assets/friends.png";
+import danielOle from "../../assets/olenjoolay pic.webp";
+import mir from "../../assets/mir.jpg";
+import muslim from "../../assets/muslim.jpg";
 
 const BoardMembersSection = ({ selectedMemberId }) => {
   const [activeCard, setActiveCard] = useState(null);
@@ -24,20 +27,22 @@ const BoardMembersSection = ({ selectedMemberId }) => {
       <div className="relative group transition-all duration-700">
         {/* Main Card */}
         <div
-          className={`bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${isActive ? "ring-4 ring-[#FFC107]/50" : ""
-            }`}
+          className={`bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
+            isActive ? "ring-4 ring-[#FFC107]/50" : ""
+          }`}
         >
           {/* Image Section */}
-          <div className="relative h-64 bg-gradient-to-br from-[#FFC107]/20 to-[#1E1E20]/10 overflow-hidden">
+          <div className="relative h-96 bg-gradient-to-br from-[#FFC107]/20 to-[#1E1E20]/10 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
             <div className="w-full h-full flex items-center justify-center">
-              <div className="w-32 h-32 bg-[#1E1E20] rounded-full flex items-center justify-center shadow-xl">
-                <span className="text-3xl font-bold text-[#FFC107]">
-                  {member.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </span>
+              <div className="relative h-96 w-full overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10" />
               </div>
             </div>
 
@@ -56,8 +61,9 @@ const BoardMembersSection = ({ selectedMemberId }) => {
               {member.role}
             </p>
             <p
-              className={`text-gray-600 text-sm leading-relaxed transition-all duration-500 ${isActive ? "line-clamp-none" : "line-clamp-3"
-                }`}
+              className={`text-gray-600 text-sm leading-relaxed transition-all duration-500 ${
+                isActive ? "line-clamp-none" : "line-clamp-3"
+              }`}
             >
               {member.description}
             </p>
@@ -115,7 +121,7 @@ const BoardMembersSection = ({ selectedMemberId }) => {
       role: "Board Chairman",
       description:
         "Ex-Regional commissioner Arusha, Mwanza, Rukwa and Ex-High Commissioner to Nigeria. A distinguished leader with extensive experience in public administration and international relations, bringing strategic vision and diplomatic expertise to guide GICCS's mission.",
-      image: "/api/placeholder/300/400",
+      image: danielOle,
     },
     {
       id: 2,
@@ -123,7 +129,7 @@ const BoardMembersSection = ({ selectedMemberId }) => {
       role: "Board Secretary",
       description:
         "Experienced leader in community development and organizational management. With a strong background in administrative excellence and community engagement, ensures effective governance and operational efficiency across all GICCS initiatives.",
-      image: "/api/placeholder/300/400",
+      image: mir,
     },
     {
       id: 3,
@@ -131,16 +137,16 @@ const BoardMembersSection = ({ selectedMemberId }) => {
       role: "Board Treasurer",
       description:
         "Financial expert with extensive experience in resource management and fiscal oversight. Brings decades of financial management expertise, ensuring transparent and effective utilization of resources to maximize community impact.",
-      image: "/api/placeholder/300/400",
+      image: muslim,
     },
-    {
-      id: 4,
-      name: "Dr. Neduvoto Piniel Mollel",
-      role: "Environment Projects Coordinator",
-      description:
-        "PhD in Plant Ecology and Evaluation. Works at TPRI and represents PARTS committee. Leading environmental scientist with specialized expertise in sustainable agriculture and environmental protection, driving GICCS's green initiatives.",
-      image: "/api/placeholder/300/400",
-    },
+    //{
+    // id: 4,
+    //name: "Dr. Neduvoto Piniel Mollel",
+    //role: "Environment Projects Coordinator",
+    //description:
+    // "PhD in Plant Ecology and Evaluation. Works at TPRI and represents PARTS committee. Leading environmental scientist with specialized expertise in sustainable agriculture and environmental protection, driving GICCS's green initiatives.",
+    // image: "/api/placeholder/300/400",
+    // },
   ];
 
   return (
@@ -154,8 +160,8 @@ const BoardMembersSection = ({ selectedMemberId }) => {
             />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-[#1E1E20]">Board of </span>
-            <span className="text-[#FFC107]">Governors</span>
+            <span className="text-[#1E1E20]">Board </span>
+            <span className="text-[#FFC107]">Members</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Meet the visionary leaders guiding our mission to transform

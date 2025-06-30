@@ -28,7 +28,7 @@ const Footer = () => {
                 Our Secure Online Donation Platform Allows You To Make
                 Contributions Quickly And Safely. Choose From Various.
               </p>
-              <div className="flex space-x-3 mt-6">
+              {/*<div className="flex space-x-3 mt-6">
                 <a
                   href="#"
                   className="w-8 h-8 rounded-full border border-gray-600 flex items-center justify-center hover:bg-yellow-500 hover:border-yellow-500 transition-colors"
@@ -48,6 +48,7 @@ const Footer = () => {
                   <FaLinkedinIn />
                 </a>
               </div>
+              */}
             </div>
 
             {/* Column 2 */}
@@ -56,7 +57,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#"
+                    href="/about"
                     className="text-gray-400 hover:text-yellow-500 flex items-center"
                   >
                     <span className="text-yellow-500 mr-2">▸</span> About Us
@@ -64,34 +65,10 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/newsletter"
                     className="text-gray-400 hover:text-yellow-500 flex items-center"
                   >
                     <span className="text-yellow-500 mr-2">▸</span> Our News
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-yellow-500 flex items-center"
-                  >
-                    <span className="text-yellow-500 mr-2">▸</span> Our Campaign
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-yellow-500 flex items-center"
-                  >
-                    <span className="text-yellow-500 mr-2">▸</span> FAQ
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-yellow-500 flex items-center"
-                  >
-                    <span className="text-yellow-500 mr-2">▸</span> Get A Quote
                   </a>
                 </li>
               </ul>
@@ -103,15 +80,16 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#"
+                    href="/programs/entrepreneurship-business-grants"
                     className="text-gray-400 hover:text-yellow-500 flex items-center"
                   >
-                    <span className="text-yellow-500 mr-2">▸</span> Our Causes
+                    <span className="text-yellow-500 mr-2">▸</span>Business
+                    Grants
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/programs/education"
                     className="text-gray-400 hover:text-yellow-500 flex items-center"
                   >
                     <span className="text-yellow-500 mr-2">▸</span> Education
@@ -120,23 +98,16 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/renewable-energy"
                     className="text-gray-400 hover:text-yellow-500 flex items-center"
                   >
-                    <span className="text-yellow-500 mr-2">▸</span> Our Campaign
+                    <span className="text-yellow-500 mr-2">▸</span>Renewable
+                    Energy
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
-                    className="text-gray-400 hover:text-yellow-500 flex items-center"
-                  >
-                    <span className="text-yellow-500 mr-2">▸</span> Food Support
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
+                    href="/health"
                     className="text-gray-400 hover:text-yellow-500 flex items-center"
                   >
                     <span className="text-yellow-500 mr-2">▸</span> Health
@@ -156,7 +127,7 @@ const Footer = () => {
                 </li>
                 <li className="flex">
                   <FaPhone className="text-yellow-500 mr-3 mt-1 flex-shrink-0" />
-                  <p className="text-gray-400">+255 (123) 456 789</p>
+                  <p className="text-gray-400">+255 785 044 220</p>
                 </li>
                 <li className="flex">
                   <FaEnvelope className="text-yellow-500 mr-3 mt-1 flex-shrink-0" />
@@ -175,7 +146,7 @@ const Footer = () => {
             Copyright © 2025 <span className="text-yellow-500">Giccs</span>.
             All Rights Reserved.
           </p>
-          <div className="flex space-x-4 text-sm text-gray-400">
+          {/*<div className="flex space-x-4 text-sm text-gray-400">
             <a href="#" className="hover:text-white">
               Terms & Conditions
             </a>
@@ -186,6 +157,7 @@ const Footer = () => {
               Cookie Settings
             </a>
           </div>
+          */}
         </div>
       </div>
     </>

@@ -161,13 +161,13 @@ const GICCSMissionVision = () => {
         </div>
 
         {/* Objectives Section */}
-
         <div className="max-w-7xl mx-auto">
           <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-12">
             Our Key <span className="text-green-400">Objectives</span>
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* First row - 3 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             <ActionCard
               icon={<EducationIcon />}
               title="Education Access"
@@ -182,31 +182,41 @@ const GICCSMissionVision = () => {
             />
             <ActionCard
               icon={<CommunityIcon />}
-              title="Women & Disabled Empowerment"
+              title="Women Empowerment"
               description="Strengthening women and disabled individuals by imparting entrepreneurship skills, fostering financial independence and social inclusion."
               color="blue"
             />
-            <ActionCard
-              icon={<EnvironmentIcon />}
-              title="Environmental Protection"
-              description="Advocating for environment protection and implementing sustainable waste management projects to preserve our natural heritage for future generations."
-              color="green"
-            />
-            <ActionCard
-              icon={<Leaf />}
-              title="Renewable Energy"
-              description="Promoting renewable energy solutions to reduce environmental impact while providing sustainable power sources for rural and urban communities."
-              color="orange"
-            />
-            <ActionCard
-              icon={<Users />}
-              title="Agriculture & Livestock"
-              description="Empowering communities with modern animal husbandry techniques and good farming methods to improve food security and income generation."
-              color="blue"
-            />
           </div>
-        </div>
 
+          {/* Second row - Centered single card */}
+          <div className="flex justify-center">
+            <div className="w-full max-w-sm md:max-w-md lg:max-w-[25rem]">
+              <ActionCard
+                icon={<Leaf />}
+                title="Renewable Energy"
+                description="Promoting renewable energy solutions to reduce environmental impact while providing sustainable power sources for rural and urban communities."
+                color="orange"
+              />
+            </div>
+          </div>
+
+          {/* Commented out cards for reference */}
+          {/* 
+  <ActionCard
+    icon={<EnvironmentIcon />}
+    title="Environmental Protection"
+    description="Advocating for environment protection and implementing sustainable waste management projects to preserve our natural heritage for future generations."
+    color="green"
+  />
+  
+  <ActionCard
+    icon={<Users />}
+    title="Agriculture & Livestock"
+    description="Empowering communities with modern animal husbandry techniques and good farming methods to improve food security and income generation."
+    color="blue"
+  />
+  */}
+        </div>
         {/* Call to Action */}
         {/*<div className="max-w-4xl mx-auto mt-16 text-center">
         <div className="bg-gradient-to-r from-green-500 to-blue-500 p-8 rounded-2xl shadow-2xl">

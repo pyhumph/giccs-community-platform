@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Instagram, Facebook, Twitter, Plus, X } from "lucide-react";
-
 import volunteer01 from "../../assets/volunteer01.jpg";
 import volunteer03 from "../../assets/volunteer.jpg";
-
+import danielOle from "../../assets/olenjoolay pic.webp";
+import mir from "../../assets/mir.jpg";
+import muslim from "../../assets/muslim.jpg";
 import Slogan from "../sub-comp/slogan";
 import CTAButton from "../sub-comp/Button";
 
@@ -65,7 +66,6 @@ const VolunteerCard = ({ name, role, image, id }) => {
         {isHovered && (
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/70 to-transparent"></div>
         )}
-
         <div
           className={`absolute right-4 top-[76%] -translate-y-1/2 flex flex-col gap-2 transition-all duration-300 ${showSocial ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         >
@@ -87,7 +87,6 @@ const VolunteerCard = ({ name, role, image, id }) => {
           ))}
         </div>
       </div>
-
       <div
         className={`p-8 transition-all duration-300 ${isHovered ? "bg-[#101828]" : "bg-[#FAE7F3]"}`}
       >
@@ -102,10 +101,10 @@ const VolunteerCard = ({ name, role, image, id }) => {
           {role}
         </p>
       </div>
-
       <button
-        className={`absolute top-[74%] right-4 p-1 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300 z-10 ${showSocial ? "bg-[#FFC107] rotate-0" : "bg-[#101828] rotate-0"
-          }`}
+        className={`absolute top-[74%] right-4 p-1 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300 z-10 ${
+          showSocial ? "bg-[#FFC107] rotate-0" : "bg-[#101828] rotate-0"
+        }`}
         onClick={(e) => {
           e.stopPropagation();
           setShowSocial(!showSocial);
@@ -122,34 +121,43 @@ const VolunteerCard = ({ name, role, image, id }) => {
 };
 
 export default function VolunteerTeamSection() {
-  const navigate = useNavigate(); // ✅ Fix: Add useNavigate here
+  const navigate = useNavigate();
 
   const volunteers = [
     {
       id: 1,
       name: "Daniel Ole Njooley",
       role: "Volunteer",
-      image: volunteer01,
+      image: danielOle,
     },
     {
       id: 2,
       name: "Mirjean Ackbaraly Pirbhai",
       role: "Volunteer",
-      image: volunteer01,
+      image: mir,
     },
     {
       id: 3,
       name: "Muslim Mohamedtaki Remtula",
       role: "Volunteer",
-      image: volunteer03,
+      image: muslim,
     },
-    {
-      id: 4,
-      name: "Dr. Neduvoto Piniel Mollel",
-      role: "Volunteer",
-      image: volunteer01,
-    },
+    //{
+    // id: 4,
+    //  name: "Dr. Neduvoto Piniel Mollel",
+    // role: "Volunteer",
+    // image: volunteer01,
+    //},
   ];
+
+  // Determine grid classes based on number of volunteers
+  const getGridClasses = (count) => {
+    if (count === 1) return "grid-cols-1 max-w-sm mx-auto";
+    if (count === 2) return "grid-cols-1 md:grid-cols-2 max-w-2xl mx-auto";
+    if (count === 3)
+      return "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto";
+    return "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"; // 4 or more
+  };
 
   return (
     <div className="w-full">
@@ -174,7 +182,7 @@ export default function VolunteerTeamSection() {
             <span className="text-yellow-500">Team</span>
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className={`grid ${getGridClasses(volunteers.length)} gap-6`}>
           {volunteers.map((volunteer) => (
             <VolunteerCard
               key={volunteer.id}

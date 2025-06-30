@@ -3,6 +3,7 @@ import { Heart, Check } from "lucide-react";
 import healthImg from "../../../assets/health_03.jpg";
 import healthcare from "../../../assets/handshake_health.png";
 import Slogan from "../../sub-comp/slogan";
+import CTAButton from "../../sub-comp/Button";
 
 const HealthIntro = () => {
   return (
@@ -102,6 +103,14 @@ const HealthIntro = () => {
                 </div>
               </div>
             </div>
+
+            <a
+              href="https://forms.gle/cw8Jkk4KQfuz6xGi8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <CTAButton text="Apply for Support" />
+            </a>
 
             {/*<button className="bg-[#1E1E20] text-white px-8 py-4 rounded-full font-semibold flex items-center group transition-all duration-300 hover:bg-[#FFC107] hover:text-[#1E1E20]">
               <span>Learn More About Our Approach</span>

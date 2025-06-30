@@ -35,8 +35,7 @@ const ContactInfo = () => {
             </div>
             <div>
               <h3 className="font-bold text-xl mb-2">Phone</h3>
-              <p className="text-gray-600">+255 (123) 456 789</p>
-              <p className="text-gray-600">+255 (987) 654 321</p>
+              <p className="text-gray-600">+255 785 044 220</p>
             </div>
           </div>
         </div>
@@ -50,8 +49,8 @@ const ContactInfo = () => {
             </div>
             <div>
               <h3 className="font-bold text-xl mb-2">Email</h3>
-              <p className="text-gray-600">info@giccs.com</p>
-              <p className="text-gray-600">support@giccs.com</p>
+              <p className="text-gray-600">admin@giccs.or.tz</p>
+              <p className="text-gray-600">agiccs736@gmail.com</p>
             </div>
           </div>
         </div>

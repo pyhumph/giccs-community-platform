@@ -61,7 +61,8 @@ const Application = () => {
       bgColor: "bg-red-50",
       borderColor: "border-red-200",
       hoverColor: "hover:border-red-400",
-      formLink: "#", // Placeholder - will be updated later
+      formLink: "https://forms.gle/cw8Jkk4KQfuz6xGi8",
+
       features: [
         "Medical treatment costs",
         "Prescription medications",
@@ -69,7 +70,6 @@ const Application = () => {
         "Emergency medical support",
       ],
       estimatedTime: "5-6 minutes",
-      comingSoon: true,
     },
   ];
 
@@ -134,8 +134,9 @@ const Application = () => {
             return (
               <div
                 key={application.id}
-                className={`relative bg-white rounded-2xl shadow-lg border-2 ${application.borderColor} ${application.hoverColor} transition-all duration-300 hover:shadow-2xl hover:scale-105 overflow-hidden ${application.comingSoon ? "opacity-75" : ""
-                  }`}
+                className={`relative bg-white rounded-2xl shadow-lg border-2 ${application.borderColor} ${application.hoverColor} transition-all duration-300 hover:shadow-2xl hover:scale-105 overflow-hidden ${
+                  application.comingSoon ? "opacity-75" : ""
+                }`}
                 onMouseEnter={() => setHoveredCard(application.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
@@ -151,8 +152,9 @@ const Application = () => {
                 {/* Card Header */}
                 <div className={`${application.bgColor} p-8 text-center`}>
                   <div
-                    className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${application.color} flex items-center justify-center mb-6 mx-auto transform transition-transform duration-300 ${hoveredCard === application.id ? "scale-110 rotate-3" : ""
-                      }`}
+                    className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${application.color} flex items-center justify-center mb-6 mx-auto transform transition-transform duration-300 ${
+                      hoveredCard === application.id ? "scale-110 rotate-3" : ""
+                    }`}
                   >
                     <IconComponent className="w-10 h-10 text-white" />
                   </div>
@@ -200,10 +202,11 @@ const Application = () => {
                   <button
                     onClick={() => handleApplyClick(application)}
                     disabled={application.comingSoon}
-                    className={`w-full py-4 px-6 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2 ${application.comingSoon
+                    className={`w-full py-4 px-6 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2 ${
+                      application.comingSoon
                         ? "bg-gray-200 text-gray-500 cursor-not-allowed"
                         : `bg-gradient-to-r ${application.color} text-white hover:shadow-lg hover:scale-105 transform`
-                      }`}
+                    }`}
                   >
                     {application.comingSoon ? (
                       <span>Coming Soon</span>
@@ -288,11 +291,11 @@ const Application = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <div className="flex items-center space-x-2">
                 <span className="text-sm">📧</span>
-                <span className="text-sm">support@example.com</span>
+                <span className="text-sm">admin@giccs.or.tz</span>
               </div>
               <div className="flex items-center space-x-2">
                 <span className="text-sm">📞</span>
-                <span className="text-sm">+255 123 456 789</span>
+                <span className="text-sm">+255 785 044 220</span>
               </div>
             </div>
           </div>
