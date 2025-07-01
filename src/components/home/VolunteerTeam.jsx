@@ -102,9 +102,8 @@ const VolunteerCard = ({ name, role, image, id }) => {
         </p>
       </div>
       <button
-        className={`absolute top-[74%] right-4 p-1 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300 z-10 ${
-          showSocial ? "bg-[#FFC107] rotate-0" : "bg-[#101828] rotate-0"
-        }`}
+        className={`absolute top-[74%] right-4 p-1 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300 z-10 ${showSocial ? "bg-[#FFC107] rotate-0" : "bg-[#101828] rotate-0"
+          }`}
         onClick={(e) => {
           e.stopPropagation();
           setShowSocial(!showSocial);
@@ -127,19 +126,19 @@ export default function VolunteerTeamSection() {
     {
       id: 1,
       name: "Daniel Ole Njooley",
-      role: "Volunteer",
+      role: "Board Chairman",
       image: danielOle,
     },
     {
       id: 2,
       name: "Mirjean Ackbaraly Pirbhai",
-      role: "Volunteer",
+      role: "Board Secretary",
       image: mir,
     },
     {
       id: 3,
       name: "Muslim Mohamedtaki Remtula",
-      role: "Volunteer",
+      role: "Board Treasurer",
       image: muslim,
     },
     //{

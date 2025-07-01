@@ -117,11 +117,12 @@ const NewsletterGrid = ({ activeFilter, searchTerm }) => {
       </div>
 
       {/* Load More Button */}
-      <div className="text-center mt-12">
+      {/*<div className="text-center mt-12">
         <button className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
           Load More Newsletters
         </button>
       </div>
+      */}
     </div>
   );
 };

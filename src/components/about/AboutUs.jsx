@@ -14,7 +14,7 @@ export default function AboutUs() {
             </div>
 
             <h1 className="text-4xl mt-1 md:text-5xl font-bold text-gray-800">
-              Helping Each Other Can Make{" "}
+              Helping Each Other Can Make The{" "}
               <span className="text-yellow-400">World</span> Better
             </h1>
 

@@ -303,7 +303,7 @@ export default function Donation() {
               </p>
 
               {/* Testimonial */}
-              <div className="bg-gray-50 p-6 rounded-lg mb-6 border-l-4 border-orange-500">
+              {/*<div className="bg-gray-50 p-6 rounded-lg mb-6 border-l-4 border-orange-500">
                 <div className="flex flex-col">
                   <p className="text-gray-700 italic mb-4">
                     "Volunteering with this charity changed my life. Seeing the
@@ -326,6 +326,7 @@ export default function Donation() {
                   </div>
                 </div>
               </div>
+              */}
 
               <p className="text-lg text-gray-700">
                 Join us as we strive to make lasting change. Whether you're

@@ -131,7 +131,7 @@ const Footer = () => {
                 </li>
                 <li className="flex">
                   <FaEnvelope className="text-yellow-500 mr-3 mt-1 flex-shrink-0" />
-                  <p className="text-gray-400">info@giccs.com</p>
+                  <p className="text-gray-400">admin@giccs.or.tz</p>
                 </li>
               </ul>
             </div>

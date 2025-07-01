@@ -7,7 +7,7 @@ import {
   CircleDollarSign,
 } from "lucide-react";
 import SectionWrapper from "../../sub-comp/SectionWrapper";
-import entrepreneurImg from "../../../assets/entrepreneurs_training.jpg";
+import entrepreneurImg from "../../../assets/ikwep.png";
 import businessIcon from "../../../assets/business-strategy.png";
 import Slogan from "../../sub-comp/slogan";
 
@@ -80,7 +80,7 @@ function EntrepreneurshipIntro() {
               Our Entrepreneurship & Business Grants program is specifically
               designed to empower women from the Shia Khoja Ithnaasheri
               Community and underserved areas. We provide financial grants,
-              business training, and ongoing support to help women grow their
+              business training, and ongoing support to help women expand their
               existing businesses and achieve financial independence.
             </p>
 

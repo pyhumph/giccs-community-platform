@@ -366,7 +366,7 @@ const BecomeVolunteerPage = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gradient-to-br from-[#2A2A2D] to-[#1E1E20]">
+      {/*} <section className="py-20 bg-gradient-to-br from-[#2A2A2D] to-[#1E1E20]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-[#FFC107] bg-clip-text text-transparent">
@@ -663,11 +663,11 @@ const BecomeVolunteerPage = () => {
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <a
-                href="mailto:volunteers@giccs.org"
+                href="mailto:admin@giccs.or.tz"
                 className="flex items-center gap-3 text-[#FFC107] hover:text-yellow-400 transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                volunteers@giccs.org
+                admin@giccs.or.tz
               </a>
               <a
                 href="tel:+1234567890"

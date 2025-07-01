@@ -27,9 +27,8 @@ const BoardMembersSection = ({ selectedMemberId }) => {
       <div className="relative group transition-all duration-700">
         {/* Main Card */}
         <div
-          className={`bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
-            isActive ? "ring-4 ring-[#FFC107]/50" : ""
-          }`}
+          className={`bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${isActive ? "ring-4 ring-[#FFC107]/50" : ""
+            }`}
         >
           {/* Image Section */}
           <div className="relative h-96 bg-gradient-to-br from-[#FFC107]/20 to-[#1E1E20]/10 overflow-hidden">
@@ -61,9 +60,8 @@ const BoardMembersSection = ({ selectedMemberId }) => {
               {member.role}
             </p>
             <p
-              className={`text-gray-600 text-sm leading-relaxed transition-all duration-500 ${
-                isActive ? "line-clamp-none" : "line-clamp-3"
-              }`}
+              className={`text-gray-600 text-sm leading-relaxed transition-all duration-500 ${isActive ? "line-clamp-none" : "line-clamp-3"
+                }`}
             >
               {member.description}
             </p>
@@ -128,7 +126,7 @@ const BoardMembersSection = ({ selectedMemberId }) => {
       name: "Mirjean Ackbaraly Pirbhai",
       role: "Board Secretary",
       description:
-        "Experienced leader in community development and organizational management. With a strong background in administrative excellence and community engagement, ensures effective governance and operational efficiency across all GICCS initiatives.",
+        "Distinguished healthcare and education leader with extensive experience spanning multiple sectors. Currently serves as Board Chairman and consultant at Ithna Asheri Charitable Polyclinic, where he has revolutionized healthcare delivery through system improvements and ISO certification initiatives. Former Company Director of JR Institute of Information Technology and JR Electronics Ltd, where he built educational programs serving 2000+ students. His diverse background includes construction company ownership, coffee procurement management, and pioneering roles in hospital administration. Brings decades of strategic leadership, financial management, and community development expertise to organizational governance.",
       image: mir,
     },
     {
@@ -136,7 +134,7 @@ const BoardMembersSection = ({ selectedMemberId }) => {
       name: "Muslim Mohamedtaki Remtula",
       role: "Board Treasurer",
       description:
-        "Financial expert with extensive experience in resource management and fiscal oversight. Brings decades of financial management expertise, ensuring transparent and effective utilization of resources to maximize community impact.",
+        "Muslim Mohammedtaki Remtula is a retired company executive with extensive leadership experience in the corporate sector. He holds a Master's in Business Administration (MBA) and served as Chief Executive Officer of Tanfoam Limited from 1966 to 2012, spanning an impressive 46-year career with the organization. Muslim brings decades of executive leadership experience and a strong commitment to educational and community development initiatives to the GICCS board.",
       image: muslim,
     },
     //{

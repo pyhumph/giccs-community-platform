@@ -23,7 +23,6 @@ const Newsletter = () => {
         setSearchTerm={setSearchTerm}
       />
       <NewsletterGrid activeFilter={activeFilter} searchTerm={searchTerm} />
-      <NewsletterSubscription />
       <Subscribe />
       <BackToTopButton />
       <Footer />

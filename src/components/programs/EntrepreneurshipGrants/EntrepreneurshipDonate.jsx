@@ -20,9 +20,9 @@ function EntrepreneurshipDonate() {
               </h3>
               <p className="text-gray-300 mb-8">
                 Your donation can help provide business grants, training, and
-                mentorship to women entrepreneurs from the Shia Khoja
-                Ithnaasheri community. Together, we can create opportunities for
-                economic independence and community transformation.
+                mentorship to women entrepreneurs to the community. Together, we
+                can create opportunities for economic independence and community
+                transformation.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to={`/donate`}>

@@ -13,34 +13,85 @@ const CommunityButton = ({
   return (
     <button
       onClick={onClick}
-      className="hover:scale-105 cursor-pointer font-bold px-4 md:px-4 lg:px-6 xl:px-8 py-9 md:py-3 lg:py-4 xl:py-4 rounded-full relative group overflow-hidden transition-all duration-300 text-xs md:text-sm lg:text-base"
+      className="
+        relative
+        group
+        overflow-hidden
+        font-bold
+        rounded-full
+        transition-all
+        duration-300
+        cursor-pointer
+        inline-flex
+        items-center
+        justify-center
+        text-xs
+        sm:text-sm
+        md:text-base
+        lg:text-base
+        xl:text-lg
+        px-6
+        py-3
+        sm:px-8
+        sm:py-3
+        md:px-8
+        md:py-4
+        lg:px-10
+        lg:py-4
+        hover:scale-105
+      "
       style={{ backgroundColor: bgColor, color: textColor }}
     >
-      {/* Left stripe that grows on hover */}
+      {/* Left stripe */}
       <span
-        className="absolute top-0 bottom-0 left-1/2 w-0 group-hover:w-1/2 transform -translate-x-full group-hover:translate-x-0 transition-all duration-300"
+        className="
+          absolute top-0 bottom-0 left-1/2 w-0
+          group-hover:w-1/2
+          transform -translate-x-full
+          group-hover:translate-x-0
+          transition-all duration-300
+        "
         style={{ backgroundColor: hoverBgColor }}
       ></span>
 
-      {/* Middle stripe that's visible by default */}
+      {/* Middle stripe */}
       <span
-        className="absolute top-0 bottom-0 left-1/2 w-px transform -translate-x-1/2 transition-all duration-300"
+        className="
+          absolute top-0 bottom-0 left-1/2 w-px
+          transform -translate-x-1/2
+          transition-all duration-300
+        "
         style={{ backgroundColor: stripColor }}
       ></span>
 
-      {/* Right stripe that grows on hover */}
+      {/* Right stripe */}
       <span
-        className="absolute top-0 bottom-0 right-1/2 w-0 group-hover:w-1/2 transform translate-x-full group-hover:translate-x-0 transition-all duration-300"
+        className="
+          absolute top-0 bottom-0 right-1/2 w-0
+          group-hover:w-1/2
+          transform translate-x-full
+          group-hover:translate-x-0
+          transition-all duration-300
+        "
         style={{ backgroundColor: hoverBgColor }}
       ></span>
 
-      {/* Content container */}
-      <div className="flex items-center space-x-1 md:space-x-2 relative z-10">
-        <span className="group-hover:text-white transition-colors duration-300">
+      {/* Content */}
+      <span className="relative z-10 flex items-center gap-1 sm:gap-2">
+        <span className="transition-colors duration-300 group-hover:text-white">
           {text}
         </span>
-        <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 transition-all duration-300 transform group-hover:translate-x-1 group-hover:rotate-45 group-hover:text-white" />
-      </div>
+        <ArrowUpRight
+          className="
+            w-4 h-4
+            sm:w-4 sm:h-4
+            md:w-5 md:h-5
+            lg:w-5 lg:h-5
+            transition-all duration-300
+            transform group-hover:translate-x-1 group-hover:rotate-45 group-hover:text-white
+          "
+        />
+      </span>
     </button>
   );
 };
