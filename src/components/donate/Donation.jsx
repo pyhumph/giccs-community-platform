@@ -21,31 +21,40 @@ export default function Donation() {
     }
 
     setLoading(true);
+
     try {
-      if (typeof window.Email === "undefined") {
-        throw new Error("SMTP.js not loaded. Add the script to index.html");
-      }
+      const data = {
+        apikey: import.meta.env.VITE_ELASTICEMAIL_API_KEY,
+        subject: `New Donation from ${firstName} ${lastName}`,
+        from: import.meta.env.VITE_SMTP_USERNAME, // admin@giccs.or.tz
+        to: import.meta.env.VITE_SMTP_TO, // admin@giccs.or.tz
+        bodyHtml: `
+        <h2>New Donation</h2>
+        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phoneNumber || "Not provided"}</p>
+        <p><strong>Address:</strong> ${address || "Not provided"}</p>
+        <p><strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}</p>
+        <p><strong>Donation Amount:</strong> $${donationAmount}</p>
+      `,
+        isTransactional: true,
+      };
 
-      const result = await window.Email.send({
-        Host: import.meta.env.VITE_SMTP_HOST,
-        Username: import.meta.env.VITE_SMTP_USERNAME,
-        Password: import.meta.env.VITE_SMTP_PASSWORD,
-        To: import.meta.env.VITE_SMTP_USERNAME,
-        From: import.meta.env.VITE_SMTP_USERNAME,
-        Subject: `New Donation from ${firstName} ${lastName}`,
-        Body: `
-          <h2>New Donation</h2>
-          <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phoneNumber || "Not provided"}</p>
-          <p><strong>Address:</strong> ${address || "Not provided"}</p>
-          <p><strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}</p>
-          <p><strong>Donation Amount:</strong> $${donationAmount}</p>
-        `,
-      });
+      const response = await fetch(
+        "https://api.elasticemail.com/v2/email/send",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(data),
+        },
+      );
 
-      if (result === "OK") {
+      const result = await response.json();
+      console.log("Donation API response:", result);
+
+      if (result.success) {
         alert("🎉 Thank you for your donation!");
+        // Reset form
         setFirstName("");
         setLastName("");
         setEmail("");
@@ -54,12 +63,12 @@ export default function Donation() {
         setMessage("");
         setDonationAmount(10);
       } else {
+        console.error("API error:", result);
         alert("Failed to send. Please try again.");
-        console.error(result);
       }
     } catch (error) {
-      console.error("SMTP Error:", error);
-      alert("Error occurred while sending your donation message.");
+      console.error("Error:", error);
+      alert("An error occurred while sending your donation.");
     } finally {
       setLoading(false);
     }

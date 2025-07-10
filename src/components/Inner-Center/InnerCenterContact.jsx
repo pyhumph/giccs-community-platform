@@ -53,30 +53,47 @@ const InnerCenterContact = () => {
     setLoading(true);
 
     try {
-      if (typeof window.Email === "undefined") {
-        throw new Error("SMTP.js not loaded. Check if the script is added.");
+      const apiKey = import.meta.env.VITE_ELASTICEMAIL_API_KEY;
+      const toEmail = import.meta.env.VITE_SMTP_TO;
+      const fromEmail = import.meta.env.VITE_SMTP_USERNAME;
+
+      if (!apiKey) {
+        throw new Error("Elastic Email API key is missing.");
       }
 
-      const result = await window.Email.send({
-        Host: import.meta.env.VITE_SMTP_HOST,
-        Username: import.meta.env.VITE_SMTP_USERNAME,
-        Password: import.meta.env.VITE_SMTP_PASSWORD,
-        To: import.meta.env.VITE_SMTP_USERNAME,
-        From: import.meta.env.VITE_SMTP_USERNAME,
-        Subject: `New Inner Center Inquiry from ${formData.name}`,
-        Body: `
-        <h2>New Inquiry from Inner Center Page</h2>
-        <p><strong>Name:</strong> ${formData.name}</p>
-        <p><strong>Email:</strong> ${formData.email}</p>
-        <p><strong>Phone:</strong> ${formData.phone || "Not Provided"}</p>
-        <p><strong>Program Interested:</strong> ${formData.program || "Not Selected"}</p>
-        <p><strong>Message:</strong><br>${formData.message.replace(/\n/g, "<br>")}</p>
-        <hr>
-        <p><em>This message was sent from the GICCS Inner Center form.</em></p>
-      `,
-      });
+      const subject = `New Inner Center Inquiry from ${formData.name}`;
+      const body = `
+      <h2>New Inquiry from Inner Center Page</h2>
+      <p><strong>Name:</strong> ${formData.name}</p>
+      <p><strong>Email:</strong> ${formData.email}</p>
+      <p><strong>Phone:</strong> ${formData.phone || "Not Provided"}</p>
+      <p><strong>Program Interested:</strong> ${formData.program || "Not Selected"}</p>
+      <p><strong>Message:</strong><br>${formData.message.replace(/\n/g, "<br>")}</p>
+      <hr>
+      <p><em>This message was sent from the GICCS Inner Center form.</em></p>
+    `;
 
-      if (result === "OK") {
+      const params = new URLSearchParams();
+      params.append("apikey", apiKey);
+      params.append("from", fromEmail);
+      params.append("to", toEmail);
+      params.append("subject", subject);
+      params.append("bodyHtml", body);
+
+      const response = await fetch(
+        "https://api.elasticemail.com/v2/email/send",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: params.toString(),
+        },
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
         alert("✅ Message sent successfully!");
         setFormData({
           name: "",
@@ -87,7 +104,9 @@ const InnerCenterContact = () => {
         });
       } else {
         console.error("Email sending error:", result);
-        alert("❌ Failed to send message. Please try again later.");
+        alert(
+          `❌ Failed to send message. ${result.error || "Please try again later."}`,
+        );
       }
     } catch (error) {
       console.error("Submission error:", error);

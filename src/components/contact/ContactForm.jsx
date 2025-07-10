@@ -24,41 +24,43 @@ const ContactForm = () => {
     setSubmitStatus("");
 
     try {
-      // Check if Email is available (SMTP.js)
-      if (typeof window.Email === "undefined") {
-        throw new Error(
-          "SMTP.js not loaded. Please add the script to your HTML.",
-        );
-      }
+      const data = {
+        apikey: import.meta.env.VITE_ELASTICEMAIL_API_KEY,
+        subject: `New Contact Form Message from ${formData.name}`,
+        from: import.meta.env.VITE_SMTP_USERNAME, // Must be verified sender
+        to: import.meta.env.VITE_SMTP_TO,
+        bodyHtml: `
+    <h3>New Contact Form Submission</h3>
+    <p><strong>Name:</strong> ${formData.name}</p>
+    <p><strong>Email:</strong> ${formData.email}</p>
+    <p><strong>Phone:</strong> ${formData.phone || "Not provided"}</p>
+    <p><strong>Message:</strong></p>
+    <p>${formData.message.replace(/\n/g, "<br>")}</p>
+  `,
+        isTransactional: true, // ✅ This is required!
+      };
 
-      const result = await window.Email.send({
-        Host: import.meta.env.VITE_SMTP_HOST,
-        Username: import.meta.env.VITE_SMTP_USERNAME,
-        Password: import.meta.env.VITE_SMTP_PASSWORD,
-        To: import.meta.env.VITE_SMTP_USERNAME,
-        From: import.meta.env.VITE_SMTP_USERNAME,
-        Subject: `New Contact Form Message from ${formData.name}`,
-        Body: `
-          <h3>New Contact Form Submission</h3>
-          <p><strong>Name:</strong> ${formData.name}</p>
-          <p><strong>Email:</strong> ${formData.email}</p>
-          <p><strong>Phone:</strong> ${formData.phone || "Not provided"}</p>
-          <p><strong>Message:</strong></p>
-          <p>${formData.message.replace(/\n/g, "<br>")}</p>
-          <hr>
-          <p><em>This message was sent from your website contact form.</em></p>
-        `,
-      });
+      const response = await fetch(
+        "https://api.elasticemail.com/v2/email/send",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(data),
+        },
+      );
 
-      if (result === "OK") {
+      const result = await response.json();
+      //console.log("Elastic Email API response:", result);
+
+      if (result.success) {
         setSubmitStatus("success");
         setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
         setSubmitStatus("error");
-        console.error("Email send result:", result);
+        console.error("API error:", result);
       }
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("Error:", error);
       setSubmitStatus("error");
     } finally {
       setLoading(false);

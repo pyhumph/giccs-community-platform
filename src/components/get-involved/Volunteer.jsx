@@ -150,36 +150,45 @@ const BecomeVolunteerPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const elasticEmailAPIKey = import.meta.env.VITE_ELASTICEMAIL_API_KEY;
+    const elasticEmailTo = import.meta.env.VITE_SMTP_TO;
+    const elasticEmailFrom = import.meta.env.VITE_SMTP_USERNAME;
+
+    const emailBody = `
+    <h2>New Volunteer Application</h2>
+    <p><strong>Name:</strong> ${formData.name}</p>
+    <p><strong>Email:</strong> ${formData.email}</p>
+    <p><strong>Phone:</strong> ${formData.phone || "Not Provided"}</p>
+    <p><strong>Location:</strong> ${formData.location}</p>
+    <p><strong>Skills:</strong> ${formData.skills}</p>
+    <p><strong>Availability:</strong> ${formData.availability}</p>
+    <p><strong>Experience:</strong> ${formData.experience}</p>
+    <p><strong>Motivation:</strong> ${formData.motivation}</p>
+    <hr>
+    <p><em>Submitted via the GICCS Volunteer Page</em></p>
+  `;
+
     try {
-      if (typeof window.Email === "undefined") {
-        throw new Error(
-          "SMTP.js not loaded. Please add the script to index.html.",
-        );
-      }
+      const response = await fetch(
+        "https://api.elasticemail.com/v2/email/send",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            apikey: elasticEmailAPIKey,
+            from: elasticEmailFrom,
+            to: elasticEmailTo,
+            subject: `New Volunteer Application from ${formData.name}`,
+            bodyHtml: emailBody,
+          }),
+        },
+      );
 
-      const result = await window.Email.send({
-        Host: import.meta.env.VITE_SMTP_HOST,
-        Username: import.meta.env.VITE_SMTP_USERNAME,
-        Password: import.meta.env.VITE_SMTP_PASSWORD,
-        To: import.meta.env.VITE_SMTP_USERNAME,
-        From: import.meta.env.VITE_SMTP_USERNAME,
-        Subject: `New Volunteer Application from ${formData.name}`,
-        Body: `
-        <h2>New Volunteer Application</h2>
-        <p><strong>Name:</strong> ${formData.name}</p>
-        <p><strong>Email:</strong> ${formData.email}</p>
-        <p><strong>Phone:</strong> ${formData.phone}</p>
-        <p><strong>Location:</strong> ${formData.location}</p>
-        <p><strong>Skills:</strong> ${formData.skills}</p>
-        <p><strong>Availability:</strong> ${formData.availability}</p>
-        <p><strong>Experience:</strong> ${formData.experience}</p>
-        <p><strong>Motivation:</strong> ${formData.motivation}</p>
-        <hr>
-        <p><em>Submitted via the GICCS Volunteer Page</em></p>
-      `,
-      });
+      const data = await response.json();
 
-      if (result === "OK") {
+      if (response.ok && data.success) {
         alert("✅ Thank you for your application! We’ll contact you soon.");
         setFormData({
           name: "",
@@ -193,11 +202,11 @@ const BecomeVolunteerPage = () => {
         });
         setActiveStep(0);
       } else {
+        console.error(data);
         alert("❌ Error sending application. Please try again.");
-        console.error(result);
       }
     } catch (error) {
-      console.error("SMTP error:", error);
+      console.error("Elastic Email error:", error);
       alert("❌ An error occurred. Check your network or email config.");
     }
   };
