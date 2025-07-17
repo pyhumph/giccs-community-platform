@@ -2,32 +2,33 @@ import React, { useState, useEffect } from "react";
 import SectionWrapper from "../../sub-comp/SectionWrapper";
 import Slogan from "../../sub-comp/slogan";
 import eduIcon from "../../../assets/education_04.png";
+import student from "../../../assets/student.png";
 
 function EducationTestimonials() {
   const testimonials = [
     {
       id: 1,
-      name: "Fatima J.",
-      role: "Medical Student",
-      image: "/api/placeholder/100/100",
+      name: "S.S",
+      role: "ACCA Qualification",
+      image: student,
       content:
-        "Thanks to GICCS, I'm now pursuing my dream of becoming a doctor. The financial support and mentorship have been invaluable in my journey. I am now in my third year of medical school, and I look forward to giving back to my community.",
+        "I am incredibly grateful for the support I’ve received in pursuing my ACCA qualification. This opportunity has not only helped me grow academically, but it has also brought me closer to achieving my dream of becoming a professional accountant.Thanks to your generosity, I’ve been able to fully focus on my studies. Your support has made a real difference in my journey, and I hope many more students can benefit from the same.",
       video: null,
     },
     {
       id: 2,
-      name: "Hassan K.",
-      role: "Engineering Graduate",
-      image: "/api/placeholder/100/100",
+      name: "F.R",
+      role: "Masters Graduate",
+      image: student,
       content:
-        "I was struggling to continue my education after Form 6 due to financial constraints. GICCS stepped in and supported my engineering degree. Today, I'm working with a leading company and helping my siblings get an education too.",
+        "I am deeply grateful to MIDAS/ GICCS for their generous sponsorship and unwavering support throughout my Master’s journey. This opportunity not only allowed me to pursue specialized training in Internal Medicine, but it also empowered me to grow both professionally and personally. The knowledge and skills I’ve acquired are now helping me serve my community with greater confidence and compassion.This support has been life-changing—not just for me, but for every patient I now have the privilege to care for. I sincerely thank you for believing in my potential. Your investment in education is planting seeds of hope and progress, and I pray that many more aspiring students are granted the same chance to rise and make a difference.",
       video: null,
     },
     {
       id: 3,
       name: "Zahra M.",
       role: "Business Administration Student",
-      image: "/api/placeholder/100/100",
+      image: student,
       content:
         "The education support program changed my life trajectory. Coming from an underserved community, I never thought I would get a chance at higher education. Now I'm close to graduating and already have job offers.",
       video: null,
@@ -36,7 +37,7 @@ function EducationTestimonials() {
       id: 4,
       name: "Ali R.",
       role: "IT Diploma Graduate",
-      image: "/api/placeholder/100/100",
+      image: student,
       content:
         "Through the partnership with JRIIT, I was able to complete my IT diploma. The skills I gained have helped me secure a good job, and I'm even thinking of starting my own tech company to create jobs for others in my community.",
       video: null,

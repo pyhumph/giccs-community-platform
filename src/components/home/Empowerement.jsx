@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import video from "../../assets/VID-20250508-WA0000.mp4";
 import {
   FaGraduationCap,
   FaHeartbeat,
@@ -453,17 +454,21 @@ const EmpowermentShowcase = () => {
             </button>
 
             {/* Video Player */}
+
             <div className="aspect-w-16 aspect-h-9">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/uyVCneA_e3o?si=_3vvpmKcI7PfUKDi&autoplay=1&mute=1"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
+              <video
+                width="100%"
+                height="100%"
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover rounded-lg"
+              >
+                <source src={video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
