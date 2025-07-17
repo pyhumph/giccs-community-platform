@@ -13,10 +13,10 @@ const HealthImpact = () => {
   });
 
   const targets = {
-    patients: 5800,
-    communities: 124,
-    volunteers: 350,
-    programs: 46,
+    patients: 58,
+    communities: 10,
+    volunteers: 10,
+    programs: 4,
   };
 
   // Simple animation for counters

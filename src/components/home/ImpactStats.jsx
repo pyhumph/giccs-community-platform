@@ -5,7 +5,7 @@ import { Users, Handshake, PackageCheck, Trophy } from "lucide-react";
 const stats = [
   {
     icon: <Users size={36} />,
-    value: "40+",
+    value: "10+",
     label: "Dedicated Team Members",
   },
   {
@@ -38,11 +38,10 @@ const ImpactStats = () => {
         {stats.map((stat, index) => (
           <div
             key={index}
-            className={`flex flex-col items-center px-4 space-y-4 relative ${
-              index !== stats.length - 1
+            className={`flex flex-col items-center px-4 space-y-4 relative ${index !== stats.length - 1
                 ? "border-r-2 border-dotted border-[#FFC107]"
                 : ""
-            }`}
+              }`}
           >
             {/* Icon with border and no background */}
             <div className="p-3 border-2 border-white rounded-full">
