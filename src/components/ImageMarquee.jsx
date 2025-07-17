@@ -1,6 +1,11 @@
 import { useEffect, useRef } from "react";
-import img01 from "../assets/r.png";
-import img02 from "../assets/seven.png";
+import img01 from "../assets/image03.jpg";
+import img02 from "../assets/image04.jpg";
+import img03 from "../assets/image05.jpg";
+import img04 from "../assets/image06.jpg";
+import img05 from "../assets/image07.jpg";
+import img06 from "../assets/image09.jpg";
+import img07 from "../assets/image10.jpg";
 
 export default function ImageMarquee() {
   const marqueeRef = useRef(null);
@@ -18,27 +23,27 @@ export default function ImageMarquee() {
     },
     {
       id: 3,
-      src: img01,
+      src: img03,
       alt: "Children playing together",
     },
     {
       id: 4,
-      src: img02,
+      src: img04,
       alt: "Smiling child",
     },
     {
       id: 5,
-      src: img01,
+      src: img05,
       alt: "Children receiving gifts",
     },
     {
       id: 6,
-      src: img02,
+      src: img06,
       alt: "Community support",
     },
     {
       id: 7,
-      src: img02,
+      src: img07,
       alt: "Community support",
     },
   ];

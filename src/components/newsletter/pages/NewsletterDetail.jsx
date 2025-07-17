@@ -8,6 +8,10 @@ import NewsletterSubscription from "../NewsletterSubscription";
 import BackToTopButton from "../../sub-comp/BackToTopButton";
 import Subscribe from "../../contact/Subscribe";
 import Footer from "../../sub-comp/Footer";
+import newz01 from "../../../assets/ikwep.png";
+import newz02 from "../../../assets/jr_institute_of_information_technology_9.jpg";
+import newz03 from "../../../assets/MussaKassam.jpg";
+import newz04 from "../../../assets/healthDonation.jpg";
 
 // Main Newsletter Detail Page Component
 const NewsletterDetailPage = () => {
@@ -17,186 +21,171 @@ const NewsletterDetailPage = () => {
   const newsletters = [
     {
       id: 1,
-      title: "Year of Transformation: Our 2024 Impact Report",
-      date: "December 15, 2024",
-      category: "Impact Stories",
-      readTime: 8,
+      title: "Empowering Women Entrepreneurs: Our Business Grant Impact",
+      date: "July 17, 2025",
+      category: "Program Highlights",
+      readTime: 5,
       views: 1245,
       author: "GICCS Team",
       preview:
-        "Discover how your support transformed thousands of lives this year. From education breakthroughs to healthcare innovations, see the incredible impact we've made together in communities worldwide.",
+        "Through our women-only business grants, GICCS is helping female entrepreneurs turn ideas into thriving businesses. Discover how access to funding, mentorship, and training is transforming lives today.",
       introduction:
-        "As we approach the end of 2024, it's time to reflect on the incredible journey we've shared and the lives we've transformed together. This year has been nothing short of extraordinary, marked by unprecedented growth, innovative programs, and most importantly, the positive impact we've created in communities worldwide.",
-      image:
-        "https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      tags: ["impact", "annual-report", "2024", "transformation", "community"],
+        "Do you have a business idea? Need to expand your current business? Are finances holding you back? At GICCS, we believe in the power of women to drive change — and we're here to support that journey through our dedicated business grant program.",
+      image: newz01,
+      tags: [
+        "women",
+        "entrepreneurship",
+        "business-grants",
+        "2025",
+        "economic-empowerment",
+      ],
       hasAudio: true,
       content: `
-        <h2>Our Journey in 2024</h2>
-        <p>This year marked a significant milestone in our organization's mission to create lasting change in communities worldwide. Through innovative programs and dedicated partnerships, we've been able to reach more people than ever before.</p>
-        
-        <h3>Key Achievements</h3>
-        <ul>
-          <li><strong>Education Impact:</strong> Provided educational resources to over 10,000 students across 15 countries</li>
-          <li><strong>Healthcare Access:</strong> Established 25 new healthcare facilities in underserved communities</li>
-          <li><strong>Economic Empowerment:</strong> Supported 500+ entrepreneurs with microfinance and training programs</li>
-          <li><strong>Environmental Initiatives:</strong> Planted 100,000 trees and implemented sustainable practices in 50 communities</li>
-        </ul>
-        
-        <h3>Looking Forward</h3>
-        <p>As we move into 2025, we're excited about the new opportunities ahead. With your continued support, we plan to expand our reach and deepen our impact in existing communities while exploring innovative approaches to address emerging challenges.</p>
-        
-        <p>Thank you for being part of this incredible journey. Together, we're not just changing lives – we're building a better future for generations to come.</p>
-      `,
+    <h2>Why Women-Only Business Grants?</h2>
+    <p>Many women in underserved communities face barriers when it comes to accessing capital, training, and mentorship for their businesses. Our business grant program is designed to break those barriers and equip women with the tools they need to succeed — from startup support to business expansion.</p>
+
+    <h3>Real Impact in 2025</h3>
+    <ul>
+      <li><strong>Over 150 women entrepreneurs supported</strong> with direct financial grants</li>
+      <li><strong>Tailored mentorship</strong> for business planning, marketing, and financial literacy</li>
+      <li><strong>Skill development workshops</strong> delivered across multiple regions</li>
+      <li><strong>Success stories</strong> ranging from retail, fashion, agribusiness, to creative industries</li>
+    </ul>
+
+    <h3>Stories That Inspire</h3>
+    <p>“Thanks to IKWEPS, I was able to buy a professional camera and gear that upgraded my work quality and boosted my income.” — <strong>Z.D., Professional Photographer</strong></p>
+    <p>“We're truly grateful for the grant that helped us expand SpiceHub, diversify our products, and strengthen our business.” — <strong>SpiceHub Team</strong></p>
+
+    <h3>Are You a Woman with a Dream?</h3>
+    <p>If you're a woman with a business idea or looking to grow your existing venture, <strong>GICCS is here for you</strong>. Our business grants are open to women in the SHIA KHOJA ITHNAASHERI COMMUNITY who are committed to making a difference through entrepreneurship.</p>
+
+    <p><strong>Applications are reviewed on a rolling basis.</strong> Reach out to our team or visit our Programs page to learn how you can benefit.</p>
+
+    <h3>Looking Ahead</h3>
+    <p>As we continue through 2025, we remain committed to economic empowerment and inclusion. Our focus is not just on funding — it's about equipping women with the confidence, skills, and network to thrive independently.</p>
+
+    <p>Thank you for walking this journey with us. Every story of success starts with support — and your belief in our mission makes it possible.</p>
+  `,
     },
+
     {
       id: 2,
-      title: "New Educational Centers Opening Across Rural Communities",
-      date: "November 28, 2024",
+      title:
+        "Celebrating Our 2025 Graduates: 20+ Students Set to Complete Their Journey",
+      date: "July 17, 2025",
       category: "Program Updates",
-      readTime: 5,
+      readTime: 4,
       views: 892,
       author: "Education Team",
       preview:
-        "Exciting news as we inaugurate five new educational centers, bringing quality learning opportunities directly to underserved rural communities.",
+        "This October, over 20 students sponsored by GICCS are set to graduate — a powerful milestone in their academic and personal journeys, made possible through your support.",
       introduction:
-        "Education is the cornerstone of sustainable development, and we're thrilled to announce the opening of five new educational centers in rural communities across three countries. These centers represent more than just buildings – they're beacons of hope and opportunity.",
-      image:
-        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      tags: ["education", "rural-development", "expansion"],
+        "We’re thrilled to announce that more than 20 students sponsored through the GICCS education program will officially graduate this coming October. This achievement reflects the resilience of these young learners and the collective commitment of our community to empower future leaders.",
+      image: newz02,
+      tags: ["education", "graduation", "student-success", "2025"],
       hasAudio: false,
       content: `
-        <h2>Breaking Down Barriers to Education</h2>
-        <p>For too long, children in remote rural areas have faced significant challenges accessing quality education. Distance, lack of infrastructure, and limited resources have created barriers that we're now breaking down, one community at a time.</p>
-        
-        <h3>Our New Educational Centers</h3>
-        <p>Each of our five new centers has been strategically located to serve multiple villages within a 10-kilometer radius:</p>
-        
-        <ul>
-          <li><strong>Mwanza Learning Center (Tanzania):</strong> Serving 8 villages with 340 enrolled students</li>
-          <li><strong>Kayunga Education Hub (Uganda):</strong> Supporting 6 communities with 280 students</li>
-          <li><strong>Thika Rural Academy (Kenya):</strong> Reaching 12 villages with 420 students</li>
-          <li><strong>Nyanza Community School (Rwanda):</strong> Serving 5 communities with 190 students</li>
-          <li><strong>Mbeya Learning Institute (Tanzania):</strong> Supporting 9 villages with 380 students</li>
-        </ul>
-        
-        <h3>More Than Just Classrooms</h3>
-        <p>Our centers offer comprehensive educational support including:</p>
-        <ul>
-          <li>Primary and secondary education programs</li>
-          <li>Adult literacy classes</li>
-          <li>Vocational training workshops</li>
-          <li>Computer literacy programs</li>
-          <li>Health and nutrition education</li>
-        </ul>
-        
-        <h3>Community Impact</h3>
-        <p>The response from local communities has been overwhelming. Parents who never had the opportunity for formal education are now seeing their children access quality learning resources. We've also created 45 new jobs, hiring local teachers and support staff from the communities we serve.</p>
-        
-        <p>This expansion brings our total number of educational centers to 23 across East Africa, directly impacting over 3,200 students and their families.</p>
-      `,
+    <h2>Class of 2025: A Moment to Celebrate</h2>
+    <p>After years of hard work, determination, and community support, over 20 students are set to graduate this October. These students come from diverse backgrounds, yet share one thing in common — the opportunity to thrive through educational sponsorship.</p>
+
+    <h3>Our Role in Their Journey</h3>
+    <p>Through your support, GICCS has provided full educational sponsorship to these students, covering tuition fees, supplies, mentorship, and personal development programs. This graduation marks a major milestone not only for the students, but for their families and communities.</p>
+
+    <h3>Beyond the Classroom</h3>
+    <p>Many of our graduating students have also taken part in life skills workshops, leadership camps, and vocational training, equipping them to enter the next chapter of their lives with confidence and purpose.</p>
+
+    <h3>What Comes Next?</h3>
+    <p>Several graduates have already begun applying for college, internships, and job training opportunities. As they transition, GICCS will continue to offer post-graduation support to help them navigate their goals.</p>
+
+    <p>We couldn’t be prouder of their accomplishments. These students are living proof of what happens when potential is met with opportunity — and we thank you for being a part of that journey.</p>
+  `,
     },
+
     {
       id: 3,
-      title: "Healthcare Heroes: Meet Our Volunteer Medical Team",
-      date: "November 20, 2024",
+      title: "Scholarship Opportunities: Supporting Students in Need",
+      date: "July 17, 2025",
       category: "Community News",
-      readTime: 6,
+      readTime: 4,
       views: 654,
-      author: "Medical Outreach Team",
+      author: "Education Support Team",
       preview:
-        "Get to know the dedicated healthcare professionals who volunteer their time and expertise to provide medical care in remote areas.",
+        "We are currently offering scholarships to children who wish to continue their education but lack the financial means. The window is open — apply now or help spread the word.",
       introduction:
-        "Behind every successful healthcare mission are the heroes who dedicate their time, skills, and compassion to serve those in need. Today, we shine a spotlight on our incredible volunteer medical team who make our healthcare programs possible.",
-      image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      tags: ["healthcare", "volunteers", "heroes"],
-      hasAudio: true,
-      content: `
-        <h2>Our Volunteer Medical Heroes</h2>
-        <p>Our medical volunteer program brings together healthcare professionals from around the world who share a common goal: providing quality healthcare to underserved communities. This year, we've had 127 medical volunteers contribute over 4,800 hours of service.</p>
-        
-        <h3>Meet Some of Our Outstanding Volunteers</h3>
-        
-        <h4>Dr. Sarah Mitchell - Pediatric Surgeon, UK</h4>
-        <p>Dr. Mitchell has been volunteering with us for three years, performing life-saving surgeries on children. "Every child deserves the chance to live a healthy life," she says. "The joy on a parent's face when their child recovers is worth every sacrifice."</p>
-        
-        <h4>Nurse Maria Santos - Emergency Care Specialist, Philippines</h4>
-        <p>Maria leads our emergency response team and has trained over 200 local community health workers. Her dedication to building local capacity ensures sustainable healthcare long after our missions end.</p>
-        
-        <h4>Dr. James Ochieng - General Practitioner, Kenya</h4>
-        <p>As a local volunteer, Dr. Ochieng brings invaluable cultural understanding to our team. He's instrumental in bridging the gap between international volunteers and local communities.</p>
-        
-        <h3>Impact by the Numbers</h3>
-        <ul>
-          <li><strong>15,600 patients</strong> treated this year</li>
-          <li><strong>340 surgeries</strong> performed</li>
-          <li><strong>2,100 children</strong> vaccinated</li>
-          <li><strong>890 pregnant women</strong> received prenatal care</li>
-          <li><strong>450 community health workers</strong> trained</li>
-        </ul>
-        
-        <h3>Training the Next Generation</h3>
-        <p>Our volunteers don't just provide immediate care – they're building the foundation for sustainable healthcare by training local healthcare workers. Through our mentorship programs, we've certified 89 new community health assistants this year.</p>
-        
-        <h3>Join Our Medical Mission</h3>
-        <p>We're always looking for qualified healthcare professionals to join our mission. Whether you can volunteer for a week or a month, your skills can make a life-changing difference.</p>
-      `,
-    },
-    {
-      id: 4,
-      title: "Entrepreneurship Program Graduates 200+ Small Business Owners",
-      date: "November 10, 2024",
-      category: "Impact Stories",
-      readTime: 7,
-      views: 1023,
-      author: "Economic Development Team",
-      preview:
-        "Celebrating the success of our entrepreneurship program as over 200 participants graduate and launch their own sustainable businesses.",
-      introduction:
-        "Economic empowerment is at the heart of sustainable development. We're proud to announce that our latest entrepreneurship program cohort has graduated 203 new small business owners, each equipped with the skills, knowledge, and resources needed to build successful enterprises.",
-      image:
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      tags: ["entrepreneurship", "graduation", "success-stories"],
+        "At GICCS, we believe every child deserves access to education. We're pleased to announce that our scholarship window is currently open for students in need — especially those with no fees or family income to support their education.",
+      image: newz03,
+      tags: ["education", "scholarships", "student-support", "2025"],
       hasAudio: false,
       content: `
-        <h2>Transforming Lives Through Entrepreneurship</h2>
-        <p>Our 6-month intensive entrepreneurship program combines practical business training with financial literacy, mentorship, and startup capital. This comprehensive approach ensures our graduates don't just start businesses – they build sustainable enterprises that support their families and communities.</p>
-        
-        <h3>Program Highlights</h3>
-        <p>This year's cohort was our largest and most diverse yet:</p>
-        <ul>
-          <li><strong>203 graduates</strong> across 4 countries</li>
-          <li><strong>68% women entrepreneurs</strong></li>
-          <li><strong>45% youth participants</strong> (ages 18-25)</li>
-          <li><strong>32% participants with disabilities</strong></li>
-          <li><strong>Average age:</strong> 29 years</li>
-        </ul>
-        
-        <h3>Success Stories</h3>
-        
-        <h4>Grace Mutindi - Organic Farm Enterprise, Kenya</h4>
-        <p>Grace started with a small plot of land and big dreams. Through our program, she learned sustainable farming techniques and business management. Today, her organic vegetable farm employs 12 people and supplies three local markets. "I never imagined I could build something this successful," Grace shares.</p>
-        
-        <h4>David Mukisa - Solar Energy Solutions, Uganda</h4>
-        <p>David identified the need for affordable solar solutions in his community. Our program helped him develop a business plan and secure startup funding. His company has now installed solar systems in over 150 homes, bringing clean energy to rural areas.</p>
-        
-        <h4>Fatima Al-Zahra - Textile Cooperative, Rwanda</h4>
-        <p>Fatima brought together 15 women to form a textile cooperative specializing in traditional fabrics. The cooperative now exports to three countries and has become a source of pride for their community.</p>
-        
-        <h3>Economic Impact</h3>
-        <p>The ripple effects of our entrepreneurship program extend far beyond individual success:</p>
-        <ul>
-          <li><strong>1,240 jobs created</strong> by graduate businesses</li>
-          <li><strong>$580,000 in combined revenue</strong> generated in first 6 months</li>
-          <li><strong>92% business survival rate</strong> after one year</li>
-          <li><strong>Average 340% income increase</strong> for participants</li>
-        </ul>
-        
-        <h3>Looking Ahead</h3>
-        <p>Building on this success, we're expanding our program to reach 400 entrepreneurs in 2025. We're also launching a graduate mentorship network where successful alumni support new participants, creating a sustainable ecosystem of entrepreneurial growth.</p>
-      `,
+    <h2>Scholarships for Children in Need</h2>
+    <p>We continue to receive applications from students whose only barrier to education is the lack of financial support. Our scholarship program is designed to give hope and access to children determined to complete their studies.</p>
+    
+    <h3>Who Is Eligible?</h3>
+    <p>This opportunity is for students who demonstrate academic commitment but cannot afford school fees or materials. Priority is given to children from underserved or low-income households.</p>
+
+    <h3>What Does the Scholarship Cover?</h3>
+    <ul>
+      <li>Full or partial school tuition</li>
+      <li>Books and essential learning materials</li>
+      <li>School uniforms and transportation (where needed)</li>
+      <li>Mentorship and psychosocial support</li>
+    </ul>
+
+    <h3>Apply or Nominate</h3>
+    <p>If you know a child who deserves this opportunity or if you're a parent/guardian seeking support, please reach out. Our application team is ready to guide you through the process.</p>
+
+    <p>Education changes lives — and your support or referral could make that possible for someone today.</p>
+  `,
     },
+
+    {
+      id: 5,
+      title:
+        "Chronic Illness Awareness Drives Reach Over 100 Community Members",
+      date: "October 12, 2024",
+      category: "Health Support",
+      readTime: 6,
+      views: 1184,
+      author: "Health Support Team",
+      preview:
+        "Through community screenings and education, GICCS has empowered over 100 individuals with vital knowledge and early detection of chronic illnesses like diabetes and hypertension.",
+      introduction:
+        "At GICCS, we believe that knowledge is the first step to wellness. This year, our chronic illness awareness and screening campaigns reached more than 1,000 people across underserved communities, offering free health checks and critical information about managing long-term conditions.",
+      image: newz04,
+      tags: ["health-awareness", "chronic-diseases", "community-outreach"],
+      hasAudio: false,
+      content: `
+    <h2>Raising Awareness, Empowering Lives</h2>
+    <p>Our community-driven approach to health education focuses on early detection, lifestyle changes, and ongoing support — particularly for chronic illnesses that silently affect millions, such as diabetes and hypertension.</p>
+
+    <h3>Program Impact</h3>
+    <ul>
+      <li><strong>1,000+ community members reached</strong> through on-site health education drives</li>
+      <li><strong>620 individuals</strong> received free blood pressure and blood sugar screenings</li>
+      <li><strong>28%</strong> identified with risk factors for diabetes or hypertension</li>
+    </ul>
+
+    <h3>Educational Workshops</h3>
+    <p>Alongside screenings, our health team conducted interactive workshops focusing on:</p>
+    <ul>
+      <li>Nutrition and its role in managing blood sugar and pressure</li>
+      <li>Simple daily habits to prevent lifestyle-related illnesses</li>
+      <li>How to monitor symptoms and seek early medical attention</li>
+    </ul>
+
+    <h3>Community Voices</h3>
+
+    <h4>Zahra Salum - Arusha, Tanzania</h4>
+    <p>“I always felt tired and dizzy, but I thought it was just age. Through the GICCS screening, I found out my blood pressure was high. Now I’ve changed my diet and I’m walking every morning. I feel stronger.”</p>
+
+    <h4>Mohamed Bakari - Tanga, Tanzania</h4>
+    <p>“I didn’t know anything about diabetes. After the health talk, I realized my father had symptoms. We went for a check-up and caught it early. I’m thankful for this awareness program.”</p>
+
+    <h3>Looking Ahead</h3>
+    <p>Building on the success of this campaign, GICCS plans to expand its health education drives to five more regions in 2025. We’ll continue focusing on chronic illness awareness, empowering communities to live healthier, more informed lives.</p>
+  `,
+    },
+
     {
       id: 5,
       title: "Clean Water Initiative Reaches 50,000 People",
@@ -250,84 +239,6 @@ const NewsletterDetailPage = () => {
         
         <h3>Next Phase</h3>
         <p>With this milestone achieved, we're setting our sights on reaching 100,000 people by the end of 2025. We're also expanding our focus to include water conservation and climate-resilient water systems to ensure communities remain water-secure even during droughts.</p>
-      `,
-    },
-    {
-      id: 6,
-      title: "Volunteer Spotlight: Sarah's Journey of Service",
-      date: "October 15, 2024",
-      category: "Community News",
-      readTime: 5,
-      views: 456,
-      author: "Community Relations Team",
-      preview:
-        "Meet Sarah Johnson, whose dedication to our cause has touched countless lives. Learn about her inspiring journey and impact.",
-      introduction:
-        "In our volunteer spotlight series, we celebrate the individuals who make our work possible. Today, we're honored to share the story of Sarah Johnson, a remarkable volunteer whose three-year journey with us exemplifies the power of dedication and compassion.",
-      image:
-        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      tags: ["volunteer-spotlight", "inspiration", "service"],
-      hasAudio: false,
-      content: `
-        <h2>Sarah's Journey: From Corporate Executive to Community Champion</h2>
-        <p>Sarah Johnson was a successful marketing executive in New York when she first learned about our work. What started as a two-week volunteer vacation has transformed into a life-changing journey of service spanning three years and four countries.</p>
-        
-        <h3>The Beginning</h3>
-        <p>"I was feeling unfulfilled despite my career success," Sarah recalls. "I had always wanted to make a real difference, but I didn't know how. When I found GICCS, I knew this was my chance to contribute something meaningful to the world."</p>
-        
-        <p>Sarah's first assignment was helping establish educational programs in rural Guatemala. What she thought would be a brief respite from corporate life became the beginning of a new chapter.</p>
-        
-        <h3>Making an Impact</h3>
-        <p>Over three years, Sarah has contributed to multiple programs:</p>
-        
-        <h4>Education Program Coordinator - Guatemala (6 months)</h4>
-        <ul>
-          <li>Helped establish 3 new learning centers</li>
-          <li>Trained 25 local teachers</li>
-          <li>Developed curriculum for adult literacy programs</li>
-        </ul>
-        
-        <h4>Healthcare Support - Kenya (8 months)</h4>
-        <ul>
-          <li>Assisted in mobile clinic operations</li>
-          <li>Organized medical supply distribution</li>
-          <li>Supported vaccination campaigns reaching 2,000 children</li>
-        </ul>
-        
-        <h4>Community Development - Philippines (10 months)</h4>
-        <ul>
-          <li>Led disaster recovery efforts after Typhoon Mawar</li>
-          <li>Coordinated rebuilding of 45 homes</li>
-          <li>Established community resilience programs</li>
-        </ul>
-        
-        <h4>Program Manager - Tanzania (ongoing)</h4>
-        <ul>
-          <li>Oversees integration of all program areas</li>
-          <li>Manages team of 15 local staff</li>
-          <li>Develops long-term sustainability strategies</li>
-        </ul>
-        
-        <h3>Personal Transformation</h3>
-        <p>"Every community I've worked in has taught me something new," Sarah reflects. "I came here thinking I would help others, but I've received so much more than I've given. These experiences have shown me what truly matters in life."</p>
-        
-        <p>Sarah's corporate background in marketing has proven invaluable in our community outreach efforts. She's helped develop communication strategies that have increased program participation by 60% in her assigned regions.</p>
-        
-        <h3>Recognition and Awards</h3>
-        <p>Sarah's exceptional service has been recognized both locally and internationally:</p>
-        <ul>
-          <li>2023 Outstanding Volunteer Award - GICCS</li>
-          <li>Community Hero Recognition - Arusha Regional Council</li>
-          <li>Global Citizen Award - International Volunteer Alliance</li>
-        </ul>
-        
-        <h3>Looking Forward</h3>
-        <p>Sarah recently decided to make her volunteer work permanent, accepting a position as our Regional Program Director for East Africa. "This isn't just work for me anymore," she says. "This is my life's calling. I can't imagine doing anything else."</p>
-        
-        <h3>Sarah's Message to Future Volunteers</h3>
-        <p>"Don't wait for the 'perfect' time to start making a difference. The world needs your skills, your passion, and your heart right now. Take that first step – you'll be amazed where it leads you."</p>
-        
-        <p><em>Interested in volunteering? Contact our volunteer coordinator to learn about current opportunities. Whether you can spare a week or a year, your contribution can make a lasting impact.</em></p>
       `,
     },
   ];
@@ -447,7 +358,7 @@ const NewsletterDetailPage = () => {
       </div>
 
       {/* Newsletter Subscription Section */}
-      <div className="bg-white py-16">
+      {/*}<div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <NewsletterSubscription />
         </div>

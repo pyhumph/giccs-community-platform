@@ -7,7 +7,7 @@ import {
   CircleDollarSign,
 } from "lucide-react";
 import SectionWrapper from "../../sub-comp/SectionWrapper";
-import entrepreneurImg from "../../../assets/ikwep.png";
+import entrepreneurImg from "../../../assets/grants_aid.jpg";
 import businessIcon from "../../../assets/business-strategy.png";
 import Slogan from "../../sub-comp/slogan";
 

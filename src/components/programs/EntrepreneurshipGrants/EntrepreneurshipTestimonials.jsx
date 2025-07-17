@@ -3,34 +3,35 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import SectionWrapper from "../../sub-comp/SectionWrapper";
 import Slogan from "../../sub-comp/slogan";
 import businessIcon from "../../../assets/business-strategy.png";
+import woman from "../../../assets/woman (1).png";
 
 function EntrepreneurshipTestimonials() {
   const testimonials = [
     {
       id: 1,
-      name: "Zainab M.",
+      name: "C.P",
       role: "Restaurant Owner",
       quote:
-        "The business grant from GICCS helped me renovate my small restaurant and add new equipment. The business training taught me how to manage my finances better and market my services. My customer base has grown significantly.",
-      image: "/api/placeholder/100/100",
+        "Thanks to IKWEP, I was able to expand my food business with more products and higher sales. I really appreciate the support!",
+      image: woman,
       rating: 5,
     },
     {
-      id: 2,
-      name: "Sakina J.",
-      role: "Handcraft Entrepreneur",
+      id: 4,
+      name: "Z.D",
+      role: "Professional Photographer",
       quote:
-        "As a single mother, starting my own business was challenging. The support from GICCS has been invaluable. The grant helped me purchase materials in bulk, and the mentorship has guided me in building a sustainable business model.",
-      image: "/api/placeholder/100/100",
+        "Thanks to IKWEPS, I was able to buy a professional camera and gear that upgraded my work quality and boosted my income. I'm truly grateful for the support!",
+      image: woman,
       rating: 5,
     },
     {
-      id: 3,
-      name: "Fatima A.",
-      role: "Clothing Store Owner",
+      id: 5,
+      name: "SpiceHub",
+      role: "Spice Business Owners",
       quote:
-        "Thanks to the Entrepreneurship & Business Grants program, I was able to move my clothing store to a better location and expand my inventory. The marketing workshops helped me create an online presence, which has brought in new customers.",
-      image: "/api/placeholder/100/100",
+        "We're truly grateful to IKWEPS for the grant that helped us expand SpiceHub, diversify our products, and strengthen our business. Your support made a real difference!",
+      image: woman,
       rating: 5,
     },
     {
@@ -39,7 +40,7 @@ function EntrepreneurshipTestimonials() {
       role: "Beauty Salon Owner",
       quote:
         "The grant from GICCS enabled me to purchase high-quality equipment for my salon. The business training helped me better manage my time and resources. My business has grown, and I now employ two other women from my community.",
-      image: "/api/placeholder/100/100",
+      image: woman,
       rating: 5,
     },
   ];
@@ -150,8 +151,9 @@ function EntrepreneurshipTestimonials() {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentIndex ? "bg-[#FFC107] w-5" : "bg-black/30"
-                }`}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${
+                index === currentIndex ? "bg-[#FFC107] w-5" : "bg-black/30"
+              }`}
             />
           ))}
         </div>

@@ -1,7 +1,7 @@
 import Slogan from "../sub-comp/slogan.jsx";
-import newz01 from "../../assets/mustafa-alabri-9gz10zK7mWo-unsplash.jpg";
-import newz02 from "../../assets/kate-bezzubets-WBzkNwjpvwc-unsplash.jpg";
-import newz03 from "../../assets/jorge-maya-9AiE2wfpwvY-unsplash.jpg";
+import newz01 from "../../assets/ikwep.png";
+import newz02 from "../../assets/MussaKassam.jpg";
+import newz03 from "../../assets/jr_institute_of_information_technology_9.jpg";
 import CTAButton from "../sub-comp/Button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -10,33 +10,32 @@ export default function NewsletterSection() {
   const newsItems = [
     {
       id: 1,
-      date: "25 Apr",
-      category: "Impact Stories",
-      title: "Year of Transformation: Our 2025 Impact Report",
+      date: "17 Jul",
+      category: "Program Highlights",
+      title: "Empowering Women Entrepreneurs",
       views: 12,
       shares: 0,
-      image:
-        "https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: newz01,
     },
+
     {
       id: 2,
-      date: "02 May",
+      date: "17 Jul",
       category: "Program Updates",
-      title: "New Educational Centers Opening Across Rural Communities",
+      title: "Celebrating Our 2025 Graduates",
       views: 12,
       shares: 0,
-      image:
-        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: newz03,
     },
+
     {
       id: 3,
-      date: "17 May",
+      date: "17 Jul",
       category: "Community Development",
-      title: "Health Heroes: Meet Our Volunteer Medical Team",
+      title: "Scholarship Window Open for Students in Need",
       views: 12,
       shares: 0,
-      image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: newz02,
     },
   ];
 

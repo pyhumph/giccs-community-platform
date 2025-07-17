@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Slogan from "../../sub-comp/slogan";
-import children from "../../../assets/children-playing.png";
-import mother from "../../../assets/mother-child.png";
+import children from "../../../assets/image.png";
+import mother from "../../../assets/image02.jpg";
 import businessIcon from "../../../assets/business-strategy.png";
 
 const FAQItem = ({ question, answer, isOpen, toggle }) => {
@@ -89,14 +89,14 @@ export default function RenewableEnergyFAQ() {
                             image={businessIcon}
                         />
                     </div>
-                    <h2 className="text-6xl font-extrabold mb-10">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-6 lg:mb-10 leading-tight">
                         <span className="text-[#1E1E20]">Frequently </span>
                         <span className="text-[#FFC107]">Asked</span>
                         <br />
                         <span className="text-dark-green">Questions</span>
                     </h2>
 
-                    <div className="space-y-4">
+                    <div className="space-y-2 md:space-y-3 lg:space-y-4">
                         {faqs.map((faq, index) => (
                             <FAQItem
                                 key={faq.id}
@@ -109,20 +109,23 @@ export default function RenewableEnergyFAQ() {
                     </div>
                 </div>
 
-                <div className="md:w-1/2 md:pl-8 relative">
-                    <div className="bg-teal-700 h-full w-full absolute -z-10 right-0"></div>
-                    <div className="relative z-10 p-6">
-                        <div className="relative">
+                <div className="w-full lg:w-1/2 relative">
+                    <div className="bg-yellow-100 absolute inset-0 rounded-2xl lg:rounded-none lg:right-0 lg:w-[120%]"></div>
+
+                    <div className="bg-teal-700 absolute inset-0 rounded-2xl lg:rounded-none lg:right-0 lg:w-[120%]"></div>
+
+                    <div className="relative z-10 p-4 md:p-6 lg:p-8">
+                        <div className="relative max-w-full">
                             <img
                                 src={children}
                                 alt="Children playing"
-                                className="w-[98%] rounded-2xl border-10 border-white shadow-2xl shadow-black h-[43rem] object-cover"
+                                className="w-full max-w-md lg:max-w-lg xl:max-w-xl rounded-2xl border-4 md:border-8 lg:border-10 border-white shadow-2xl h-64 md:h-80 lg:h-96 xl:h-[43rem] object-cover mx-auto lg:mx-0"
                             />
-                            <div className="absolute -right-40 bottom-[12rem]">
+                            <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 lg:bottom-12 lg:-right-16 xl:bottom-[12rem] xl:-right-20 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-64 xl:h-64">
                                 <img
                                     src={mother}
                                     alt="Mother with child"
-                                    className="rounded-2xl w-full h-full border-10 border-white shadow-2xl shadow-black object-cover"
+                                    className="rounded-2xl w-full h-full border-4 md:border-6 lg:border-8 xl:border-10 border-white shadow-2xl object-cover"
                                 />
                             </div>
                         </div>

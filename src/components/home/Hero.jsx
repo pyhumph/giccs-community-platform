@@ -10,7 +10,7 @@ export default function Hero() {
   const [displayText, setDisplayText] = useState("");
 
   const slides = [bg01, bg02, bg03];
-  const fullText = "Bringing Hope and Aid to Tanzanians in Need";
+  const fullText = "Bringing Hope and Aid to Tanzaniansin Need";
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,15 +41,17 @@ export default function Hero() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+            index === currentSlide ? "opacity-100" : "opacity-0"
+          }`}
         >
           <div className="w-full h-full overflow-hidden">
             <img
               src={slide}
               alt={`Slide ${index + 1}`}
-              className={`w-full h-full object-cover transition-transform duration-5000 ease-out ${index === currentSlide ? "scale-110" : "scale-70"
-                }`}
+              className={`w-full h-full object-cover transition-transform duration-5000 ease-out ${
+                index === currentSlide ? "scale-110" : "scale-70"
+              }`}
             />
           </div>
         </div>
@@ -77,11 +79,11 @@ export default function Hero() {
           <span className="block">
             {displayText.includes("Bringing")
               ? displayText.substring(
-                0,
-                displayText.indexOf("Tanzanians") !== -1
-                  ? displayText.indexOf("Tanzanians")
-                  : displayText.length,
-              )
+                  0,
+                  displayText.indexOf("Tanzanians") !== -1
+                    ? displayText.indexOf("Tanzanians")
+                    : displayText.length,
+                )
               : ""}
           </span>
           {displayText.includes("Tanzanians") && (

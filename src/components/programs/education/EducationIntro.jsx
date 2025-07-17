@@ -20,7 +20,7 @@ function EducationIntro() {
               />
               <div className="absolute -bottom-6 -right-6 bg-[#FFC107] p-6 rounded-lg shadow-lg hidden md:block">
                 <div className="text-center text-[#1E1E20]">
-                  <div className="text-4xl font-bold">300+</div>
+                  <div className="text-4xl font-bold">210+</div>
                   <div className="text-xl font-medium">Students Supported</div>
                 </div>
               </div>

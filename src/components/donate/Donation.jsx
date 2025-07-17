@@ -120,20 +120,22 @@ export default function Donation() {
                     {presetAmounts.map((amount) => (
                       <button
                         key={amount}
-                        className={`py-2 px-4 rounded-full transition-all transform hover:scale-105 duration-200 ${donationAmount === amount
+                        className={`py-2 px-4 rounded-full transition-all transform hover:scale-105 duration-200 ${
+                          donationAmount === amount
                             ? "bg-orange-500 text-white shadow-md"
                             : "bg-gray-100 text-gray-800 hover:bg-orange-400"
-                          }`}
+                        }`}
                         onClick={() => setDonationAmount(amount)}
                       >
                         ${amount}
                       </button>
                     ))}
                     <button
-                      className={`py-2 px-4 rounded-full transition-all transform hover:scale-105 duration-200 ${!presetAmounts.includes(donationAmount)
+                      className={`py-2 px-4 rounded-full transition-all transform hover:scale-105 duration-200 ${
+                        !presetAmounts.includes(donationAmount)
                           ? "bg-orange-500 text-white shadow-md"
                           : "bg-gray-100 text-gray-800 hover:bg-orange-400"
-                        }`}
+                      }`}
                       onClick={() => {
                         setDonationAmount(0);
                         document.querySelector('input[type=["text"]').focus();
@@ -305,10 +307,11 @@ export default function Donation() {
               </div>
 
               <p className="text-lg text-gray-700 mb-8">
-                Your support helps us reach remote villages, build schools,
-                deliver medical supplies, and bring joy where it's needed most.
-                Each step we take is a step forward—made possible by the
-                generosity of people like you.
+                Your support helps us reach underserved communities by providing
+                better education, women’s empowerment, and medical support. All
+                these efforts aim to bring joy where it’s needed most. Every
+                step we take is made possible by the generosity of people like
+                you.
               </p>
 
               {/* Testimonial */}
@@ -348,7 +351,7 @@ export default function Donation() {
           {/* Right Sidebar */}
           <div className="w-full lg:w-1/3">
             {/* Recent Posts */}
-            <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+            {/* <div className="bg-white rounded-lg shadow-md p-6 mb-6">
               <h3 className="text-lg font-semibold mb-4">Recent Posts</h3>
               <div className="space-y-4">
                 {[1, 2, 3].map((i) => (

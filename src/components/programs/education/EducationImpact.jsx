@@ -10,28 +10,28 @@ function EducationImpact() {
   const impactStats = [
     {
       id: 1,
-      count: "300+",
+      count: "210+",
       title: "Students Supported",
       description:
         "Total students who have received support through our education program",
     },
     {
       id: 2,
-      count: "100+",
+      count: "70+",
       title: "Current Students",
       description:
         "Students currently continuing their education with our support",
     },
     {
       id: 3,
-      count: "85%",
+      count: "66.5%",
       title: "Graduation Rate",
       description:
         "Percentage of supported students who successfully complete their education",
     },
     {
       id: 4,
-      count: "10+",
+      count: "5+",
       title: "Partner Institutions",
       description:
         "Educational institutions we collaborate with for student placement",
@@ -108,8 +108,8 @@ function EducationImpact() {
                 </div>
                 <p className="text-gray-700 italic mb-4">
                   The support I received from GICCS changed my life. I was able
-                  to complete my education and now I work as a software
-                  engineer, helping others in my community.
+                  to complete my education and now I work as a IT Professional,
+                  helping others in my community.
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
@@ -120,9 +120,9 @@ function EducationImpact() {
                     />
                   </div>
                   <div>
-                    <p className="font-bold text-[#1E1E20]">Mohammed H.</p>
+                    <p className="font-bold text-[#1E1E20]">M.R</p>
                     <p className="text-sm text-gray-600">
-                      Computer Science Graduate
+                      Information Technology Graduate
                     </p>
                   </div>
                 </div>

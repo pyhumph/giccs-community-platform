@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Slogan from "../sub-comp/slogan";
-import children from "../../assets/children-playing.png";
-import mother from "../../assets/mother-child.png";
+import children from "../../assets/image.png";
+import mother from "../../assets/image02.jpg";
 
 const FAQItem = ({ question, answer, isOpen, toggle }) => {
   return (

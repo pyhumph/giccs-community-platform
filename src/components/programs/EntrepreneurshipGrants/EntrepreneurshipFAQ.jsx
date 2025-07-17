@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Slogan from "../../sub-comp/slogan";
-import children from "../../../assets/children-playing.png";
-import mother from "../../../assets/mother-child.png";
+import children from "../../../assets/image.png";
+import mother from "../../../assets/image02.jpg";
 import businessIcon from "../../../assets/business-strategy.png";
 
 const FAQItem = ({ question, answer, isOpen, toggle }) => {
@@ -116,11 +116,11 @@ export default function EntrepreneurshipFAQ() {
                 alt="Children playing"
                 className="w-[98%] rounded-2xl border-10 border-white shadow-2xl shadow-black h-[43rem] object-cover"
               />
-              <div className="absolute -right-40 bottom-[12rem]">
+              <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 lg:bottom-12 lg:-right-16 xl:bottom-[12rem] xl:-right-20 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-64 xl:h-64">
                 <img
                   src={mother}
                   alt="Mother with child"
-                  className="rounded-2xl w-full h-full border-10 border-white shadow-2xl shadow-black object-cover"
+                  className="rounded-2xl w-full h-full border-4 md:border-6 lg:border-8 xl:border-10 border-white shadow-2xl object-cover"
                 />
               </div>
             </div>

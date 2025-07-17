@@ -70,14 +70,14 @@ const CommunityImpact = () => {
         </div>
 
         <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-black mt-4 md:mt-6 px-2 leading-relaxed">
-          Global Integrated Charitable Community Services (GICCS) Is A
-          Registered NGO In Tanzania Working To Improve Lives Through
-          Sustainable Programs In Education, Healthcare, Environmental
-          Conservation, And Economic Empowerment.
+          Global Integrated Charitable Community Services (GICCS) is a
+          registered NGO in Tanzania working to improve lives through
+          sustainable programs in education, healthcare, environmental
+          conservation, and economic empowerment.
         </p>
 
         <div className="mt-6 md:mt-8">
-          <NumberCounter targetNumber={154489} duration={2500} suffix="+" />
+          <NumberCounter targetNumber={5000} duration={2500} suffix="+" />
         </div>
 
         <p className="text-[#5a5d78] text-sm sm:text-base md:text-lg font-semibold mt-2">

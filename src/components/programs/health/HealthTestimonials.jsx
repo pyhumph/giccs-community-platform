@@ -12,9 +12,9 @@ const HealthTestimonials = () => {
     {
       id: 1,
       quote:
-        "GICCS health support program has been a lifeline for our community. Their regular health screenings helped detect my diabetes early, and they've been supporting my treatment ever since.",
-      name: "Maria Joseph",
-      location: "Mwanza Region",
+        "GICCS health support program has been a lifeline for our community. Their regular health screenings helped detect my kidney failure early, and they’ve been supporting my treatment ever since.",
+      name: "Sharifa Hamisi",
+      location: "Arusha Region",
       image: testImg01,
     },
     {
@@ -152,9 +152,8 @@ const HealthTestimonials = () => {
                   setCurrent(index);
                   setTimeout(() => setIsAnimating(false), 500);
                 }}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === current ? "bg-[#FFC107] w-8" : "bg-white/30"
-                }`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === current ? "bg-[#FFC107] w-8" : "bg-white/30"
+                  }`}
                 aria-label={`View testimonial ${index + 1}`}
               />
             ))}
