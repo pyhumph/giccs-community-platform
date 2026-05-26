@@ -56,7 +56,7 @@ function EducationTestimonials() {
 
   return (
     <SectionWrapper>
-      <div className="bg-[#1E1E20] py-16 md:py-20 lg:py-24 text-white">
+      <div className="bg-[#1E1E20] text-white">
         <div className="container mx-auto px-4">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">

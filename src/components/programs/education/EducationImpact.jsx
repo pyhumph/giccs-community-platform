@@ -40,7 +40,7 @@ function EducationImpact() {
 
   return (
     <SectionWrapper>
-      <div className="container mx-auto px-4 py-16 md:py-20 lg:py-24">
+      <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <div className="flex items-center justify-center mb-4">

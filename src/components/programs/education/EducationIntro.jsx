@@ -8,7 +8,7 @@ import CTAButton from "../../sub-comp/Button";
 function EducationIntro() {
   return (
     <SectionWrapper>
-      <div className="container mx-auto px-4 py-16 md:py-20 lg:py-24">
+      <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
           {/* Image column */}
           <div className="w-full lg:w-1/2 order-2 lg:order-1">

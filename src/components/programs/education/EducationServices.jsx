@@ -140,7 +140,7 @@ function EducationServices() {
 
   return (
     <SectionWrapper>
-      <div className="bg-gray-50 py-16 md:py-20 lg:py-24">
+      <div className="bg-gray-50">
         <div className="container mx-auto px-4">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
@@ -178,7 +178,7 @@ function EducationServices() {
             ))}
           </div>
 
-          {/* CTA Section */}
+          {/* CTA Section
           <div className="mt-12 md:mt-16 text-center">
             <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
               If you meet these criteria and wish to apply for educational
@@ -192,7 +192,7 @@ function EducationServices() {
             >
               <CTAButton text="Apply for Support" />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </SectionWrapper>

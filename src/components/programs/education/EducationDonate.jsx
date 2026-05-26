@@ -12,7 +12,7 @@ import CTAButton from "../../sub-comp/Button";
 function EducationDonate() {
   return (
     <SectionWrapper>
-      <div className="container mx-auto px-4 py-16 md:py-20 lg:py-24">
+      <div className="container mx-auto px-4">
         <div className="bg-gradient-to-r from-[#1E1E20] to-[#2a2a2c] rounded-xl overflow-hidden shadow-xl">
           <div className="flex flex-col lg:flex-row">
             {/* Content */}
